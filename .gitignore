@@ -1,6 +1,9 @@
 node_modules/
 .env
+.env.*
 .DS_Store
-
+*serviceAccount*.json
+firebase-key.json
+firebase-*.json
 # Secret Firebase credentials
 server/firebase-key.json
