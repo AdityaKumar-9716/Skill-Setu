@@ -1,19 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const { runFullSkillSetuAudit } = require('../controllers/pipelineController');
+const validate = require('../middleware/validate');
+const { auditRequestSchema } = require('../schemas/pipelineSchema');
 
 // 1. Member 5's Direct AI Testbed
 // POST /api/analyze/skill-gap
-router.post('/skill-gap', async (req, res) => {
+router.post('/skill-gap', validate(auditRequestSchema), async (req, res) => {
     try {
         const { studentSkills, targetRole } = req.body;
-
-        if (!studentSkills || !targetRole) {
-            return res.status(400).json({
-                success: false,
-                error: "Missing required fields: studentSkills and targetRole are both required."
-            });
-        }
 
         // Member 5 hooks raw Gemini logic here
         res.status(200).json({
@@ -35,6 +30,6 @@ router.post('/skill-gap', async (req, res) => {
 
 // 2. Team Lead's Master Pipeline Route (SerpApi + Gemini)
 // POST /api/analyze/full-audit
-router.post('/full-audit', runFullSkillSetuAudit);
+router.post('/full-audit', validate(auditRequestSchema), runFullSkillSetuAudit);
 
 module.exports = router;
