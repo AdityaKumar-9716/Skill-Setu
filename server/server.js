@@ -5,6 +5,7 @@ require('dotenv').config();
 // Import route modules
 const jobsRoutes = require('./routes/jobs');
 const analyzeRoutes = require('./routes/analyze');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -25,6 +26,9 @@ app.get('/health', (req, res) => {
 // Mount API Routes
 app.use('/api/jobs', jobsRoutes);
 app.use('/api/analyze', analyzeRoutes);
+
+// Mount Global Error Handler (MUST BE LAST MIDDLEWARE)
+app.use(errorHandler);
 
 // Start Server
 app.listen(PORT, () => {
