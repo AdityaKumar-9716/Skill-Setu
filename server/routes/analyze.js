@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const { runFullSkillSetuAudit } = require('../controllers/pipelineController');
 
+// 1. Member 5's Direct AI Testbed
 // POST /api/analyze/skill-gap
 router.post('/skill-gap', async (req, res) => {
     try {
         const { studentSkills, targetRole } = req.body;
 
-        // Validate incoming payload
         if (!studentSkills || !targetRole) {
             return res.status(400).json({
                 success: false,
@@ -14,7 +15,7 @@ router.post('/skill-gap', async (req, res) => {
             });
         }
 
-        // Member 5's Gemini AI pipeline will hook in right here!
+        // Member 5 hooks raw Gemini logic here
         res.status(200).json({
             success: true,
             message: "Gemini analysis endpoint ready! Awaiting Member 5 integration.",
@@ -31,5 +32,9 @@ router.post('/skill-gap', async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// 2. Team Lead's Master Pipeline Route (SerpApi + Gemini)
+// POST /api/analyze/full-audit
+router.post('/full-audit', runFullSkillSetuAudit);
 
 module.exports = router;
