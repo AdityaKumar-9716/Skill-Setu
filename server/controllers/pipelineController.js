@@ -1,8 +1,10 @@
+const aiService = require('../ai');
+
 // server/controllers/pipelineController.js
 
 /**
  * Main Pipeline Orchestrator for Skill Setu
- * Chains SerpApi Live Job Ingestion directly into Gemini Gap Analysis
+ * Chains SerpApi Live Job Ingestion directly into AI Gap Analysis & Roadmap
  */
 async function runFullSkillSetuAudit(req, res) {
     try {
@@ -27,23 +29,29 @@ async function runFullSkillSetuAudit(req, res) {
             }
         ];
 
-        // STEP 2: Placeholder for Member 5's Gemini AI analysis
-        // const aiReport = await aiService.analyzeSkillGap(studentSkills, targetRole, liveJobs);
-        const aiReportMock = {
+        // STEP 2: Member 5's AI analysis (local rule-based engine)
+        const gap = aiService.analyzeSkillGap(req.body, targetRole);
+        const roadmapData = aiService.generateLearningRoadmap(req.body, targetRole);
+
+        const aiReport = {
             targetRole,
-            matchPercentage: 70,
-            missingSkills: ["System Design", "Cloud Deployment (AWS/GCP)", "Docker"],
+            matchPercentage: gap.matchPercentage,
+            readinessLevel: gap.readinessLevel,
+            missingSkills: gap.breakdown.missingSkills.map((m) => m.skill),
             recommendedProjects: [
                 {
-                    title: "Real-time Analytics Dashboard",
-                    techStack: ["React", "Express", "Tailwind"],
-                    description: "Build an end-to-end dashboard consuming live REST APIs."
+                    title: `${targetRole} Portfolio Project`,
+                    techStack: gap.breakdown.highPriorityGaps.slice(0, 3),
+                    description: `Build an end-to-end ${targetRole} application addressing identified gaps.`
                 }
             ],
-            roadmap: [
-                { week: 1, topic: "API & Middleware Deep-Dive", actionItems: ["Master error handlers", "Implement rate limiting"] },
-                { week: 2, topic: "Containerization & Cloud", actionItems: ["Dockerize backend", "Deploy to cloud tier"] }
-            ]
+            roadmap: roadmapData.roadmap.map((step) => ({
+                week: step.stepNumber,
+                topic: step.title,
+                actionItems: step.actionItems
+            })),
+            detailedBreakdown: gap.breakdown,
+            radarComparison: gap.radarComparison
         };
 
         // STEP 3: Return the combined intelligence report to the frontend
@@ -55,8 +63,9 @@ async function runFullSkillSetuAudit(req, res) {
                 jobsQueried: liveJobsMock.length,
                 locationSampled: location
             },
-            auditResult: aiReportMock
+            auditResult: aiReport
         });
+
 
     } catch (error) {
         console.error("❌ Pipeline Failure:", error.message);
