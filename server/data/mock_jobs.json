@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Software Developer",
+    "company_name": "Demo Company",
+    "location": "Delhi",
+    "description": "Develop and maintain software applications. Write clean code, debug applications, and work with the development team."
+  },
+  {
+    "title": "Frontend Developer",
+    "company_name": "Demo Tech",
+    "location": "Delhi",
+    "description": "Build responsive web interfaces using HTML, CSS, JavaScript and modern frontend technologies."
+  },
+  {
+    "title": "Backend Developer",
+    "company_name": "Demo Solutions",
+    "location": "Delhi",
+    "description": "Develop backend services, APIs and databases. Work with the team to build reliable web applications."
+  }
+]
