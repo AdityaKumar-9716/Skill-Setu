@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 
 
 .env
 node_modules
+=======
+node_modules/
+.env
+.env.*
+.DS_Store
+*serviceAccount*.json
+firebase-key.json
+firebase-*.json
+# Secret Firebase credentials
+server/firebase-key.json
+>>>>>>> 67adc02a156f491129b160d17f0b71f98e36745e
