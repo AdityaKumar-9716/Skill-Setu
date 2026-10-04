@@ -16,7 +16,10 @@
     "dotenv": "^18.0.4",
     "express": "^5.2.1",
     "firebase-admin": "^14.5.0",
+<<<<<<< HEAD
     "serpapi": "^2.2.1",
+=======
+>>>>>>> 67adc02a156f491129b160d17f0b71f98e36745e
     "zod": "^4.6.5"
   },
   "devDependencies": {
