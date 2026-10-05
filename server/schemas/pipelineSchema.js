@@ -8,4 +8,22 @@ const auditRequestSchema = z.object({
     })
 });
 
-module.exports = { auditRequestSchema };
+// Flexible schema allowing incomplete, partial, or optional fields with graceful fallbacks
+const flexibleProfileSchema = z.object({
+    body: z.object({
+        studentSkills: z.union([z.array(z.string()), z.string(), z.record(z.any())]).optional(),
+        skills: z.union([z.array(z.string()), z.string(), z.record(z.any())]).optional(),
+        technicalSkills: z.union([z.array(z.string()), z.string(), z.record(z.any())]).optional(),
+        targetRole: z.string().optional(),
+        careerGoal: z.string().optional(),
+        projects: z.array(z.any()).optional(),
+        experience: z.array(z.any()).optional(),
+        certifications: z.array(z.any()).optional(),
+        education: z.any().optional(),
+        interests: z.union([z.array(z.string()), z.string()]).optional(),
+        location: z.string().optional()
+    }).passthrough().optional()
+});
+
+module.exports = { auditRequestSchema, flexibleProfileSchema };
+
