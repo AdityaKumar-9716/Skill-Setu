@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-
-.env
-node_modules
-=======
 node_modules/
 .env
 .env.*
@@ -11,6 +5,16 @@ node_modules/
 *serviceAccount*.json
 firebase-key.json
 firebase-*.json
-# Secret Firebase credentials
+
 server/firebase-key.json
->>>>>>> 67adc02a156f491129b160d17f0b71f98e36745e
+
+# Next.js
+.next/
+out/
+build/
+.swc/
+tsconfig.tsbuildinfo
+
+# Scratch and Backups
+scratch/
+*_backup.*

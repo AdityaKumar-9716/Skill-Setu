@@ -1,75 +1,47 @@
-const aiService = require('../ai');
+const serpapiService = require('../services/serpapiService');
+const geminiService = require('../services/geminiService');
+const dbService = require('../services/dbService');
 
-// server/controllers/pipelineController.js
-
-/**
- * Main Pipeline Orchestrator for Skill Setu
- * Chains SerpApi Live Job Ingestion directly into AI Gap Analysis & Roadmap
- */
-async function runFullSkillSetuAudit(req, res) {
+async function runFullSkillSetuAudit(req, res, next) {
     try {
-        const { studentSkills, targetRole, location = "India" } = req.body;
-
-        if (!studentSkills || !targetRole) {
-            return res.status(400).json({
-                success: false,
-                error: "studentSkills (array) and targetRole (string) are required."
-            });
-        }
+        const { studentSkills, targetRole, location = "India", userId } = req.body;
 
         console.log(`🔍 [Skill-Setu Engine] Initiating Live Audit for: ${targetRole}`);
 
-        // STEP 1: Placeholder for Member 4's SerpApi extraction
-        // const liveJobs = await serpapiService.fetchLiveJobs(targetRole, location);
-        const liveJobsMock = [
-            {
-                title: targetRole,
-                company: "Leading Tech Firm",
-                description: `Looking for a ${targetRole} with strong fundamental understanding, hands-on project experience, API integration, and cloud deployment knowledge.`
-            }
-        ];
+        // STEP 1: SerpApi Live Job Ingestion
+        const liveJobs = await serpapiService.fetchLiveJobs(targetRole, location);
+        
+        if (!liveJobs || liveJobs.length === 0) {
+            const error = new Error("No market data found for this role/location.");
+            error.statusCode = 404;
+            throw error;
+        }
+        
+        const cleanedJobs = serpapiService.cleanJobDescriptions(liveJobs);
 
-        // STEP 2: Member 5's AI analysis (local rule-based engine)
-        const gap = aiService.analyzeSkillGap(req.body, targetRole);
-        const roadmapData = aiService.generateLearningRoadmap(req.body, targetRole);
+        // STEP 2: Real Gemini AI Analysis
+        console.log(`🧠 [Skill-Setu Engine] Analyzing with Gemini 2.5 Flash...`);
+        const aiReport = await geminiService.generateAuditReport(studentSkills, targetRole, cleanedJobs);
 
-        const aiReport = {
-            targetRole,
-            matchPercentage: gap.matchPercentage,
-            readinessLevel: gap.readinessLevel,
-            missingSkills: gap.breakdown.missingSkills.map((m) => m.skill),
-            recommendedProjects: [
-                {
-                    title: `${targetRole} Portfolio Project`,
-                    techStack: gap.breakdown.highPriorityGaps.slice(0, 3),
-                    description: `Build an end-to-end ${targetRole} application addressing identified gaps.`
-                }
-            ],
-            roadmap: roadmapData.roadmap.map((step) => ({
-                week: step.stepNumber,
-                topic: step.title,
-                actionItems: step.actionItems
-            })),
-            detailedBreakdown: gap.breakdown,
-            radarComparison: gap.radarComparison
-        };
+        // STEP 3: Save to Firestore
+        console.log(`💾 [Skill-Setu Engine] Saving roadmap to Database...`);
+        const savedDocId = await dbService.saveRoadmap(userId, aiReport);
 
-        // STEP 3: Return the combined intelligence report to the frontend
+        // STEP 4: Return payload
         res.status(200).json({
             success: true,
-            source: "Skill Setu Live Engine",
+            source: "Skill Setu Live Engine (Gemini + SerpApi)",
             targetRole,
             marketDataSummary: {
-                jobsQueried: liveJobsMock.length,
+                jobsQueried: liveJobs.length,
                 locationSampled: location
             },
+            databaseId: savedDocId,
             auditResult: aiReport
         });
 
-
     } catch (error) {
-        console.error("❌ Pipeline Failure:", error.message);
-        res.status(500).json({ success: false, error: error.message });
+        next(error);
     }
 }
 

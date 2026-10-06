@@ -14,6 +14,18 @@ router.get("/search", async (req, res) => {
       location = "India"
     } = req.query;
 
+    // Fetch live jobs from SerpApi
+    const jobs = await fetchLiveJobs(role, location);
+
+    // Convert SerpApi results into the format our website needs
+    const formattedJobs = jobs.map((job) => ({
+      title: job.title || "",
+      company: job.company_name || "",
+      location: job.location || "",
+      description: job.description || "",
+      apply_link: job.apply_options?.[0]?.link || job.share_link || ""
+    }));
+
     res.status(200).json({
       success: true,
       query: {
@@ -35,14 +47,3 @@ router.get("/search", async (req, res) => {
 });
 
 module.exports = router;
-    // Fetch live jobs from SerpApi
-    const jobs = await fetchLiveJobs(role, location);
-
-    // Convert SerpApi results into the format our website needs
-    const formattedJobs = jobs.map((job) => ({
-      title: job.title || "",
-      company: job.company_name || "",
-      location: job.location || "",
-      description: job.description || "",
-      apply_link: job.apply_options?.[0]?.link || job.share_link || ""
-    }));

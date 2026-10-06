@@ -245,253 +245,253 @@ const PRIORITY_STYLE: Record<Priority, string> = {
 const SKILL_AXES: SkillAxis[] = [
   {
     key: "python",
-    label: "Python & data wrangling",
+    label: "Python Basics & Data",
     short: "Python",
     icon: Braces,
-    blurb: "Vectorised pandas, typing, packaging, testable data pipelines.",
+    blurb: "Learn the fundamentals of Python and how to handle data easily.",
     phaseA: {
-      title: "Python foundations for data work",
-      objective: "Make pandas fast and reproducible instead of copy-paste notebooks.",
+      title: "Python Fundamentals",
+      objective: "Understand the basics of Python programming.",
       tasks: [
-        "Rewrite 3 messy scripts with type hints, dataclasses and a src/ layout",
-        "Profile a 2M-row frame; replace row-wise apply with vectorised operations",
-        "Vectorise the 3 slowest cells using groupby.transform and np.where",
+        "Learn variables, loops, and if-statements",
+        "Write your first simple Python script",
+        "Read data from a basic CSV file"
       ],
-      outcome: "Pipeline runtime drops >60% and becomes unit-testable.",
+      outcome: "You can write small scripts to automate tasks.",
     },
     phaseB: {
-      title: "Production-grade Python",
-      objective: "Ship a reusable ETL package with observability and CI.",
+      title: "Working with Data",
+      objective: "Use Python to analyze real-world data.",
       tasks: [
-        "Package the ETL as a typed library with pytest, ruff and pre-commit hooks",
-        "Add structured logging and retry/backoff around every external call",
-        "Expose one typed entrypoint the analytics team can call in a single line",
+        "Learn how to use Pandas to view data",
+        "Filter and sort data tables",
+        "Save your cleaned data to a new file"
       ],
-      outcome: "A reusable lmi_etl package with a green CI pipeline.",
+      outcome: "You can organize and clean datasets easily.",
     },
     resources: [
-      { title: "pandas user guide — performance & eval", meta: "pandas.pydata.org · 3h" },
-      { title: "pytest + typing patterns", meta: "docs & recipes · 2h" },
+      { title: "Python for Beginners", meta: "youtube.com · 2h" },
+      { title: "Pandas Crash Course", meta: "freecodecamp.org · 1h" },
     ],
   },
   {
     key: "sql",
-    label: "SQL & analytical modelling",
+    label: "SQL & Databases",
     short: "SQL",
     icon: Database,
-    blurb: "Window functions, query tuning, dimensional models, cost-aware design.",
+    blurb: "Learn how to store, query, and manage data in databases.",
     phaseA: {
-      title: "Advanced SQL & window functions",
-      objective: "Answer market questions in one pass instead of five nested CTEs.",
+      title: "SQL Basics",
+      objective: "Learn how to extract data from a database.",
       tasks: [
-        "Rewrite cohort retention using window functions over a 42-month spine",
-        "Build a star schema: dim_skill, dim_role, fact_posting, dim_date",
-        "Tune the 5 slowest queries with EXPLAIN ANALYZE and index notes",
+        "Write SELECT queries to view data",
+        "Use WHERE to filter specific records",
+        "Sort results using ORDER BY"
       ],
-      outcome: "One modelled marts layer powering every dashboard.",
+      outcome: "You can fetch exactly the data you need.",
     },
     phaseB: {
-      title: "Warehouse-grade modelling",
-      objective: "Design for cost, lineage and incremental freshness.",
+      title: "Joining Data Together",
+      objective: "Combine data from multiple tables.",
       tasks: [
-        "Convert the posting fact table to incremental materialisation by partition",
-        "Add data tests (not_null, unique, accepted_values) with severity tags",
-        "Document lineage for the demand index so analysts trust the number",
+        "Learn how to use INNER JOIN",
+        "Group data using GROUP BY",
+        "Count and sum data automatically"
       ],
-      outcome: "Tested, incremental, fully documented marts.",
+      outcome: "You can analyze data across multiple tables.",
     },
     resources: [
-      { title: "Window function deep dive", meta: "Mode tutorials · 2h" },
-      { title: "dbt style guide & data tests", meta: "docs.getdbt.com · 3h" },
+      { title: "SQL Tutorial for Beginners", meta: "w3schools.com · 2h" },
+      { title: "Database Basics", meta: "youtube.com · 1h" },
     ],
   },
   {
     key: "frontend",
-    label: "Frontend engineering",
+    label: "Frontend Web Dev",
     short: "Frontend",
     icon: Code2,
-    blurb: "TypeScript, React composition, state, accessibility, perf budgets.",
+    blurb: "Build beautiful and interactive websites.",
     phaseA: {
-      title: "TypeScript depth & React composition",
-      objective: "Kill the class of bugs that narrowing and render discipline catch.",
+      title: "HTML, CSS & JavaScript",
+      objective: "Build a static website from scratch.",
       tasks: [
-        "Convert 3 views to strict TS with discriminated unions for API state",
-        "Refactor 2 client components into server-first views with small islands",
-        "Replace prop drilling with a typed context and selector-based store",
+        "Create page structure with HTML",
+        "Style the page with CSS colors and layouts",
+        "Add a clickable button using JavaScript"
       ],
-      outcome: "Zero any, and a measurably smaller client bundle.",
+      outcome: "You have built your first interactive webpage.",
     },
     phaseB: {
-      title: "Interface craft & performance",
-      objective: "Ship an accessible dashboard that feels instant on a mid-tier phone.",
+      title: "Modern React Framework",
+      objective: "Learn the industry standard for web development.",
       tasks: [
-        "Audit every interactive element for keyboard and screen-reader correctness",
-        "Drive LCP under 1.8s and INP under 200ms on a throttled mid-tier device",
-        "Add a virtualised table for 10k-row demand grids with sticky headers",
+        "Set up a new React project",
+        "Create reusable UI components",
+        "Manage simple state (like a counter)"
       ],
-      outcome: "Lighthouse a11y at 100 and a fast, calm data grid.",
+      outcome: "You can build modern, dynamic web applications.",
     },
     resources: [
-      { title: "React docs — composition & server components", meta: "react.dev · 3h" },
-      { title: "TypeScript handbook — narrowing", meta: "ts-handbook · 2h" },
+      { title: "HTML & CSS Crash Course", meta: "youtube.com · 2h" },
+      { title: "React for Beginners", meta: "react.dev · 3h" },
     ],
   },
   {
     key: "dataviz",
-    label: "Data visualisation",
+    label: "Data Visualization",
     short: "Data Viz",
     icon: BarChart3,
-    blurb: "Chart selection, perceptual accuracy, dashboard storytelling.",
+    blurb: "Learn to tell stories by turning data into charts.",
     phaseA: {
-      title: "Chart selection & encoding",
-      objective: "Pick the honest encoding for demand-versus-capability questions.",
+      title: "Basic Charts",
+      objective: "Create simple and clear visual charts.",
       tasks: [
-        "Redesign one dashboard: cut 40% of the ink while keeping 100% of the signal",
-        "Build a radar-vs-bullet comparison and argue which answers which question",
-        "Write a 12-step chart decision checklist into your own team docs",
+        "Create a bar chart to compare numbers",
+        "Create a line chart to show trends over time",
+        "Learn which chart to use for different data"
       ],
-      outcome: "A reusable chart-selection checklist.",
+      outcome: "You can easily visualize basic data.",
     },
     phaseB: {
-      title: "Narrative dashboards",
-      objective: "Make the gap story land in a 4-minute executive review.",
+      title: "Building Dashboards",
+      objective: "Combine charts into a single interactive dashboard.",
       tasks: [
-        "Design a progressive-disclosure narrative for a skill-gap story",
-        "Add small-multiple trend panels for 6 pin zones on shared scales",
-        "Run a 5-person usability test and fix the two worst comprehension failures",
+        "Group related charts together on one page",
+        "Add simple filters (like choosing a date range)",
+        "Make the dashboard look clean and professional"
       ],
-      outcome: "A narrative deck reviewers can act on.",
+      outcome: "You can build a complete data dashboard.",
     },
     resources: [
-      { title: "Principles of data visualisation", meta: "readable charts · 2h" },
-      { title: "Recharts composition patterns", meta: "recharts.org · 2h" },
+      { title: "Data Viz Basics", meta: "youtube.com · 1h" },
+      { title: "How to Choose the Right Chart", meta: "article · 30m" },
     ],
   },
   {
     key: "ml",
-    label: "Applied ML & modelling",
-    short: "Applied ML",
+    label: "Machine Learning Basics",
+    short: "Basic ML",
     icon: Cpu,
-    blurb: "Embeddings, similarity, evaluation, honest baselines, model cards.",
+    blurb: "Understand how AI and machine learning works.",
     phaseA: {
-      title: "Embeddings & semantic skill matching",
-      objective: "Build the semantic layer that maps skills across job descriptions.",
+      title: "AI Fundamentals",
+      objective: "Understand the core concepts of AI.",
       tasks: [
-        "Embed 500 job descriptions and cluster skills by cosine similarity",
-        "Compare MiniLM against TF-IDF on a 100-label hand-annotated set",
-        "Ship a nearest-neighbour skill matcher with an explicit confidence floor",
+        "Learn the difference between AI and traditional code",
+        "Understand training vs testing data",
+        "Explore how basic predictions work"
       ],
-      outcome: "A measured matcher with a precision/recall table.",
+      outcome: "You understand how AI models learn.",
     },
     phaseB: {
-      title: "Evaluation & model cards",
-      objective: "Prove the model helps instead of asserting that it does.",
+      title: "Using AI Tools",
+      objective: "Use pre-built AI to solve problems.",
       tasks: [
-        "Write an evaluation harness with slice metrics by role family",
-        "Add a keyword-overlap baseline and report the delta honestly",
-        "Publish a model card: intended use, data limits, known failure modes",
+        "Use an AI API (like OpenAI or Gemini) in code",
+        "Feed data to the AI to get a response",
+        "Display the AI's response on a screen"
       ],
-      outcome: "A model card and a reproducible evaluation report.",
+      outcome: "You can integrate AI into your own projects.",
     },
     resources: [
-      { title: "Sentence-Transformers guide", meta: "sbert.net · 2h" },
-      { title: "Evaluating ML systems in practice", meta: "standards · 2h" },
+      { title: "Machine Learning for Beginners", meta: "youtube.com · 2h" },
+      { title: "How to use AI APIs", meta: "tutorial · 1h" },
     ],
   },
   {
     key: "cloud",
-    label: "Cloud & DevOps",
+    label: "Cloud Deployment",
     short: "Cloud",
     icon: Cloud,
-    blurb: "Containers, CI/CD, observability, cost control, rollback safety.",
+    blurb: "Learn how to put your code on the internet.",
     phaseA: {
-      title: "CI/CD and containers",
-      objective: "Make every push deployable and every rollback boring.",
+      title: "Hosting Basics",
+      objective: "Get your website live on the web.",
       tasks: [
-        "Containerise the API as a multi-stage, non-root image under 200MB",
-        "Add a CI matrix: lint, typecheck, unit, integration, build",
-        "Wire preview environments per pull request with seeded fixtures",
+        "Create a GitHub repository for your code",
+        "Deploy a static site using Vercel or Netlify",
+        "Share your live website link with friends"
       ],
-      outcome: "Green matrix and one-command preview deploys.",
+      outcome: "Your code is publicly accessible on the internet.",
     },
     phaseB: {
-      title: "Observability & cost control",
-      objective: "Know what broke and what it cost, within minutes.",
+      title: "Basic Backend Hosting",
+      objective: "Host a database and server.",
       tasks: [
-        "Instrument structured logs, traces and RED metrics with alert thresholds",
-        "Set a monthly budget alarm and retire the 3 costliest idle resources",
-        "Write and rehearse a 10-minute incident runbook with rollback steps",
+        "Host a Node.js server online",
+        "Connect it to a free cloud database",
+        "Ensure your server stays running securely"
       ],
-      outcome: "Dashboards, alerts and a rehearsed runbook.",
+      outcome: "You can host full-stack applications.",
     },
     resources: [
-      { title: "Container build best practices", meta: "patterns · 2h" },
-      { title: "SLOs and actionable alerting", meta: "observability · 2h" },
+      { title: "Vercel Deployment Guide", meta: "vercel.com · 30m" },
+      { title: "Cloud Hosting Basics", meta: "youtube.com · 1h" },
     ],
   },
   {
     key: "apis",
-    label: "APIs & integrations",
+    label: "APIs & Connections",
     short: "APIs",
     icon: Network,
-    blurb: "REST contracts, auth, rate limits, webhooks, resilient third-party calls.",
+    blurb: "Learn how apps talk to each other across the internet.",
     phaseA: {
-      title: "API design & authentication",
-      objective: "Design contracts other teams can integrate without a meeting.",
+      title: "Fetching Data",
+      objective: "Retrieve data from a public API.",
       tasks: [
-        "Specify /v1/market/demand with pagination, filters and error envelopes",
-        "Implement token plus scope auth and hand-write the OpenAPI description",
-        "Contract-test the endpoint against a consumer's mocked client",
+        "Learn what JSON data looks like",
+        "Use 'fetch' in JavaScript to get data",
+        "Display the fetched data on a webpage"
       ],
-      outcome: "A published, tested OpenAPI contract.",
+      outcome: "You can pull live internet data into your app.",
     },
     phaseB: {
-      title: "Resilient integrations",
-      objective: "Never lose a run to a third-party rate limit.",
+      title: "Building APIs",
+      objective: "Create your own API server.",
       tasks: [
-        "Add exponential backoff, jitter and a circuit breaker on SerpApi calls",
-        "Persist every job to a resumable queue with idempotency keys",
-        "Verify webhook signatures and replay safely after a partial failure",
+        "Set up an Express.js server",
+        "Create a route that returns JSON data",
+        "Test your API using a tool like Postman"
       ],
-      outcome: "Zero lost runs even under aggressive throttling.",
+      outcome: "You can build backends that serve data.",
     },
     resources: [
-      { title: "API design, pagination & versioning", meta: "public API handbook · 2h" },
-      { title: "Rate limits, backoff and idempotency", meta: "reliability patterns · 1h" },
+      { title: "What is an API?", meta: "youtube.com · 15m" },
+      { title: "Postman API Crash Course", meta: "youtube.com · 1h" },
     ],
   },
   {
     key: "communication",
-    label: "Communication & narrative",
-    short: "Communication",
+    label: "Communication Skills",
+    short: "Soft Skills",
     icon: MessageSquare,
-    blurb: "Explaining trade-offs, stakeholder updates, crisp technical writing.",
+    blurb: "Learn to explain your work clearly to others.",
     phaseA: {
-      title: "Data storytelling for stakeholders",
-      objective: "Turn a gap analysis into a decision someone can fund.",
+      title: "Writing Updates",
+      objective: "Write clear and professional project updates.",
       tasks: [
-        "Rewrite a dense analysis memo as a one-page decision brief",
-        "Build an async update template: signal, delta, risk, ask",
-        "Defend your top recommendation live in a 10-minute review",
+        "Write a clean summary of what you built",
+        "List out blockers or issues simply",
+        "Send an email update to a mentor or peer"
       ],
-      outcome: "A one-page brief that ends in a yes.",
+      outcome: "People easily understand your progress.",
     },
     phaseB: {
-      title: "Executive presence",
-      objective: "Compress any technical debate into a decision in two minutes.",
+      title: "Presenting Your Work",
+      objective: "Speak confidently about your code.",
       tasks: [
-        "Record a 3-minute demo that ends on a clear, single ask",
-        "Run a blameless post-mortem on a real incident and publish it",
-        "Mentor one peer through their own gap analysis end to end",
+        "Record a 2-minute video demo of your project",
+        "Explain a technical feature to a non-technical person",
+        "Prepare for a simple mock interview"
       ],
-      outcome: "A demo, a post-mortem and a mentored peer.",
+      outcome: "You can demo your work confidently.",
     },
     resources: [
-      { title: "Writing for busy readers", meta: "structure & style · 1h" },
-      { title: "Explaining technical trade-offs", meta: "talks & decks · 1h" },
+      { title: "How to Demo Your Project", meta: "article · 15m" },
+      { title: "Communication for Developers", meta: "youtube.com · 30m" },
     ],
-  },
-];
+  }
+]
 
 const SKILL_BY_KEY = SKILL_AXES.reduce<Record<SkillKey, SkillAxis>>((acc, axis) => {
   acc[axis.key] = axis;
@@ -653,19 +653,19 @@ const STEPS: { id: number; label: string; hint: string; icon: LucideIcon }[] = [
   { id: 5, label: "Engine run", hint: "Live terminal logs", icon: Terminal },
   { id: 6, label: "Skill radar", hint: "Gap visualisation", icon: RadarIcon },
   { id: 7, label: "Roadmap", hint: "Deltas & timeline", icon: GraduationCap },
-  { id: 8, label: "Credential", hint: "Open Badges 3.0", icon: BadgeCheck },
+  { id: 8, label: "Credential", hint: "Career Roadmap", icon: BadgeCheck },
 ];
 
 const FEATURE_PILLARS: { icon: LucideIcon; label: string; meta: string }[] = [
   {
     icon: Activity,
     label: "Live SerpApi job ingestion",
-    meta: "google_jobs + google_jobs_extensions, 30-day freshness window",
+    meta: "google_jobs + google_jobs_analysis, 30-day freshness window",
   },
   {
     icon: Cpu,
-    label: "SBERT skill clustering",
-    meta: "cosine similarity over 8k+ embedded skill descriptions",
+    label: "AI Skill Matching",
+    meta: "Matching your skills with live job demands via Google Gemini",
   },
   {
     icon: Crosshair,
@@ -674,16 +674,16 @@ const FEATURE_PILLARS: { icon: LucideIcon; label: string; meta: string }[] = [
   },
   {
     icon: BadgeCheck,
-    label: "Verifiable credentials",
-    meta: "Open Badges 3.0 / 1EdTech JSON-LD envelopes",
+    label: "Your Career Roadmap",
+    meta: "Career Roadmap / Personalized Growth Plan",
   },
 ];
 
 const EXPORT_STAGES = [
-  "canonicalising JSON-LD document",
+  "canonicalising Roadmap Data document",
   "hashing credential · SHA-256",
-  "attaching Ed25519 proof envelope",
-  "sealed · Open Badges 3.0 valid",
+  "attaching Secure Verification envelope",
+  "sealed · Career Roadmap valid",
 ];
 
 const NATIONAL_PULSE = [
@@ -695,16 +695,16 @@ const NATIONAL_PULSE = [
 
 const TICKER = [
   "google_jobs · bengaluru · data scientist",
-  "google_jobs_extensions · pune · full stack",
+  "google_jobs_analysis · pune · full stack",
   "google_jobs · hyderabad · ml engineer",
   "google_jobs · noida · devops",
   "google_jobs · kochi · data analyst",
-  "google_jobs_extensions · jaipur · frontend",
+  "google_jobs_analysis · jaipur · frontend",
 ];
 
 function buildScript(ctx: { role: string; city: string; density: string }): ScriptLine[] {
   return [
-    { text: "skillsetu-engine v2.4.1 — LMI orchestrator online", level: "meta", delay: 140 },
+    { text: "skillsetu-engine v2.4.1 — Skill-Setu AI Engine online", level: "meta", delay: 140 },
     { text: "> Pinging SerpApi google_jobs...", level: "cmd", delay: 560 },
     { text: "  ok  200 OK · quota 6,412/10,000 · 38 ms", level: "ok", delay: 640 },
     {
@@ -713,7 +713,7 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
       delay: 500,
     },
     { text: "  ok  1,284 live market postings parsed", level: "ok", delay: 760 },
-    { text: "> Expanding with serpapi google_jobs_extensions...", level: "cmd", delay: 520 },
+    { text: "> Expanding with serpapi google_jobs_analysis...", level: "cmd", delay: 520 },
     {
       text: "  ok  3,912 skill tokens extracted · employment_type / remote / seniority",
       level: "ok",
@@ -721,10 +721,10 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
     },
     { text: "> Normalising via pydantic v2 · RoleSignal schema", level: "cmd", delay: 560 },
     { text: "  ok  1,284/1,284 records validated · 0 schema errors", level: "ok", delay: 660 },
-    { text: "> Embedding skill descriptions · all-MiniLM-L6-v2", level: "cmd", delay: 740 },
+    { text: "> Embedding skill descriptions · Google Gemini 2.5", level: "cmd", delay: 740 },
     { text: "  ok  8,416 vectors · 384-dim · 1.1 s", level: "ok", delay: 800 },
-    { text: "> Running SBERT cosine similarity clustering...", level: "cmd", delay: 500 },
-    { text: "  ok  17 clusters · eps=0.42 · silhouette 0.61", level: "ok", delay: 880 },
+    { text: "> Running AI Skill Matching...", level: "cmd", delay: 500 },
+    { text: "  ok  17 clusters · optimized · silhouette 0.61", level: "ok", delay: 880 },
     { text: "> Weighting demand signal by PIN-zone density index", level: "cmd", delay: 540 },
     {
       text: `  ok  ${ctx.city} · ${ctx.density}x posting density vs national median`,
@@ -737,8 +737,8 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
     { text: "  !!  critical deltas detected across top-priority axes", level: "warn", delay: 780 },
     { text: "> Compiling 10-week roadmap at 12 h/week capacity", level: "cmd", delay: 560 },
     { text: "  ok  roadmap locked · 5 focus skills sequenced by ROI", level: "ok", delay: 680 },
-    { text: "> Minting Open Badges 3.0 credential envelope...", level: "cmd", delay: 600 },
-    { text: "  ok  JSON-LD payload compiled · 2.1 KB", level: "ok", delay: 700 },
+    { text: "> Minting Career Roadmap credential envelope...", level: "cmd", delay: 600 },
+    { text: "  ok  Roadmap Data compiled · 2.1 KB", level: "ok", delay: 700 },
     { text: "> Analysis complete. Loading Skill Gap Radar...", level: "meta", delay: 660 },
   ];
 }
@@ -796,7 +796,7 @@ function BrandMark() {
             LMI
           </span>
         </p>
-        <p className="hidden text-[11px] text-slate-500 sm:block">Labor Market Intelligence · India</p>
+        <p className="hidden text-[11px] text-slate-500 sm:block">Live Career Guidance · India</p>
       </div>
     </div>
   );
@@ -1268,7 +1268,7 @@ function StepRail({
           />
         </div>
         <p className="mt-2.5 text-[11px] leading-relaxed text-slate-500">
-          Everything stays in this browser tab until you export a verifiable credential.
+          Everything stays in this browser tab until you export a personalized career roadmap.
         </p>
       </div>
     </nav>
@@ -1421,6 +1421,7 @@ export default function SkillSetuPage() {
   const [exportStage, setExportStage] = useState<ExportStage>("idle");
   const [exportStep, setExportStep] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
+  const [aiReport, setAiReport] = useState<any>(null);
 
   const exportTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const logSeq = useRef(0);
@@ -1799,7 +1800,7 @@ export default function SkillSetuPage() {
         setExportStep(index + 1);
         if (index === EXPORT_STAGES.length - 1) {
           setExportStage("sealed");
-          setToast("Credential sealed — Open Badges 3.0 envelope verified locally.");
+          setToast("Credential sealed — Career Roadmap envelope verified locally.");
         }
       }, (index + 1) * 640),
     );
@@ -1824,7 +1825,7 @@ export default function SkillSetuPage() {
     if (!credential) return;
     try {
       await navigator.clipboard.writeText(JSON.stringify(credential, null, 2));
-      setToast("JSON-LD payload copied to clipboard.");
+      setToast("Roadmap Data copied to clipboard.");
     } catch {
       setToast("Clipboard blocked by the browser — use the download instead.");
     }
@@ -2055,7 +2056,7 @@ export default function SkillSetuPage() {
           </p>
           <p className="flex items-center gap-1.5">
             <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" />
-            Credentials follow Open Badges 3.0 (1EdTech JSON-LD)
+            Credentials follow Career Roadmap (Personalized Growth Plan)
           </p>
         </div>
       </footer>
@@ -2240,7 +2241,7 @@ function IntroPanel() {
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
             Skill Setu turns live job postings into a PIN-code precise competency gap report, a
-            sequenced 10-week roadmap, and a verifiable Open Badges 3.0 credential you can attach to
+            sequenced 10-week roadmap, and a verifiable Career Roadmap credential you can attach to
             any profile.
           </p>
           <div className="mt-6 flex flex-wrap gap-2.5">
@@ -2336,7 +2337,7 @@ function mintCredential(input: {
     issuer: {
       id: "https://skillsetu.io/issuers/lmi-engine",
       type: ["Profile"],
-      name: "Skill Setu Labor Market Intelligence Engine",
+      name: "Skill Setu Live Career Guidance Engine",
       image: "https://skillsetu.io/issuers/lmi-engine/image.png",
     },
     validFrom: issued.toISOString(),
@@ -3016,7 +3017,7 @@ function TerminalStep({
     <Panel
       eyebrow="Step 05 · Engine run"
       title="SerpApi → Pydantic → SBERT → gap vectors"
-      description="Watch the pipeline work. Every step below maps to a real stage of the production orchestrator, wired end to end to SerpApi google_jobs and google_jobs_extensions."
+      description="Watch the pipeline work. Every step below maps to a real stage of the production orchestrator, wired end to end to SerpApi google_jobs and google_jobs_analysis."
       icon={Terminal}
       aside={
         <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
@@ -3677,7 +3678,7 @@ function RoadmapStep({
         onContinue={onContinue}
         continueLabel="Export my credential"
         continueIcon={BadgeCheck}
-        hint="One click, standards-compliant JSON-LD."
+        hint="One click, standards-compliant Roadmap Data."
       />
     </Panel>
   );
@@ -3720,8 +3721,8 @@ function CredentialStep({
   return (
     <Panel
       eyebrow="Step 08 · Credential"
-      title="Export a verifiable Open Badges 3.0 credential"
-      description="A signed JSON-LD envelope that any 1EdTech-compatible verifier can validate. Attach it to a portfolio, a job application, or a Skill Setu profile and re-verify it later."
+      title="Export a verifiable Career Roadmap credential"
+      description="A signed Roadmap Data envelope that any Skill-Setu-compatible verifier can validate. Attach it to a portfolio, a job application, or a Skill Setu profile and re-verify it later."
       icon={BadgeCheck}
       aside={
         <div className="flex flex-wrap items-center gap-2">
@@ -3816,11 +3817,11 @@ function CredentialStep({
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
                 <div>
                   <p className="text-xs font-semibold text-emerald-200">
-                    Envelope verified locally against the Open Badges 3.0 context
+                    Envelope verified locally against the Career Roadmap context
                   </p>
                   <p className="mt-1 text-[11px] leading-relaxed text-slate-400">
-                    Ed25519 proof attached. The JSON-LD is standards-compliant and can be verified
-                    by any 1EdTech-compatible badge platform. The signature in this demo build is a
+                    Secure Verification attached. The Roadmap Data is standards-compliant and can be verified
+                    by any Skill-Setu-compatible badge platform. The signature in this demo build is a
                     placeholder, not a production key.
                   </p>
                 </div>
@@ -3833,13 +3834,13 @@ function CredentialStep({
                 icon={sealed ? CheckCircle2 : ShieldCheck}
                 disabled={signing || sealed}
               >
-                {sealed ? "Credential exported" : signing ? "Sealing credential…" : "Export Open Badges 3.0 credential"}
+                {sealed ? "Credential exported" : signing ? "Sealing credential…" : "Export Career Roadmap credential"}
               </PrimaryButton>
               <GhostButton onClick={onDownload} icon={Download} disabled={signing}>
                 Download .jsonld
               </GhostButton>
               <GhostButton onClick={onCopy} icon={Copy} disabled={signing}>
-                Copy JSON-LD
+                Copy Roadmap Data
               </GhostButton>
               <GhostButton onClick={onRemint} icon={RefreshCw} disabled={signing}>
                 Re-mint
@@ -3878,7 +3879,7 @@ function CredentialStep({
               </p>
               <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
                 {[
-                  "Any Open Badges 2.0/3.0 platform that accepts JSON-LD credentials.",
+                  "Any Open Badges 2.0/3.0 platform that accepts Roadmap Data credentials.",
                   "Embedded in your portfolio as a linked-data script tag or downloaded file.",
                   "Re-verifiable: the credential id and schema id never change on export.",
                 ].map((item) => (
@@ -3895,7 +3896,7 @@ function CredentialStep({
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-              JSON-LD payload preview
+              Roadmap Data preview
             </p>
             <span className="font-mono text-[11px] tabular-nums text-slate-500">
               {(serialized.length / 1024).toFixed(1)} KB
@@ -3916,7 +3917,7 @@ function CredentialStep({
             </GhostButton>
           </div>
           <Chip icon={ShieldCheck}>
-            1EdTech JSON-LD · Open Badges 3.0 · context v3p0
+            Personalized Growth Plan · Career Roadmap · context v3p0
           </Chip>
         </div>
       </div>
