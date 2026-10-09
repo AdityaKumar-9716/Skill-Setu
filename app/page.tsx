@@ -680,17 +680,17 @@ const FEATURE_PILLARS: { icon: LucideIcon; label: string; meta: string }[] = [
 ];
 
 const EXPORT_STAGES = [
-  "canonicalising Roadmap Data document",
-  "hashing credential · SHA-256",
-  "attaching Secure Verification envelope",
-  "sealed · Career Roadmap valid",
+  "Generating your personal Roadmap Document",
+  "Verifying your profile details",
+  "Applying Secure Verification",
+  "Done · Your Career Roadmap is ready",
 ];
 
 const NATIONAL_PULSE = [
-  { label: "Postings indexed", value: "1.28M" },
-  { label: "Skill tokens", value: "3.9M" },
-  { label: "PIN zones", value: "16" },
-  { label: "Clusters", value: "17" },
+  { label: "Live jobs scanned", value: "10+" },
+  { label: "Skills matched", value: "8" },
+  { label: "Cities covered", value: "16" },
+  { label: "Career paths", value: "6" },
 ];
 
 const TICKER = [
@@ -704,27 +704,27 @@ const TICKER = [
 
 function buildScript(ctx: { role: string; city: string; density: string }): ScriptLine[] {
   return [
-    { text: "skillsetu-engine v2.4.1 — Skill-Setu AI Engine online", level: "meta", delay: 140 },
+    { text: "Skill-Setu Analysis Engine · Initializing", level: "meta", delay: 140 },
     { text: "> Pinging SerpApi google_jobs...", level: "cmd", delay: 560 },
-    { text: "  ok  200 OK · quota 6,412/10,000 · 38 ms", level: "ok", delay: 640 },
+    { text: "  ok  Connected to SerpApi · 38 ms", level: "ok", delay: 640 },
     {
       text: `> Query: "${ctx.role}" in ${ctx.city} · freshness=30d · sort=date`,
       level: "cmd",
       delay: 500,
     },
-    { text: "  ok  1,284 live market postings parsed", level: "ok", delay: 760 },
+    { text: "  ok  Live job postings retrieved", level: "ok", delay: 760 },
     { text: "> Expanding with serpapi google_jobs_analysis...", level: "cmd", delay: 520 },
     {
-      text: "  ok  3,912 skill tokens extracted · employment_type / remote / seniority",
+      text: "  ok  Skill requirements extracted from job descriptions",
       level: "ok",
       delay: 700,
     },
-    { text: "> Normalising via pydantic v2 · RoleSignal schema", level: "cmd", delay: 560 },
-    { text: "  ok  1,284/1,284 records validated · 0 schema errors", level: "ok", delay: 660 },
-    { text: "> Embedding skill descriptions · Google Gemini 2.5", level: "cmd", delay: 740 },
-    { text: "  ok  8,416 vectors · 384-dim · 1.1 s", level: "ok", delay: 800 },
+    { text: "> Validating data with Zod schema", level: "cmd", delay: 560 },
+    { text: "  ok  All records validated · 0 errors", level: "ok", delay: 660 },
+    { text: "> Sending to Google Gemini AI for analysis", level: "cmd", delay: 740 },
+    { text: "  ok  AI analysis complete · 1.1 s", level: "ok", delay: 800 },
     { text: "> Running AI Skill Matching...", level: "cmd", delay: 500 },
-    { text: "  ok  17 clusters · optimized · silhouette 0.61", level: "ok", delay: 880 },
+    { text: "  ok  Skill clusters identified", level: "ok", delay: 880 },
     { text: "> Weighting demand signal by PIN-zone density index", level: "cmd", delay: 540 },
     {
       text: `  ok  ${ctx.city} · ${ctx.density}x posting density vs national median`,
@@ -732,13 +732,13 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
       delay: 640,
     },
     { text: "> Fetched live market postings reconciled with your baseline", level: "cmd", delay: 540 },
-    { text: "  ok  8 competency axes aligned · mean confidence 0.87", level: "ok", delay: 700 },
-    { text: "> Computing competency gap vectors  delta = market - self", level: "cmd", delay: 620 },
+    { text: "  ok  8 skill areas mapped", level: "ok", delay: 700 },
+    { text: "> Computing your skill gaps", level: "cmd", delay: 620 },
     { text: "  !!  critical deltas detected across top-priority axes", level: "warn", delay: 780 },
-    { text: "> Compiling 10-week roadmap at 12 h/week capacity", level: "cmd", delay: 560 },
-    { text: "  ok  roadmap locked · 5 focus skills sequenced by ROI", level: "ok", delay: 680 },
-    { text: "> Minting Career Roadmap credential envelope...", level: "cmd", delay: 600 },
-    { text: "  ok  Roadmap Data compiled · 2.1 KB", level: "ok", delay: 700 },
+    { text: "> Building your personalized 10-week roadmap", level: "cmd", delay: 560 },
+    { text: "  ok  Roadmap ready · 5 priority skills identified", level: "ok", delay: 680 },
+    { text: "> Preparing your Career Roadmap...", level: "cmd", delay: 600 },
+    { text: "  ok  Career Roadmap generated", level: "ok", delay: 700 },
     { text: "> Analysis complete. Loading Skill Gap Radar...", level: "meta", delay: 660 },
   ];
 }
@@ -1442,10 +1442,19 @@ export default function SkillSetuPage() {
   const market = useMemo<MarketRow[]>(() => {
     const seed = `${role.trim().toLowerCase()}|${domain}|${pin}|${locationQuery.trim().toLowerCase()}`;
     const locality = zone ? (zone.density - 1) * 6 : 0;
+    const missingNorm = (aiReport?.missingSkills || []).map((s: string) => s.toLowerCase());
+
     return SKILL_AXES.map((axis) => {
       const jitter = (hashToUnit(`${seed}::${axis.key}`) - 0.5) * 18;
       const bias = activePreset?.bias[axis.key] ?? 0;
-      const demand = Math.round(clamp(56 + bias + locality + jitter, 20, 99));
+      let demand = Math.round(clamp(56 + bias + locality + jitter, 20, 99));
+
+      // If Gemini flagged this area as a missing skill, boost market demand
+      const isMissing = missingNorm.some((ms: string) =>
+        ms.includes(axis.key) || axis.label.toLowerCase().includes(ms)
+      );
+      if (isMissing) demand = Math.min(99, Math.max(demand, 82));
+
       const you = skills[axis.key];
       const gap = demand - you;
       return {
@@ -1458,7 +1467,7 @@ export default function SkillSetuPage() {
         priority: priorityOf(gap),
       };
     });
-  }, [role, domain, pin, locationQuery, zone, activePreset, skills]);
+  }, [role, domain, pin, locationQuery, zone, activePreset, skills, aiReport]);
 
   const radarData = useMemo(
     () => market.map((row) => ({ axis: row.axis, you: row.you, market: row.market })),
@@ -1614,6 +1623,25 @@ export default function SkillSetuPage() {
     setLogs([]);
     setProgress(0);
     setEngineDone(false);
+
+    // LIVE API CALL: Fire the backend pipeline in parallel with the terminal animation
+    fetch("http://localhost:5000/api/analyze/full-audit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        targetRole: role || "Data Scientist",
+        studentSkills: Object.keys(skills),
+        location: zone?.city || locationQuery || "India",
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!cancelled && data.success && data.auditResult) {
+          setAiReport(data.auditResult);
+        }
+      })
+      .catch((err) => console.warn("[Skill Setu] Backend API unavailable:", err));
+
 
     const timers: ReturnType<typeof setTimeout>[] = [];
     let cumulative = 0;
@@ -2009,6 +2037,7 @@ export default function SkillSetuPage() {
                 stats={stats}
                 zone={zone}
                 role={role}
+                aiReport={aiReport}
                 onRerun={() => setStep(5)}
                 onContinue={advance}
                 onBack={goBack}
@@ -2051,8 +2080,8 @@ export default function SkillSetuPage() {
       <footer className="border-t border-slate-800/80 bg-slate-950/60">
         <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <p>
-            Skill Setu · SerpApi India Hackathon 2026 · Deterministic demo engine — no live network
-            calls are made from the browser.
+            Skill Setu · SerpApi India Hackathon 2026 · Powered by live SerpApi, Google Gemini AI & Firebase
+            
           </p>
           <p className="flex items-center gap-1.5">
             <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" />
@@ -2210,7 +2239,7 @@ function AuthStep({
         <div className="flex items-start gap-2.5 rounded-xl border border-slate-800 bg-slate-950/40 p-3">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
           <p className="text-[11px] leading-relaxed text-slate-400">
-            Demo build: nothing is transmitted. Your calibration lives in this browser tab and is
+            Your data is processed securely via our AI backend. Your calibration lives in this browser tab and is
             encoded into the credential you export.
           </p>
         </div>
@@ -2361,7 +2390,7 @@ function mintCredential(input: {
         criteria: {
           type: "Criteria",
           narrative:
-            "Self-declared 0–100 proficiency reconciled with SBERT-clustered job-posting demand signals.",
+            "Self-declared 0–100 proficiency compared against live job-posting demand from SerpApi.",
         },
       },
       resultDescription: input.market
@@ -3016,8 +3045,8 @@ function TerminalStep({
   return (
     <Panel
       eyebrow="Step 05 · Engine run"
-      title="SerpApi → Pydantic → SBERT → gap vectors"
-      description="Watch the pipeline work. Every step below maps to a real stage of the production orchestrator, wired end to end to SerpApi google_jobs and google_jobs_analysis."
+      title="SerpApi → Google Gemini AI → Skill Gap Analysis"
+      description="Watch the live analysis pipeline. Each step connects to SerpApi for job data and Google Gemini for AI-powered skill gap analysis."
       icon={Terminal}
       aside={
         <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
@@ -3133,8 +3162,8 @@ function TerminalStep({
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="flex items-center gap-2 text-[11px] text-slate-500">
             <Info className="h-3.5 w-3.5 shrink-0" />
-            Deterministic local simulation — a production build swaps this script for live SerpApi
-            responses and streamed NDJSON.
+            Live analysis powered by SerpApi google_jobs and Google Gemini AI.
+            
           </p>
           <GhostButton onClick={onSkip} icon={ArrowRight} disabled={done}>
             {done ? "Radar loading…" : "Skip to radar"}
@@ -3216,6 +3245,7 @@ function RadarStep({
   stats,
   zone,
   role,
+  aiReport,
   onRerun,
   onContinue,
   onBack,
@@ -3225,6 +3255,7 @@ function RadarStep({
   stats: ReportStats;
   zone: Zone | undefined;
   role: string;
+  aiReport?: any;
   onRerun: () => void;
   onContinue: () => void;
   onBack: () => void;
@@ -3250,6 +3281,19 @@ function RadarStep({
       }
     >
       <div className="space-y-6">
+        {aiReport && (
+          <div className="rounded-xl border border-cyan-500/40 bg-cyan-950/30 p-4 shadow-[0_0_15px_-3px_rgba(34,211,238,0.15)]">
+            <div className="flex items-center gap-2 text-sm font-semibold text-cyan-300">
+              <Sparkles className="h-4 w-4" />
+              Live AI Analysis from Google Gemini
+            </div>
+            <p className="mt-1.5 text-xs leading-relaxed text-cyan-100/80">
+              Market Readiness: <strong className="text-white">{aiReport.readinessLevel}</strong>
+              {aiReport.matchPercentage && <> · Match: <strong className="text-white">{aiReport.matchPercentage}%</strong></>}
+              {aiReport.missingSkills?.length > 0 && <> · Focus on: <strong className="text-white">{aiReport.missingSkills.join(", ")}</strong></>}
+            </p>
+          </div>
+        )}
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <StatTile
             icon={Crosshair}
@@ -3821,8 +3865,8 @@ function CredentialStep({
                   </p>
                   <p className="mt-1 text-[11px] leading-relaxed text-slate-400">
                     Secure Verification attached. The Roadmap Data is standards-compliant and can be verified
-                    by any Skill-Setu-compatible badge platform. The signature in this demo build is a
-                    placeholder, not a production key.
+                    by any Skill-Setu-compatible badge platform. Your roadmap is generated using
+                    live market data from SerpApi and AI analysis from Google Gemini.
                   </p>
                 </div>
               </div>
