@@ -1856,7 +1856,7 @@ export default function SkillSetuPage() {
   const detectLocation = useCallback(() => {
     if (locating) return;
     setLocating(true);
-    
+
     const resolveFallback = (code: string) => {
       window.setTimeout(() => {
         pickZone(PIN_ZONES[code] ? code : "110001");
@@ -1872,11 +1872,11 @@ export default function SkillSetuPage() {
             const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
             if (!res.ok) throw new Error("Reverse geocoding failed");
             const data = await res.json();
-            
+
             const city = data.address?.city || data.address?.town || data.address?.village || data.address?.county || "";
             const state = data.address?.state || "";
             const postcode = data.address?.postcode || "";
-            
+
             if (postcode || city) {
               setPin(postcode || "000000");
               const queryStr = city && state ? `${city}, ${state}` : (city || state || postcode || "Unknown Location");
@@ -2207,7 +2207,7 @@ export default function SkillSetuPage() {
         <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <p>
             Skill Setu · SerpApi India Hackathon 2026 · Powered by live SerpApi, Google Gemini AI & Firebase
-            
+
           </p>
           <p className="flex items-center gap-1.5">
             <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" />
@@ -2565,9 +2565,8 @@ function mintCredential(input: {
     type: ["VerifiableCredential", "OpenBadgeCredential"],
     id: `urn:uuid:${uuid}`,
     name: `Skill Setu LMI Skill Gap Report — ${input.role || "Open Role"}`,
-    description: `Verified skill-gap analysis for ${input.role || "an open role"} in ${city} (PIN ${
-      input.pin || "—"
-    }), benchmarked against clustered SerpApi job-market demand across ${input.market.length} competency axes.`,
+    description: `Verified skill-gap analysis for ${input.role || "an open role"} in ${city} (PIN ${input.pin || "—"
+      }), benchmarked against clustered SerpApi job-market demand across ${input.market.length} competency axes.`,
     issuer: {
       id: "https://skillsetu.io/issuers/lmi-engine",
       type: ["Profile"],
@@ -2585,13 +2584,10 @@ function mintCredential(input: {
       achievement: {
         type: ["Achievement"],
         name: "Market-Aligned Skill Calibration",
-        description: `Calibrated against ${city} demand for ${
-          input.domain || "an unspecified domain"
-        }. Coverage ${input.stats.coverage}%, model confidence ${
-          input.stats.confidence
-        }%, ${input.stats.critical} critical gap${
-          input.stats.critical === 1 ? "" : "s"
-        } with a remediation plan attached.`,
+        description: `Calibrated against ${city} demand for ${input.domain || "an unspecified domain"
+          }. Coverage ${input.stats.coverage}%, model confidence ${input.stats.confidence
+          }%, ${input.stats.critical} critical gap${input.stats.critical === 1 ? "" : "s"
+          } with a remediation plan attached.`,
         criteria: {
           type: "Criteria",
           narrative:
@@ -2601,8 +2597,7 @@ function mintCredential(input: {
       resultDescription: input.market
         .map(
           (row) =>
-            `${row.axis}: self ${row.you} / market ${row.market} (delta ${
-              row.gap > 0 ? "+" : ""
+            `${row.axis}: self ${row.you} / market ${row.market} (delta ${row.gap > 0 ? "+" : ""
             }${row.gap}, ${row.priority})`,
         )
         .join("; "),
@@ -3374,7 +3369,7 @@ function TerminalStep({
           <p className="flex items-center gap-2 text-[11px] text-slate-500">
             <Info className="h-3.5 w-3.5 shrink-0" />
             Live analysis powered by SerpApi google_jobs and Google Gemini AI.
-            
+
           </p>
           <GhostButton onClick={onSkip} icon={ArrowRight} disabled={done}>
             {done ? "Radar loading…" : "Skip to radar"}

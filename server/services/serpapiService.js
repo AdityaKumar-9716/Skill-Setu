@@ -12,7 +12,7 @@ async function fetchLiveJobs(career, location) {
 
     return response.jobs_results || [];
   } catch (error) {
-    console.error("Error fetching jobs:", error);
+    console.error("Raw SerpApi Error:", error.message || error);
     return [];
   }
 }
