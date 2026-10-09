@@ -1423,6 +1423,12 @@ export default function SkillSetuPage() {
   const [toast, setToast] = useState<string | null>(null);
   const [aiReport, setAiReport] = useState<any>(null);
 
+  // Firebase Firestore Integration State
+  const [databaseId, setDatabaseId] = useState<string | null>(null);
+  const [loadModalOpen, setLoadModalOpen] = useState(false);
+  const [loadDocInput, setLoadDocInput] = useState("");
+  const [isLoadingSaved, setIsLoadingSaved] = useState(false);
+
   const exportTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const logSeq = useRef(0);
   const terminalBodyRef = useRef<HTMLDivElement>(null);
@@ -1612,8 +1618,9 @@ export default function SkillSetuPage() {
     stats,
     displayName,
     identity,
+    databaseId,
   });
-  reportRef.current = { role, domain, pin, zone, market, stats, displayName, identity };
+  reportRef.current = { role, domain, pin, zone, market, stats, displayName, identity, databaseId };
 
   useEffect(() => {
     if (step !== 5) return;
@@ -1625,19 +1632,27 @@ export default function SkillSetuPage() {
     setEngineDone(false);
 
     // LIVE API CALL: Fire the backend pipeline in parallel with the terminal animation
-    fetch("http://localhost:5000/api/analyze/full-audit", {
+    const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/analyze";
+    fetch(`${apiBase}/full-audit`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         targetRole: role || "Data Scientist",
         studentSkills: Object.keys(skills),
         location: zone?.city || locationQuery || "India",
+        userId: identity || auth.email || auth.phone || displayName,
       }),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (!cancelled && data.success && data.auditResult) {
-          setAiReport(data.auditResult);
+        if (!cancelled && data.success) {
+          if (data.auditResult) {
+            setAiReport(data.auditResult);
+          }
+          if (data.databaseId) {
+            setDatabaseId(data.databaseId);
+            setToast(`🔥 Roadmap synced to Firebase Firestore (ID: ${data.databaseId})`);
+          }
         }
       })
       .catch((err) => console.warn("[Skill Setu] Backend API unavailable:", err));
@@ -1748,7 +1763,65 @@ export default function SkillSetuPage() {
     setCredential(null);
     setExportStage("idle");
     setExportStep(0);
+    setDatabaseId(null);
+    setLoadModalOpen(false);
+    setLoadDocInput("");
   }, []);
+
+  const handleLoadFromFirestore = useCallback(async (docIdToLoad: string) => {
+    if (!docIdToLoad.trim()) return;
+    setIsLoadingSaved(true);
+    try {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/analyze";
+      const res = await fetch(`${apiBase}/roadmap/${encodeURIComponent(docIdToLoad.trim())}`);
+      const data = await res.json();
+      if (data.success && data.roadmap) {
+        setAiReport(data.roadmap);
+        setDatabaseId(data.databaseId || docIdToLoad.trim());
+        if (data.roadmap.targetRole) {
+          setRole(data.roadmap.targetRole);
+        }
+        setStep(6);
+        setMaxStep((prev) => Math.max(prev, 6));
+        setLoadModalOpen(false);
+        setToast(`🔥 Roadmap loaded successfully from Firebase Firestore!`);
+      } else {
+        setToast(data.error || "No roadmap found with that ID in Firebase Firestore.");
+      }
+    } catch (err: any) {
+      setToast(`Failed to connect to Firebase: ${err.message}`);
+    } finally {
+      setIsLoadingSaved(false);
+    }
+  }, []);
+
+  const saveSnapshotToFirestore = useCallback(async () => {
+    try {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/analyze";
+      const res = await fetch(`${apiBase}/save-roadmap`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: identity || displayName || "student",
+          roadmapData: {
+            targetRole: role,
+            domain,
+            location: zone?.city || locationQuery,
+            stats,
+            aiReport,
+            skills,
+          },
+        }),
+      });
+      const d = await res.json();
+      if (d.success && d.databaseId) {
+        setDatabaseId(d.databaseId);
+        setToast(`🔥 Snapshot saved to Firebase Firestore! Document ID: ${d.databaseId}`);
+      }
+    } catch (e: any) {
+      setToast(`Failed to save to Firestore: ${e.message}`);
+    }
+  }, [identity, displayName, role, domain, zone, locationQuery, stats, aiReport, skills]);
 
   const applyCalibration = useCallback((id: CalibrationId) => {
     const preset = CALIBRATION_PRESETS.find((item) => item.id === id);
@@ -1891,6 +1964,19 @@ export default function SkillSetuPage() {
         <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <BrandMark />
           <div className="flex items-center gap-2 sm:gap-2.5">
+            {/* Firebase Firestore Connection Badge */}
+            <div
+              className="hidden items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/25 px-3 py-1.5 sm:flex"
+              title="Google Firebase Firestore Active (skill-setu3993)"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500"></span>
+              </span>
+              <span className="text-[11px] font-medium tracking-tight text-amber-300">Firebase Firestore</span>
+              <span className="font-mono text-[10px] text-amber-400/80">skill-setu3993</span>
+            </div>
+
             <div className="hidden items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 md:flex">
               <LiveDot />
               <span className="text-[11px] font-medium tracking-tight text-slate-300">SerpApi feed live</span>
@@ -1907,6 +1993,17 @@ export default function SkillSetuPage() {
                 <span className="font-mono text-[11px] tabular-nums text-slate-500">{pin}</span>
               ) : null}
             </div>
+
+            <button
+              type="button"
+              onClick={() => setLoadModalOpen(true)}
+              title="Load saved roadmap from Firebase Firestore"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-950/30 px-2.5 py-1.5 text-xs font-medium text-amber-300 transition-colors hover:border-amber-400/60 hover:bg-amber-900/40"
+            >
+              <Database className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Load from Firebase</span>
+            </button>
+
             <button
               type="button"
               onClick={restart}
@@ -1938,6 +2035,7 @@ export default function SkillSetuPage() {
               setAuth={setAuth}
               errors={authErrors}
               attempted={authAttempted}
+              onOpenLoadModal={() => setLoadModalOpen(true)}
               onSubmit={() => {
                 setAuthAttempted(true);
                 if (authValid) advance();
@@ -2038,6 +2136,8 @@ export default function SkillSetuPage() {
                 zone={zone}
                 role={role}
                 aiReport={aiReport}
+                databaseId={databaseId}
+                onSaveSnapshot={saveSnapshotToFirestore}
                 onRerun={() => setStep(5)}
                 onContinue={advance}
                 onBack={goBack}
@@ -2050,6 +2150,7 @@ export default function SkillSetuPage() {
                 gapChartData={gapChartData}
                 roadmap={roadmap}
                 stats={stats}
+                databaseId={databaseId}
                 onRecalibrate={() => setStep(4)}
                 onContinue={advance}
                 onBack={goBack}
@@ -2090,6 +2191,69 @@ export default function SkillSetuPage() {
         </div>
       </footer>
 
+      {/* Firebase Firestore Load Roadmap Modal */}
+      {loadModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
+          <div className="relative w-full max-w-md rounded-2xl border border-amber-500/40 bg-slate-900 p-6 shadow-2xl">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+              <div className="flex items-center gap-2 text-amber-300 font-semibold text-base">
+                <Database className="h-5 w-5 text-amber-400" />
+                Load Roadmap from Firebase
+              </div>
+              <button
+                type="button"
+                onClick={() => setLoadModalOpen(false)}
+                className="rounded-lg p-1 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            <p className="mt-3 text-xs leading-relaxed text-slate-300">
+              Enter your Firebase Firestore Document ID to retrieve and restore your personalized learning roadmap.
+            </p>
+
+            <div className="mt-4 space-y-3">
+              <div>
+                <label className="text-[11px] font-medium text-slate-400 block mb-1">
+                  Firestore Document ID
+                </label>
+                <input
+                  type="text"
+                  value={loadDocInput}
+                  onChange={(e) => setLoadDocInput(e.target.value)}
+                  placeholder="e.g. test_student_1791564214153"
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3.5 py-2.5 font-mono text-xs text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
+                />
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setLoadModalOpen(false)}
+                  className="rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  disabled={!loadDocInput.trim() || isLoadingSaved}
+                  onClick={() => handleLoadFromFirestore(loadDocInput)}
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-amber-500/40 bg-amber-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-amber-400 disabled:opacity-50 transition-colors"
+                >
+                  {isLoadingSaved ? (
+                    <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                  ) : (
+                    <Database className="h-3.5 w-3.5" />
+                  )}
+                  {isLoadingSaved ? "Loading..." : "Load Roadmap"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Toast message={toast} onDismiss={dismissToast} />
     </div>
   );
@@ -2104,6 +2268,7 @@ function AuthStep({
   setAuth,
   errors,
   attempted,
+  onOpenLoadModal,
   onSubmit,
 }: {
   mode: AuthMode;
@@ -2114,6 +2279,7 @@ function AuthStep({
   setAuth: Dispatch<SetStateAction<AuthState>>;
   errors: AuthErrors;
   attempted: boolean;
+  onOpenLoadModal?: () => void;
   onSubmit: () => void;
 }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -2247,6 +2413,19 @@ function AuthStep({
         <PrimaryButton type="submit" icon={mode === "signup" ? UserPlus : LogIn} full>
           {mode === "signup" ? "Create profile & continue" : "Log in & continue"}
         </PrimaryButton>
+
+        {onOpenLoadModal && (
+          <div className="pt-2 border-t border-slate-800/60 text-center">
+            <button
+              type="button"
+              onClick={onOpenLoadModal}
+              className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 transition-colors"
+            >
+              <Database className="h-3.5 w-3.5" />
+              <span>Have a saved Roadmap ID? Load from Firebase</span>
+            </button>
+          </div>
+        )}
       </form>
     </Panel>
   );
@@ -2340,6 +2519,7 @@ function mintCredential(input: {
   stats: ReportStats;
   displayName: string;
   identity: string;
+  databaseId?: string | null;
 }): Credential {
   const uuid = makeUuid();
   const issued = new Date();
@@ -2419,6 +2599,12 @@ function mintCredential(input: {
         .toISOString()
         .slice(0, 10),
       creditsEarned: 3,
+      databaseStorage: {
+        provider: "Google Cloud / Firebase Firestore",
+        projectId: "skill-setu3993",
+        documentId: input.databaseId || null,
+        status: input.databaseId ? "Verified in Firestore" : "Local session",
+      },
     },
     credentialSchema: {
       id: "https://skillsetu.io/schemas/lmi-skill-gap-report/v1.json",
@@ -3246,6 +3432,8 @@ function RadarStep({
   zone,
   role,
   aiReport,
+  databaseId,
+  onSaveSnapshot,
   onRerun,
   onContinue,
   onBack,
@@ -3256,6 +3444,8 @@ function RadarStep({
   zone: Zone | undefined;
   role: string;
   aiReport?: any;
+  databaseId?: string | null;
+  onSaveSnapshot?: () => void;
   onRerun: () => void;
   onContinue: () => void;
   onBack: () => void;
@@ -3292,6 +3482,63 @@ function RadarStep({
               {aiReport.matchPercentage && <> · Match: <strong className="text-white">{aiReport.matchPercentage}%</strong></>}
               {aiReport.missingSkills?.length > 0 && <> · Focus on: <strong className="text-white">{aiReport.missingSkills.join(", ")}</strong></>}
             </p>
+          </div>
+        )}
+
+        {databaseId && (
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-500/40 bg-amber-950/20 p-3.5 text-xs text-amber-200 shadow-[0_0_15px_-3px_rgba(245,158,11,0.15)]">
+            <div className="flex items-center gap-2.5">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+              </span>
+              <Database className="h-4 w-4 text-amber-400 shrink-0" />
+              <div>
+                <span className="font-medium text-amber-300">Firebase Firestore Cloud Sync:</span>{" "}
+                <span className="font-mono text-[11px] text-amber-100 bg-amber-900/60 px-2 py-0.5 rounded border border-amber-500/30">
+                  {databaseId}
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText(databaseId);
+                }}
+                className="inline-flex items-center gap-1 rounded-lg border border-amber-500/40 bg-amber-900/40 px-2.5 py-1 text-[11px] font-medium text-amber-200 transition-colors hover:border-amber-400 hover:bg-amber-800/60"
+              >
+                <Copy className="h-3 w-3" />
+                Copy ID
+              </button>
+              {onSaveSnapshot && (
+                <button
+                  type="button"
+                  onClick={onSaveSnapshot}
+                  className="inline-flex items-center gap-1 rounded-lg border border-amber-500/40 bg-amber-900/40 px-2.5 py-1 text-[11px] font-medium text-amber-200 transition-colors hover:border-amber-400 hover:bg-amber-800/60"
+                >
+                  <Cloud className="h-3 w-3" />
+                  Save Snapshot
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
+        {!databaseId && onSaveSnapshot && (
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-800 bg-slate-900/50 p-3 text-xs text-slate-300">
+            <div className="flex items-center gap-2">
+              <Database className="h-4 w-4 text-amber-400 shrink-0" />
+              <span>Save this customized roadmap to Google Firebase Firestore for permanent access.</span>
+            </div>
+            <button
+              type="button"
+              onClick={onSaveSnapshot}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-amber-500/40 bg-amber-950/40 px-3 py-1 text-[11px] font-medium text-amber-300 transition-colors hover:border-amber-400 hover:bg-amber-900/60"
+            >
+              <Cloud className="h-3 w-3" />
+              Save to Firebase
+            </button>
           </div>
         )}
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -3500,6 +3747,7 @@ function RoadmapStep({
   gapChartData,
   roadmap,
   stats,
+  databaseId,
   onRecalibrate,
   onContinue,
   onBack,
@@ -3508,6 +3756,7 @@ function RoadmapStep({
   gapChartData: { axis: string; gap: number; priority: Priority }[];
   roadmap: RoadmapWeek[];
   stats: ReportStats;
+  databaseId?: string | null;
   onRecalibrate: () => void;
   onContinue: () => void;
   onBack: () => void;
@@ -3521,12 +3770,33 @@ function RoadmapStep({
       icon={GraduationCap}
       aside={
         <div className="flex flex-wrap items-center gap-2">
+          {databaseId && (
+            <Chip icon={Database}>
+              Firestore: {databaseId}
+            </Chip>
+          )}
           <Chip icon={Clock}>~{hours}h total</Chip>
           <Chip icon={GraduationCap}>10 weeks</Chip>
         </div>
       }
     >
       <div className="space-y-6">
+        {databaseId && (
+          <div className="flex items-center justify-between gap-3 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-2.5 text-xs text-amber-200">
+            <div className="flex items-center gap-2">
+              <Database className="h-4 w-4 text-amber-400 shrink-0" />
+              <span>This 10-week roadmap is saved to <strong>Firebase Firestore</strong> (Document: <code className="font-mono text-amber-100">{databaseId}</code>).</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => navigator.clipboard.writeText(databaseId)}
+              className="inline-flex items-center gap-1 rounded border border-amber-500/30 bg-amber-900/40 px-2 py-0.5 text-[11px] text-amber-200 hover:bg-amber-800"
+            >
+              <Copy className="h-3 w-3" />
+              Copy
+            </button>
+          </div>
+        )}
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)]">
           <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-5">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">

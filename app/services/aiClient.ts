@@ -106,13 +106,38 @@ export const aiClient = {
   },
 
   // 7. Full Audit Pipeline
-  async runFullAudit(profile: StudentProfilePayload, targetRole?: string, location?: string) {
+  async runFullAudit(profile: StudentProfilePayload, targetRole?: string, location?: string, userId?: string) {
     return postAI('/full-audit', {
       studentSkills: Array.isArray(profile.studentSkills)
         ? profile.studentSkills
         : Object.keys(profile.skills || {}),
       targetRole: targetRole || profile.targetRole || 'Software Developer',
       location: location || profile.location || 'India',
+      userId: userId || profile.studentName || profile.name,
     });
+  },
+
+  // 8. Firebase Firestore Data Services
+  async getFirebaseStatus() {
+    const res = await fetch(`${API_BASE}/firebase-status`);
+    return await res.json();
+  },
+
+  async getSavedRoadmap(docId: string) {
+    const res = await fetch(`${API_BASE}/roadmap/${encodeURIComponent(docId.trim())}`);
+    return await res.json();
+  },
+
+  async saveRoadmap(userId: string, roadmapData: Record<string, unknown>) {
+    return postAI('/save-roadmap', { userId, roadmapData });
+  },
+
+  async saveUserProfile(userId: string, profile: Record<string, unknown>) {
+    return postAI('/user-profile', { userId, profile });
+  },
+
+  async getUserProfile(userId: string) {
+    const res = await fetch(`${API_BASE}/user-profile/${encodeURIComponent(userId)}`);
+    return await res.json();
   },
 };
