@@ -1856,20 +1856,45 @@ export default function SkillSetuPage() {
   const detectLocation = useCallback(() => {
     if (locating) return;
     setLocating(true);
-    const resolve = (code: string) => {
+    
+    const resolveFallback = (code: string) => {
       window.setTimeout(() => {
         pickZone(PIN_ZONES[code] ? code : "110001");
         setLocating(false);
       }, 950);
     };
+
     if (typeof navigator !== "undefined" && typeof navigator.geolocation?.getCurrentPosition === "function") {
       navigator.geolocation.getCurrentPosition(
-        () => resolve("560001"),
-        () => resolve("110001"),
-        { timeout: 4000, maximumAge: 300000 },
+        async (position) => {
+          try {
+            const { latitude, longitude } = position.coords;
+            const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+            if (!res.ok) throw new Error("Reverse geocoding failed");
+            const data = await res.json();
+            
+            const city = data.address?.city || data.address?.town || data.address?.village || data.address?.county || "";
+            const state = data.address?.state || "";
+            const postcode = data.address?.postcode || "";
+            
+            if (postcode || city) {
+              setPin(postcode || "000000");
+              const queryStr = city && state ? `${city}, ${state}` : (city || state || postcode || "Unknown Location");
+              setLocationQuery(queryStr);
+              setLocating(false);
+            } else {
+              resolveFallback("560001");
+            }
+          } catch (e) {
+            console.error("Geolocation error:", e);
+            resolveFallback("560001");
+          }
+        },
+        () => resolveFallback("110001"),
+        { timeout: 10000, maximumAge: 300000 },
       );
     } else {
-      resolve("110001");
+      resolveFallback("110001");
     }
   }, [locating, pickZone]);
 
