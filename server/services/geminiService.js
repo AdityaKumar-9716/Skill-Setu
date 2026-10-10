@@ -51,9 +51,26 @@ Return a purely JSON object with this exact schema:
           targetRole: targetRole,
           matchPercentage: 72,
           readinessLevel: "Intermediate",
-          missingSkills: ["Cloud", "APIs"],
-          recommendedProjects: [],
-          roadmap: []
+          missingSkills: ["Cloud Architecture", "System Design", "Advanced React"],
+          recommendedProjects: [
+            {
+              title: "Fullstack SaaS Platform",
+              techStack: ["Next.js", "Node", "PostgreSQL"],
+              description: "Builds experience with complex state and database relations."
+            },
+            {
+              title: "Real-time Analytics Dashboard",
+              techStack: ["React", "WebSockets", "Redis"],
+              description: "Introduces real-time data handling and caching."
+            }
+          ],
+          roadmap: [
+            { week: 1, topic: "Advanced State Management", actionItems: ["Learn Redux/Zustand", "Refactor a small app to use global state"] },
+            { week: 2, topic: "Backend Fundamentals", actionItems: ["Build a REST API", "Implement JWT auth"] },
+            { week: 3, topic: "Database Design", actionItems: ["Design a schema", "Write raw SQL queries"] },
+            { week: 4, topic: "System Architecture", actionItems: ["Learn Microservices vs Monolith", "Study caching with Redis"] },
+            { week: 5, topic: "Deployment & CI/CD", actionItems: ["Deploy to Vercel/Render", "Write GitHub Actions"] }
+          ]
         };
     }
 }
