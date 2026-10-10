@@ -1618,7 +1618,7 @@ function StepRail({
                 className={cx(
                   "group flex w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition-all duration-300",
                   item.id === step
-                    ? "border-cyan-400/40 bg-slate-900/70 shadow-[0_0_30px_-12px_rgba(34,211,238,0.8)]"
+                    ? "border-l-2 border-indigo-500 bg-indigo-500/10 text-indigo-400 shadow-[0_0_30px_-12px_rgba(99,102,241,0.8)]"
 <<<<<<< HEAD
                     : "border-transparent hover:border-slate-800 hover:bg-slate-900/40",
 =======
@@ -2426,7 +2426,7 @@ export default function SkillSetuPage() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `${slug}.credential.jsonld`;
+    anchor.download = `${slug}.credential.json`;
     document.body.appendChild(anchor);
     anchor.click();
     anchor.remove();
@@ -5299,7 +5299,7 @@ function CredentialStep({
 >>>>>>> origin/ui-overhaul-premium
               </PrimaryButton>
               <GhostButton onClick={onDownload} icon={Download} disabled={signing}>
-                Download .jsonld
+                Download .json
               </GhostButton>
               <GhostButton onClick={onCopy} icon={Copy} disabled={signing}>
 <<<<<<< HEAD
