@@ -246,34 +246,6 @@ const PRIORITY_STYLE: Record<Priority, string> = {
 const SKILL_AXES: SkillAxis[] = [
   {
     key: "python",
-    label: "Python Basics & Data",
-    short: "Python",
-    icon: Braces,
-    blurb: "Learn the fundamentals of Python and how to handle data easily.",
-    phaseA: {
-      title: "Python Fundamentals",
-      objective: "Understand the basics of Python programming.",
-      tasks: [
-        "Learn variables, loops, and if-statements",
-        "Write your first simple Python script",
-        "Read data from a basic CSV file"
-      ],
-      outcome: "You can write small scripts to automate tasks.",
-    },
-    phaseB: {
-      title: "Working with Data",
-      objective: "Use Python to analyze real-world data.",
-      tasks: [
-        "Learn how to use Pandas to view data",
-        "Filter and sort data tables",
-        "Save your cleaned data to a new file"
-      ],
-      outcome: "You can organize and clean datasets easily.",
-    },
-    resources: [
-      { title: "Python for Beginners", meta: "youtube.com · 2h" },
-      { title: "Pandas Crash Course", meta: "freecodecamp.org · 1h" },
-
     label: "Python & data wrangling",
     short: "Python",
     icon: Braces,
@@ -306,34 +278,6 @@ const SKILL_AXES: SkillAxis[] = [
   },
   {
     key: "sql",
-    label: "SQL & Databases",
-    short: "SQL",
-    icon: Database,
-    blurb: "Learn how to store, query, and manage data in databases.",
-    phaseA: {
-      title: "SQL Basics",
-      objective: "Learn how to extract data from a database.",
-      tasks: [
-        "Write SELECT queries to view data",
-        "Use WHERE to filter specific records",
-        "Sort results using ORDER BY"
-      ],
-      outcome: "You can fetch exactly the data you need.",
-    },
-    phaseB: {
-      title: "Joining Data Together",
-      objective: "Combine data from multiple tables.",
-      tasks: [
-        "Learn how to use INNER JOIN",
-        "Group data using GROUP BY",
-        "Count and sum data automatically"
-      ],
-      outcome: "You can analyze data across multiple tables.",
-    },
-    resources: [
-      { title: "SQL Tutorial for Beginners", meta: "w3schools.com · 2h" },
-      { title: "Database Basics", meta: "youtube.com · 1h" },
-
     label: "SQL & analytical modelling",
     short: "SQL",
     icon: Database,
@@ -366,34 +310,6 @@ const SKILL_AXES: SkillAxis[] = [
   },
   {
     key: "frontend",
-    label: "Frontend Web Dev",
-    short: "Frontend",
-    icon: Code2,
-    blurb: "Build beautiful and interactive websites.",
-    phaseA: {
-      title: "HTML, CSS & JavaScript",
-      objective: "Build a static website from scratch.",
-      tasks: [
-        "Create page structure with HTML",
-        "Style the page with CSS colors and layouts",
-        "Add a clickable button using JavaScript"
-      ],
-      outcome: "You have built your first interactive webpage.",
-    },
-    phaseB: {
-      title: "Modern React Framework",
-      objective: "Learn the industry standard for web development.",
-      tasks: [
-        "Set up a new React project",
-        "Create reusable UI components",
-        "Manage simple state (like a counter)"
-      ],
-      outcome: "You can build modern, dynamic web applications.",
-    },
-    resources: [
-      { title: "HTML & CSS Crash Course", meta: "youtube.com · 2h" },
-      { title: "React for Beginners", meta: "react.dev · 3h" },
-
     label: "Frontend engineering",
     short: "Frontend",
     icon: Code2,
@@ -426,34 +342,6 @@ const SKILL_AXES: SkillAxis[] = [
   },
   {
     key: "dataviz",
-    label: "Data Visualization",
-    short: "Data Viz",
-    icon: BarChart3,
-    blurb: "Learn to tell stories by turning data into charts.",
-    phaseA: {
-      title: "Basic Charts",
-      objective: "Create simple and clear visual charts.",
-      tasks: [
-        "Create a bar chart to compare numbers",
-        "Create a line chart to show trends over time",
-        "Learn which chart to use for different data"
-      ],
-      outcome: "You can easily visualize basic data.",
-    },
-    phaseB: {
-      title: "Building Dashboards",
-      objective: "Combine charts into a single interactive dashboard.",
-      tasks: [
-        "Group related charts together on one page",
-        "Add simple filters (like choosing a date range)",
-        "Make the dashboard look clean and professional"
-      ],
-      outcome: "You can build a complete data dashboard.",
-    },
-    resources: [
-      { title: "Data Viz Basics", meta: "youtube.com · 1h" },
-      { title: "How to Choose the Right Chart", meta: "article · 30m" },
-
     label: "Data visualisation",
     short: "Data Viz",
     icon: BarChart3,
@@ -486,34 +374,6 @@ const SKILL_AXES: SkillAxis[] = [
   },
   {
     key: "ml",
-    label: "Machine Learning Basics",
-    short: "Basic ML",
-    icon: Cpu,
-    blurb: "Understand how AI and machine learning works.",
-    phaseA: {
-      title: "AI Fundamentals",
-      objective: "Understand the core concepts of AI.",
-      tasks: [
-        "Learn the difference between AI and traditional code",
-        "Understand training vs testing data",
-        "Explore how basic predictions work"
-      ],
-      outcome: "You understand how AI models learn.",
-    },
-    phaseB: {
-      title: "Using AI Tools",
-      objective: "Use pre-built AI to solve problems.",
-      tasks: [
-        "Use an AI API (like OpenAI or Gemini) in code",
-        "Feed data to the AI to get a response",
-        "Display the AI's response on a screen"
-      ],
-      outcome: "You can integrate AI into your own projects.",
-    },
-    resources: [
-      { title: "Machine Learning for Beginners", meta: "youtube.com · 2h" },
-      { title: "How to use AI APIs", meta: "tutorial · 1h" },
-
     label: "Applied ML & modelling",
     short: "Applied ML",
     icon: Cpu,
@@ -546,34 +406,6 @@ const SKILL_AXES: SkillAxis[] = [
   },
   {
     key: "cloud",
-    label: "Cloud Deployment",
-    short: "Cloud",
-    icon: Cloud,
-    blurb: "Learn how to put your code on the internet.",
-    phaseA: {
-      title: "Hosting Basics",
-      objective: "Get your website live on the web.",
-      tasks: [
-        "Create a GitHub repository for your code",
-        "Deploy a static site using Vercel or Netlify",
-        "Share your live website link with friends"
-      ],
-      outcome: "Your code is publicly accessible on the internet.",
-    },
-    phaseB: {
-      title: "Basic Backend Hosting",
-      objective: "Host a database and server.",
-      tasks: [
-        "Host a Node.js server online",
-        "Connect it to a free cloud database",
-        "Ensure your server stays running securely"
-      ],
-      outcome: "You can host full-stack applications.",
-    },
-    resources: [
-      { title: "Vercel Deployment Guide", meta: "vercel.com · 30m" },
-      { title: "Cloud Hosting Basics", meta: "youtube.com · 1h" },
-
     label: "Cloud & DevOps",
     short: "Cloud",
     icon: Cloud,
@@ -606,34 +438,6 @@ const SKILL_AXES: SkillAxis[] = [
   },
   {
     key: "apis",
-    label: "APIs & Connections",
-    short: "APIs",
-    icon: Network,
-    blurb: "Learn how apps talk to each other across the internet.",
-    phaseA: {
-      title: "Fetching Data",
-      objective: "Retrieve data from a public API.",
-      tasks: [
-        "Learn what JSON data looks like",
-        "Use 'fetch' in JavaScript to get data",
-        "Display the fetched data on a webpage"
-      ],
-      outcome: "You can pull live internet data into your app.",
-    },
-    phaseB: {
-      title: "Building APIs",
-      objective: "Create your own API server.",
-      tasks: [
-        "Set up an Express.js server",
-        "Create a route that returns JSON data",
-        "Test your API using a tool like Postman"
-      ],
-      outcome: "You can build backends that serve data.",
-    },
-    resources: [
-      { title: "What is an API?", meta: "youtube.com · 15m" },
-      { title: "Postman API Crash Course", meta: "youtube.com · 1h" },
-
     label: "APIs & integrations",
     short: "APIs",
     icon: Network,
@@ -666,37 +470,6 @@ const SKILL_AXES: SkillAxis[] = [
   },
   {
     key: "communication",
-    label: "Communication Skills",
-    short: "Soft Skills",
-    icon: MessageSquare,
-    blurb: "Learn to explain your work clearly to others.",
-    phaseA: {
-      title: "Writing Updates",
-      objective: "Write clear and professional project updates.",
-      tasks: [
-        "Write a clean summary of what you built",
-        "List out blockers or issues simply",
-        "Send an email update to a mentor or peer"
-      ],
-      outcome: "People easily understand your progress.",
-    },
-    phaseB: {
-      title: "Presenting Your Work",
-      objective: "Speak confidently about your code.",
-      tasks: [
-        "Record a 2-minute video demo of your project",
-        "Explain a technical feature to a non-technical person",
-        "Prepare for a simple mock interview"
-      ],
-      outcome: "You can demo your work confidently.",
-    },
-    resources: [
-      { title: "How to Demo Your Project", meta: "article · 15m" },
-      { title: "Communication for Developers", meta: "youtube.com · 30m" },
-    ],
-  }
-]
-
     label: "Communication & narrative",
     short: "Communication",
     icon: MessageSquare,
@@ -891,20 +664,12 @@ const STEPS: { id: number; label: string; hint: string; icon: LucideIcon }[] = [
   { id: 7, label: "Roadmap", hint: "Deltas & timeline", icon: GraduationCap },
   { id: 8, label: "Credential", hint: "Open Badges 3.0", icon: BadgeCheck },
 
-
 ];
 
 const FEATURE_PILLARS: { icon: LucideIcon; label: string; meta: string }[] = [
   {
     icon: Activity,
     label: "Live SerpApi job ingestion",
-    meta: "google_jobs + google_jobs_analysis, 30-day freshness window",
-  },
-  {
-    icon: Cpu,
-    label: "AI Skill Matching",
-    meta: "Matching your skills with live job demands via Google Gemini",
-
     meta: "google_jobs + google_jobs_extensions, 30-day freshness window",
   },
   {
@@ -923,23 +688,10 @@ const FEATURE_PILLARS: { icon: LucideIcon; label: string; meta: string }[] = [
     label: "Verifiable credentials",
     meta: "Open Badges 3.0 / 1EdTech JSON-LD envelopes",
 
-
   },
 ];
 
 const EXPORT_STAGES = [
-  "Generating your personal Roadmap Document",
-  "Verifying your profile details",
-  "Applying Secure Verification",
-  "Done · Your Career Roadmap is ready",
-];
-
-const NATIONAL_PULSE = [
-  { label: "Live jobs scanned", value: "10+" },
-  { label: "Skills matched", value: "8" },
-  { label: "Cities covered", value: "16" },
-  { label: "Career paths", value: "6" },
-
   "canonicalising JSON-LD document",
   "hashing credential · SHA-256",
   "attaching Ed25519 proof envelope",
@@ -956,12 +708,6 @@ const NATIONAL_PULSE = [
 
 const TICKER = [
   "google_jobs · bengaluru · data scientist",
-  "google_jobs_analysis · pune · full stack",
-  "google_jobs · hyderabad · ml engineer",
-  "google_jobs · noida · devops",
-  "google_jobs · kochi · data analyst",
-  "google_jobs_analysis · jaipur · frontend",
-
   "google_jobs_extensions · pune · full stack",
   "google_jobs · hyderabad · ml engineer",
   "google_jobs · noida · devops",
@@ -976,26 +722,11 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
     { text: "> Pinging SerpApi google_jobs...", level: "cmd", delay: 560 },
     { text: "  ok  200 OK · quota 6,412/10,000 · 38 ms", level: "ok", delay: 640 },
 
-
     {
       text: `> Query: "${ctx.role}" in ${ctx.city} · freshness=30d · sort=date`,
       level: "cmd",
       delay: 500,
     },
-    { text: "  ok  Live job postings retrieved", level: "ok", delay: 760 },
-    { text: "> Expanding with serpapi google_jobs_analysis...", level: "cmd", delay: 520 },
-    {
-      text: "  ok  Skill requirements extracted from job descriptions",
-      level: "ok",
-      delay: 700,
-    },
-    { text: "> Validating data with Zod schema", level: "cmd", delay: 560 },
-    { text: "  ok  All records validated · 0 errors", level: "ok", delay: 660 },
-    { text: "> Sending to Google Gemini AI for analysis", level: "cmd", delay: 740 },
-    { text: "  ok  AI analysis complete · 1.1 s", level: "ok", delay: 800 },
-    { text: "> Running AI Skill Matching...", level: "cmd", delay: 500 },
-    { text: "  ok  Skill clusters identified", level: "ok", delay: 880 },
-
     { text: "  ok  1,284 live market postings parsed", level: "ok", delay: 760 },
     { text: "> Expanding with serpapi google_jobs_extensions...", level: "cmd", delay: 520 },
     {
@@ -1017,14 +748,6 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
       delay: 640,
     },
     { text: "> Fetched live market postings reconciled with your baseline", level: "cmd", delay: 540 },
-    { text: "  ok  8 skill areas mapped", level: "ok", delay: 700 },
-    { text: "> Computing your skill gaps", level: "cmd", delay: 620 },
-    { text: "  !!  critical deltas detected across top-priority axes", level: "warn", delay: 780 },
-    { text: "> Building your personalized 10-week roadmap", level: "cmd", delay: 560 },
-    { text: "  ok  Roadmap ready · 5 priority skills identified", level: "ok", delay: 680 },
-    { text: "> Preparing your Career Roadmap...", level: "cmd", delay: 600 },
-    { text: "  ok  Career Roadmap generated", level: "ok", delay: 700 },
-
     { text: "  ok  8 competency axes aligned · mean confidence 0.87", level: "ok", delay: 700 },
     { text: "> Computing competency gap vectors  delta = market - self", level: "cmd", delay: 620 },
     { text: "  !!  critical deltas detected across top-priority axes", level: "warn", delay: 780 },
@@ -1084,14 +807,6 @@ function BrandMark() {
         <span className="absolute inset-0 rounded-xl bg-cyan-400/10" />
       </div>
       <div className="leading-tight">
-        <p className="flex items-center gap-1.5 text-[15px] font-semibold tracking-tight text-slate-100">
-          Skill<span className="text-cyan-400">Setu</span>
-          <span className="rounded border border-slate-700 bg-slate-800/60 px-1.5 py-px text-[9px] font-medium uppercase tracking-widest text-slate-400">
-            LMI
-          </span>
-        </p>
-        <p className="hidden text-[11px] text-slate-500 sm:block">Live Career Guidance · India</p>
-
         <p className="flex items-center gap-1.5 text-[15px] font-semibold tracking-tight text-zinc-100">
           Skill<span className="text-cyan-400">Setu</span>
           <span className="rounded border border-slate-700 bg-slate-800/60 px-1.5 py-px text-[9px] font-medium uppercase tracking-widest text-zinc-400">
@@ -1127,13 +842,11 @@ function Panel({
       className={cx(
         "glass-panel group",
 
-
         className,
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       <header className="flex flex-col gap-3 border-b border-zinc-800/50/80 px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
-
 
         <div className="min-w-0">
           <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-400/80">
@@ -1145,7 +858,6 @@ function Panel({
           </h2>
           {description ? (
             <p className="mt-1 max-w-3xl text-sm leading-relaxed text-zinc-400">{description}</p>
-
 
           ) : null}
         </div>
@@ -1196,11 +908,6 @@ function Field({
     <div className="space-y-1.5">
       <label
         htmlFor={id}
-        className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wider text-slate-400"
-      >
-        <span className="flex items-center gap-1.5">
-          <Icon className="h-3.5 w-3.5 text-slate-500" />
-
         className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wider text-zinc-400"
       >
         <span className="flex items-center gap-1.5">
@@ -1226,12 +933,6 @@ function Field({
           aria-invalid={invalid}
           aria-describedby={invalid ? `${id}-error` : hint ? `${id}-hint` : undefined}
           className={cx(
-            "w-full rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-600",
-            "transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
-            invalid
-              ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
-              : "border-slate-800 hover:border-slate-700 focus:border-cyan-400/60",
-
             "w-full rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-slate-600",
             "transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
             invalid
@@ -1252,7 +953,6 @@ function Field({
         </p>
       ) : hint ? (
         <p id={`${id}-hint`} className="text-xs text-zinc-500">
-
 
           {hint}
         </p>
@@ -1288,7 +988,6 @@ function PrimaryButton({
         "bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 shadow-[0_0_28px_-8px_rgba(34,211,238,0.9)]",
         "hover:shadow-[0_0_36px_-6px_rgba(34,211,238,1)] active:scale-[0.985]",
         "disabled:cursor-not-allowed disabled:from-slate-800 disabled:to-slate-800 disabled:text-zinc-500 disabled:shadow-none",
-
 
         full ? "w-full" : undefined,
         className,
@@ -1327,7 +1026,6 @@ function GhostButton({
         "transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-800/60 hover:text-cyan-300",
         "disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-zinc-800/50 disabled:hover:text-slate-300",
 
-
         className,
       )}
     >
@@ -1360,20 +1058,17 @@ function StatTile({
   return (
     <div className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
 
-
       <div className="flex items-center gap-2">
         <span className={cx("flex h-7 w-7 items-center justify-center rounded-lg border", tones[accent])}>
           <Icon className="h-3.5 w-3.5" />
         </span>
         <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
 
-
           {label}
         </p>
       </div>
       <p className="mt-2.5 text-2xl font-semibold tracking-tight text-slate-50">{value}</p>
       <p className="mt-0.5 text-[11px] text-zinc-500">{sub}</p>
-
 
     </div>
   );
@@ -1401,7 +1096,6 @@ function SegmentedControl<T extends string>({
       aria-label={ariaLabel}
       className="relative inline-flex w-full rounded-xl border border-zinc-800/50 bg-slate-950/60 p-1"
 
-
     >
       <span
         aria-hidden
@@ -1421,7 +1115,6 @@ function SegmentedControl<T extends string>({
           className={cx(
             "relative z-10 flex-1 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200",
             value === option.value ? "text-cyan-200" : "text-zinc-400 hover:text-slate-200",
-
 
           )}
         >
@@ -1448,7 +1141,6 @@ function Chip({
     active
       ? "border-cyan-400/50 bg-cyan-400/10 text-cyan-200"
       : "border-zinc-800/50 bg-slate-950/50 text-zinc-400 hover:border-slate-700 hover:text-slate-200",
-
 
   );
   if (!onClick) {
@@ -1511,7 +1203,6 @@ function StepFooter({
   return (
     <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
 
-
       <div className="flex flex-wrap items-center gap-3">
         {onBack ? (
           <GhostButton onClick={onBack} icon={ArrowLeft}>
@@ -1520,7 +1211,6 @@ function StepFooter({
         ) : null}
         {hint ? (
           <p className="flex items-center gap-1.5 text-[11px] text-zinc-500">
-
 
             <Info className="h-3.5 w-3.5 shrink-0" />
             {hint}
@@ -1567,7 +1257,6 @@ function StepRail({
                     ? "border-cyan-400/40 bg-slate-900/70 shadow-[0_0_30px_-12px_rgba(34,211,238,0.8)]"
                     : "border-transparent hover:border-zinc-800/50 hover:bg-slate-900/40",
 
-
                   !reachable ? "cursor-not-allowed opacity-40" : undefined,
                 )}
               >
@@ -1579,7 +1268,6 @@ function StepRail({
                       : state === "done"
                         ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
                         : "border-zinc-800/50 bg-slate-900/60 text-zinc-500",
-
 
                   )}
                 >
@@ -1596,7 +1284,6 @@ function StepRail({
                   </span>
                   <span className="block truncate text-[11px] text-zinc-500">{item.hint}</span>
 
-
                 </span>
                 <span className="text-[11px] font-semibold tabular-nums text-slate-600 lg:hidden">
                   {item.id}
@@ -1609,7 +1296,6 @@ function StepRail({
       <div className="mt-5 hidden rounded-xl border border-zinc-800/50 bg-slate-900/40 p-4 lg:block">
         <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
 
-
           <span>Journey</span>
           <span className="tabular-nums text-cyan-400">{completed}/8</span>
         </div>
@@ -1621,7 +1307,6 @@ function StepRail({
         </div>
         <p className="mt-2.5 text-[11px] leading-relaxed text-zinc-500">
           Everything stays in this browser tab until you export a verifiable credential.
-
 
         </p>
       </div>
@@ -1646,7 +1331,6 @@ function SkillSlider({
   return (
     <div className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
 
-
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-start gap-2.5">
           <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 text-cyan-300">
@@ -1656,13 +1340,11 @@ function SkillSlider({
             <p className="truncate text-sm font-medium tracking-tight text-zinc-100">{axis.label}</p>
             <p className="mt-0.5 text-[11px] leading-relaxed text-zinc-500">{axis.blurb}</p>
 
-
           </div>
         </div>
         <div className="shrink-0 text-right">
           <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-50">{value}</p>
           <p className="text-[10px] uppercase tracking-wider text-zinc-500">self</p>
-
 
         </div>
       </div>
@@ -1696,7 +1378,6 @@ function SkillSlider({
         <span className="text-slate-600">100</span>
       </div>
       <div className="mt-2.5 flex items-center justify-between gap-2 border-t border-zinc-800/50/80 pt-2.5">
-
 
         <span
           className={cx(
@@ -1741,7 +1422,6 @@ function Toast({ message, onDismiss }: { message: string | null; onDismiss: () =
         aria-label="Dismiss notification"
         className="rounded p-0.5 text-zinc-500 transition-colors hover:text-slate-200"
 
-
       >
         <X className="h-3.5 w-3.5" />
       </button>
@@ -1785,13 +1465,6 @@ export default function SkillSetuPage() {
   const [exportStage, setExportStage] = useState<ExportStage>("idle");
   const [exportStep, setExportStep] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
-  const [aiReport, setAiReport] = useState<any>(null);
-
-  // Firebase Firestore Integration State
-  const [databaseId, setDatabaseId] = useState<string | null>(null);
-  const [loadModalOpen, setLoadModalOpen] = useState(false);
-  const [loadDocInput, setLoadDocInput] = useState("");
-  const [isLoadingSaved, setIsLoadingSaved] = useState(false);
 
 
   const exportTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
@@ -1815,20 +1488,6 @@ export default function SkillSetuPage() {
   const market = useMemo<MarketRow[]>(() => {
     const seed = `${role.trim().toLowerCase()}|${domain}|${pin}|${locationQuery.trim().toLowerCase()}`;
     const locality = zone ? (zone.density - 1) * 6 : 0;
-    const missingNorm = (aiReport?.missingSkills || []).map((s: string) => s.toLowerCase());
-
-    return SKILL_AXES.map((axis) => {
-      const jitter = (hashToUnit(`${seed}::${axis.key}`) - 0.5) * 18;
-      const bias = activePreset?.bias[axis.key] ?? 0;
-      let demand = Math.round(clamp(56 + bias + locality + jitter, 20, 99));
-
-      // If Gemini flagged this area as a missing skill, boost market demand
-      const isMissing = missingNorm.some((ms: string) =>
-        ms.includes(axis.key) || axis.label.toLowerCase().includes(ms)
-      );
-      if (isMissing) demand = Math.min(99, Math.max(demand, 82));
-
-
     return SKILL_AXES.map((axis) => {
       const jitter = (hashToUnit(`${seed}::${axis.key}`) - 0.5) * 18;
       const bias = activePreset?.bias[axis.key] ?? 0;
@@ -1847,7 +1506,6 @@ export default function SkillSetuPage() {
       };
     });
   }, [role, domain, pin, locationQuery, zone, activePreset, skills]);
-
 
 
   const radarData = useMemo(
@@ -1997,7 +1655,6 @@ export default function SkillSetuPage() {
   reportRef.current = { role, domain, pin, zone, market, stats, displayName, identity };
 
 
-
   useEffect(() => {
     if (step !== 5) return;
     let cancelled = false;
@@ -2006,32 +1663,6 @@ export default function SkillSetuPage() {
     setLogs([]);
     setProgress(0);
     setEngineDone(false);
-
-    // LIVE API CALL: Fire the backend pipeline in parallel with the terminal animation
-    const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/analyze";
-    fetch(`${apiBase}/full-audit`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        targetRole: role || "Data Scientist",
-        studentSkills: Object.keys(skills),
-        location: zone?.city || locationQuery || "India",
-        userId: identity || auth.email || auth.phone || displayName,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (!cancelled && data.success) {
-          if (data.auditResult) {
-            setAiReport(data.auditResult);
-          }
-          if (data.databaseId) {
-            setDatabaseId(data.databaseId);
-            setToast(`🔥 Roadmap synced to Firebase Firestore (ID: ${data.databaseId})`);
-          }
-        }
-      })
-      .catch((err) => console.warn("[Skill Setu] Backend API unavailable:", err));
 
 
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -2139,41 +1770,6 @@ export default function SkillSetuPage() {
     setCredential(null);
     setExportStage("idle");
     setExportStep(0);
-    setDatabaseId(null);
-    setLoadModalOpen(false);
-    setLoadDocInput("");
-
-  }, []);
-
-
-  const saveSnapshotToFirestore = useCallback(async () => {
-    try {
-      const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/analyze";
-      const res = await fetch(`${apiBase}/save-roadmap`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          userId: identity || displayName || "student",
-          roadmapData: {
-            targetRole: role,
-            domain,
-            location: zone?.city || locationQuery,
-            stats,
-            aiReport,
-            skills,
-          },
-        }),
-      });
-      const d = await res.json();
-      if (d.success && d.databaseId) {
-        setDatabaseId(d.databaseId);
-        setToast(`🔥 Snapshot saved to Firebase Firestore! Document ID: ${d.databaseId}`);
-      }
-    } catch (e: any) {
-      setToast(`Failed to save to Firestore: ${e.message}`);
-    }
-  }, [identity, displayName, role, domain, zone, locationQuery, stats, aiReport, skills]);
-
   }, []);
 
 
@@ -2210,16 +1806,7 @@ export default function SkillSetuPage() {
   const detectLocation = useCallback(() => {
     if (locating) return;
     setLocating(true);
-
-    const resolveFallback = (code: string) => {
-    const resolve = (code: string) => {
-      window.setTimeout(() => {
-        pickZone(PIN_ZONES[code] ? code : "110001");
-        setLocating(false);
-      }, 950);
-    };
-
-
+    
     if (typeof navigator !== "undefined" && typeof navigator.geolocation?.getCurrentPosition === "function") {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {
@@ -2246,7 +1833,6 @@ export default function SkillSetuPage() {
     } else {
       pickZone("110001");
       setLocating(false);
-
     }
   }, [locating, pickZone]);
 
@@ -2280,7 +1866,6 @@ export default function SkillSetuPage() {
           setExportStage("sealed");
           setToast("Credential sealed — Open Badges 3.0 envelope verified locally.");
 
-
         }
       }, (index + 1) * 640),
     );
@@ -2293,7 +1878,7 @@ export default function SkillSetuPage() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = `${slug}.credential.json`;
+    anchor.download = `${slug}.credential.jsonld`;
     document.body.appendChild(anchor);
     anchor.click();
     anchor.remove();
@@ -2306,7 +1891,6 @@ export default function SkillSetuPage() {
     try {
       await navigator.clipboard.writeText(JSON.stringify(credential, null, 2));
       setToast("JSON-LD payload copied to clipboard.");
-
 
     } catch {
       setToast("Clipboard blocked by the browser — use the download instead.");
@@ -2341,32 +1925,6 @@ export default function SkillSetuPage() {
     <div className="relative flex min-h-screen flex-col">
       <AmbientBackground />
 
-      <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/75 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-          <BrandMark />
-          <div className="flex items-center gap-2 sm:gap-2.5">
-            {/* Firebase Firestore Connection Badge */}
-            <div
-              className="hidden items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/25 px-3 py-1.5 sm:flex"
-              title="Google Firebase Firestore Active (skill-setu3993)"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500"></span>
-              </span>
-              <span className="text-[11px] font-medium tracking-tight text-amber-300">Firebase Firestore</span>
-              <span className="font-mono text-[10px] text-amber-400/80">skill-setu3993</span>
-            </div>
-
-            <div className="hidden items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 md:flex">
-              <LiveDot />
-              <span className="text-[11px] font-medium tracking-tight text-slate-300">SerpApi feed live</span>
-              <span className="text-[11px] tabular-nums text-slate-500">
-                {stats.openings} postings
-              </span>
-            </div>
-            <div className="hidden items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 lg:flex">
-
       <header className="sticky top-0 z-40 border-b border-zinc-800/50/80 bg-slate-950/75 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <BrandMark />
@@ -2389,13 +1947,10 @@ export default function SkillSetuPage() {
               ) : null}
             </div>
 
-
             <button
               type="button"
               onClick={restart}
               title="Restart the journey"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
-
               className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800/50 bg-slate-900/60 text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
             >
               <RefreshCw className="h-4 w-4" />
@@ -2437,7 +1992,6 @@ export default function SkillSetuPage() {
               setAuth={setAuth}
               errors={authErrors}
               attempted={authAttempted}
-              onOpenLoadModal={() => setLoadModalOpen(true)}
 
               onSubmit={() => {
                 setAuthAttempted(true);
@@ -2538,9 +2092,6 @@ export default function SkillSetuPage() {
                 stats={stats}
                 zone={zone}
                 role={role}
-                aiReport={aiReport}
-                databaseId={databaseId}
-                onSaveSnapshot={saveSnapshotToFirestore}
 
                 onRerun={() => setStep(5)}
                 onContinue={advance}
@@ -2554,7 +2105,6 @@ export default function SkillSetuPage() {
                 gapChartData={gapChartData}
                 roadmap={roadmap}
                 stats={stats}
-                databaseId={databaseId}
 
                 onRecalibrate={() => setStep(4)}
                 onContinue={advance}
@@ -2583,16 +2133,6 @@ export default function SkillSetuPage() {
         </main>
       )}
 
-      <footer className="border-t border-slate-800/80 bg-slate-950/60">
-        <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
-          <p>
-            Skill Setu · SerpApi India Hackathon 2026 · Powered by live SerpApi, Google Gemini AI & Firebase
-
-          </p>
-          <p className="flex items-center gap-1.5">
-            <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" />
-            Credentials follow Career Roadmap (Personalized Growth Plan)
-
       <footer className="border-t border-zinc-800/50/80 bg-slate-950/60">
         <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-zinc-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <p>
@@ -2606,69 +2146,6 @@ export default function SkillSetuPage() {
           </p>
         </div>
       </footer>
-
-      {/* Firebase Firestore Load Roadmap Modal */}
-      {loadModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
-          <div className="relative w-full max-w-md rounded-2xl border border-amber-500/40 bg-slate-900 p-6 shadow-2xl">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <div className="flex items-center gap-2 text-amber-300 font-semibold text-base">
-                <Database className="h-5 w-5 text-amber-400" />
-                Load Roadmap from Firebase
-              </div>
-              <button
-                type="button"
-                onClick={() => setLoadModalOpen(false)}
-                className="rounded-lg p-1 text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
-
-            <p className="mt-3 text-xs leading-relaxed text-slate-300">
-              Enter your Firebase Firestore Document ID to retrieve and restore your personalized learning roadmap.
-            </p>
-
-            <div className="mt-4 space-y-3">
-              <div>
-                <label className="text-[11px] font-medium text-slate-400 block mb-1">
-                  Firestore Document ID
-                </label>
-                <input
-                  type="text"
-                  value={loadDocInput}
-                  onChange={(e) => setLoadDocInput(e.target.value)}
-                  placeholder="e.g. test_student_1791564214153"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-3.5 py-2.5 font-mono text-xs text-white placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400"
-                />
-              </div>
-
-              <div className="flex items-center justify-end gap-2 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setLoadModalOpen(false)}
-                  className="rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="button"
-                  disabled={!loadDocInput.trim() || isLoadingSaved}
-                  onClick={() => handleLoadFromFirestore(loadDocInput)}
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-amber-500/40 bg-amber-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-amber-400 disabled:opacity-50 transition-colors"
-                >
-                  {isLoadingSaved ? (
-                    <RefreshCw className="h-3.5 w-3.5 animate-spin" />
-                  ) : (
-                    <Database className="h-3.5 w-3.5" />
-                  )}
-                  {isLoadingSaved ? "Loading..." : "Load Roadmap"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
 
       <Toast message={toast} onDismiss={dismissToast} />
@@ -2685,7 +2162,6 @@ function AuthStep({
   setAuth,
   errors,
   attempted,
-  onOpenLoadModal,
 
   onSubmit,
 }: {
@@ -2697,7 +2173,6 @@ function AuthStep({
   setAuth: Dispatch<SetStateAction<AuthState>>;
   errors: AuthErrors;
   attempted: boolean;
-  onOpenLoadModal?: () => void;
 
   onSubmit: () => void;
 }) {
@@ -2715,7 +2190,6 @@ function AuthStep({
       className="self-start"
       aside={
         <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
-
 
           <LiveDot />
           {mode === "signup" ? "Takes 40 seconds" : "Session restored"}
@@ -2797,7 +2271,6 @@ function AuthStep({
             trailing={
               <span className="text-[11px] text-zinc-500">+91</span>
 
-
             }
           />
         )}
@@ -2820,17 +2293,11 @@ function AuthStep({
               aria-label={showPassword ? "Hide password" : "Show password"}
               className="rounded-md p-1.5 text-zinc-500 transition-colors hover:text-cyan-300"
 
-
             >
               {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
             </button>
           }
         />
-
-        <div className="flex items-start gap-2.5 rounded-xl border border-slate-800 bg-slate-950/40 p-3">
-          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
-          <p className="text-[11px] leading-relaxed text-slate-400">
-            Your data is processed securely via our AI backend. Your calibration lives in this browser tab and is
 
         <div className="flex items-start gap-2.5 rounded-xl border border-zinc-800/50 bg-slate-950/40 p-3">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
@@ -2845,19 +2312,6 @@ function AuthStep({
           {mode === "signup" ? "Create profile & continue" : "Log in & continue"}
         </PrimaryButton>
 
-        {onOpenLoadModal && (
-          <div className="pt-2 border-t border-slate-800/60 text-center">
-            <button
-              type="button"
-              onClick={onOpenLoadModal}
-              className="inline-flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 transition-colors"
-            >
-              <Database className="h-3.5 w-3.5" />
-              <span>Have a saved Roadmap ID? Load from Firebase</span>
-            </button>
-          </div>
-        )}
-
       </form>
     </Panel>
   );
@@ -2867,7 +2321,6 @@ function IntroPanel() {
   return (
     <div className="space-y-6">
       <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/50 p-6 backdrop-blur-md sm:p-8">
-
 
         <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
         <div className="relative">
@@ -2884,7 +2337,6 @@ function IntroPanel() {
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
             Skill Setu turns live job postings into a PIN-code precise competency gap report, a
             sequenced 10-week roadmap, and a verifiable Open Badges 3.0 credential you can attach to
-
 
             any profile.
           </p>
@@ -2905,16 +2357,10 @@ function IntroPanel() {
               key={pillar.label}
               className="group rounded-2xl border border-zinc-800/50 bg-zinc-900/50 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/30"
 
-
             >
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 bg-slate-950/60 text-cyan-300 transition-colors duration-300 group-hover:border-cyan-400/40">
                 <Icon className="h-5 w-5" />
               </span>
-              <p className="mt-3.5 text-sm font-medium tracking-tight text-slate-100">
-                {pillar.label}
-              </p>
-              <p className="mt-1 text-xs leading-relaxed text-slate-500">{pillar.meta}</p>
-
               <p className="mt-3.5 text-sm font-medium tracking-tight text-zinc-100">
                 {pillar.label}
               </p>
@@ -2924,11 +2370,6 @@ function IntroPanel() {
           );
         })}
       </div>
-
-      <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40">
-        <div className="flex items-center gap-2 border-b border-slate-800/80 px-5 py-3">
-          <Activity className="h-3.5 w-3.5 text-cyan-400" />
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
 
       <div className="overflow-hidden rounded-2xl border border-zinc-800/50 bg-slate-900/40">
         <div className="flex items-center gap-2 border-b border-zinc-800/50/80 px-5 py-3">
@@ -2943,18 +2384,11 @@ function IntroPanel() {
             {[...TICKER, ...TICKER].map((item, index) => (
               <span key={`${item}-${index}`} className="font-mono text-[11px] text-zinc-500">
 
-
                 <span className="text-cyan-400/80">&gt;</span> {item}
               </span>
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 border-t border-slate-800/80 px-5 py-4 sm:grid-cols-4">
-          {NATIONAL_PULSE.map((item) => (
-            <div key={item.label}>
-              <p className="text-xl font-semibold tracking-tight text-slate-50">{item.value}</p>
-              <p className="mt-0.5 text-[11px] text-slate-500">{item.label}</p>
-
         <div className="grid grid-cols-2 gap-4 border-t border-zinc-800/50/80 px-5 py-4 sm:grid-cols-4">
           {NATIONAL_PULSE.map((item) => (
             <div key={item.label}>
@@ -2978,7 +2412,6 @@ function mintCredential(input: {
   stats: ReportStats;
   displayName: string;
   identity: string;
-  databaseId?: string | null;
 
 }): Credential {
   const uuid = makeUuid();
@@ -3000,13 +2433,6 @@ function mintCredential(input: {
     type: ["VerifiableCredential", "OpenBadgeCredential"],
     id: `urn:uuid:${uuid}`,
     name: `Skill Setu LMI Skill Gap Report — ${input.role || "Open Role"}`,
-    description: `Verified skill-gap analysis for ${input.role || "an open role"} in ${city} (PIN ${input.pin || "—"
-      }), benchmarked against clustered SerpApi job-market demand across ${input.market.length} competency axes.`,
-    issuer: {
-      id: "https://skillsetu.io/issuers/lmi-engine",
-      type: ["Profile"],
-      name: "Skill Setu Live Career Guidance Engine",
-
     description: `Verified skill-gap analysis for ${input.role || "an open role"} in ${city} (PIN ${
       input.pin || "—"
     }), benchmarked against clustered SerpApi job-market demand across ${input.market.length} competency axes.`,
@@ -3028,15 +2454,6 @@ function mintCredential(input: {
       achievement: {
         type: ["Achievement"],
         name: "Market-Aligned Skill Calibration",
-        description: `Calibrated against ${city} demand for ${input.domain || "an unspecified domain"
-          }. Coverage ${input.stats.coverage}%, model confidence ${input.stats.confidence
-          }%, ${input.stats.critical} critical gap${input.stats.critical === 1 ? "" : "s"
-          } with a remediation plan attached.`,
-        criteria: {
-          type: "Criteria",
-          narrative:
-            "Self-declared 0–100 proficiency compared against live job-posting demand from SerpApi.",
-
         description: `Calibrated against ${city} demand for ${
           input.domain || "an unspecified domain"
         }. Coverage ${input.stats.coverage}%, model confidence ${
@@ -3056,7 +2473,6 @@ function mintCredential(input: {
           (row) =>
             `${row.axis}: self ${row.you} / market ${row.market} (delta ${
               row.gap > 0 ? "+" : ""
-
 
             }${row.gap}, ${row.priority})`,
         )
@@ -3079,12 +2495,6 @@ function mintCredential(input: {
         .toISOString()
         .slice(0, 10),
       creditsEarned: 3,
-      databaseStorage: {
-        provider: "Google Cloud / Firebase Firestore",
-        projectId: "skill-setu3993",
-        documentId: input.databaseId || null,
-        status: input.databaseId ? "Verified in Firestore" : "Local session",
-      },
 
     },
     credentialSchema: {
@@ -3238,7 +2648,6 @@ function LocationStep({
       aside={
         <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
 
-
           <LiveDot />
           16 zones resolved · 2,400+ prefixes
         </div>
@@ -3273,11 +2682,6 @@ function LocationStep({
                       className="flex w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left text-sm text-slate-300 transition-colors hover:bg-slate-800/70 hover:text-cyan-200"
                     >
                       <span className="flex items-center gap-2">
-                        <MapPin className="h-3.5 w-3.5 text-slate-500" />
-                        {item.city}, {item.region}
-                      </span>
-                      <span className="font-mono text-[11px] tabular-nums text-slate-500">
-
                         <MapPin className="h-3.5 w-3.5 text-zinc-500" />
                         {item.city}, {item.region}
                       </span>
@@ -3328,7 +2732,6 @@ function LocationStep({
           <div className="space-y-2.5">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
 
-
               Popular tier-1 zones
             </p>
             <div className="flex flex-wrap gap-2">
@@ -3348,7 +2751,6 @@ function LocationStep({
               "relative overflow-hidden rounded-2xl border p-5 transition-colors duration-300",
               zone ? "border-cyan-400/30 bg-cyan-400/[0.04]" : "border-zinc-800/50 bg-slate-950/40",
 
-
             )}
           >
             {zone ? (
@@ -3360,13 +2762,11 @@ function LocationStep({
                 <p className="mt-3 text-xl font-semibold tracking-tight text-slate-50">{zone.city}</p>
                 <p className="text-sm text-zinc-400">
 
-
                   {zone.region} · Tier {zone.tier}
                 </p>
                 <div className="mt-4 space-y-3">
                   <div>
                     <div className="flex justify-between text-[11px] text-zinc-400">
-
 
                       <span>Posting density</span>
                       <span className="tabular-nums text-cyan-300">{zone.density}x</span>
@@ -3375,7 +2775,6 @@ function LocationStep({
                   </div>
                   <div>
                     <div className="flex justify-between text-[11px] text-zinc-400">
-
 
                       <span>Cost-of-living index</span>
                       <span className="tabular-nums text-blue-300">{zone.salary.toFixed(2)}x</span>
@@ -3397,7 +2796,6 @@ function LocationStep({
                 <Locate className="h-7 w-7 text-slate-700" />
                 <p className="mt-3 text-sm text-zinc-400">No zone resolved yet</p>
 
-
                 <p className="mt-1 max-w-[24ch] text-[11px] leading-relaxed text-slate-600">
                   Enter a valid 6-digit PIN to unlock local demand weighting and compensation
                   normalisation.
@@ -3405,12 +2803,6 @@ function LocationStep({
               </div>
             )}
           </div>
-
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Why this matters
-            </p>
-            <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
 
           <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -3500,7 +2892,6 @@ function CareerStep({
                     ? "border-cyan-400/50 bg-cyan-400/[0.06] shadow-[0_0_32px_-16px_rgba(34,211,238,0.9)]"
                     : "border-zinc-800/50 bg-slate-950/40 hover:-translate-y-0.5 hover:border-slate-700",
 
-
                 )}
               >
                 {isActive ? (
@@ -3508,18 +2899,6 @@ function CareerStep({
                     <CheckCircle2 className="h-4 w-4 text-cyan-400" />
                   </span>
                 ) : null}
-                <p className="pr-6 text-sm font-semibold tracking-tight text-slate-100">
-                  {preset.role}
-                </p>
-                <p className="mt-0.5 text-[11px] text-cyan-400/80">{preset.domain}</p>
-                <p className="mt-2.5 text-[11px] leading-relaxed text-slate-500">{preset.blurb}</p>
-                <div className="mt-3 flex items-center gap-3 border-t border-slate-800/80 pt-2.5 text-[11px]">
-                  <span className="flex items-center gap-1 text-slate-400">
-                    <Rocket className="h-3 w-3" />
-                    {inrCompact(preset.openings)}
-                  </span>
-                  <span className="flex items-center gap-1 text-slate-400">
-
                 <p className="pr-6 text-sm font-semibold tracking-tight text-zinc-100">
                   {preset.role}
                 </p>
@@ -3568,7 +2947,6 @@ function CareerStep({
               >
                 <Compass className="h-3.5 w-3.5 text-zinc-500" />
 
-
                 Industry domain
               </label>
               <div className="relative">
@@ -3578,11 +2956,6 @@ function CareerStep({
                   onChange={(event) => onDomain(event.target.value)}
                   aria-invalid={Boolean(attempted && errors.domain)}
                   className={cx(
-                    "w-full appearance-none rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-100 transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
-                    attempted && errors.domain
-                      ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
-                      : "border-slate-800 hover:border-slate-700 focus:border-cyan-400/60",
-
                     "w-full appearance-none rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-zinc-100 transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
                     attempted && errors.domain
                       ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
@@ -3599,7 +2972,6 @@ function CareerStep({
                 </select>
                 <ChevronRight className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 rotate-90 text-zinc-500" />
 
-
               </div>
               {attempted && errors.domain ? (
                 <p className="flex items-center gap-1.5 text-xs text-rose-400">
@@ -3609,12 +2981,6 @@ function CareerStep({
               ) : null}
             </div>
           </div>
-
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-            {signal ? (
-              <>
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
 
           <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
             {signal ? (
@@ -3631,14 +2997,12 @@ function CareerStep({
                 </p>
                 <p className="mt-0.5 text-xs text-zinc-400">{signal.blurb}</p>
 
-
                 <div className="mt-4 grid grid-cols-3 gap-3">
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-cyan-300">
                       {inrCompact(signal.openings)}
                     </p>
                     <p className="text-[10px] uppercase tracking-wider text-zinc-500">postings</p>
-
 
                   </div>
                   <div>
@@ -3647,18 +3011,11 @@ function CareerStep({
                     </p>
                     <p className="text-[10px] uppercase tracking-wider text-zinc-500">median LPA</p>
 
-
                   </div>
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-200">
                       17
                     </p>
-                    <p className="text-[10px] uppercase tracking-wider text-slate-500">clusters</p>
-                  </div>
-                </div>
-                <div className="mt-4 space-y-2 border-t border-slate-800/80 pt-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-
                     <p className="text-[10px] uppercase tracking-wider text-zinc-500">clusters</p>
                   </div>
                 </div>
@@ -3687,7 +3044,6 @@ function CareerStep({
               <div className="flex min-h-[220px] flex-col items-center justify-center text-center">
                 <Target className="h-7 w-7 text-slate-700" />
                 <p className="mt-3 text-sm text-zinc-400">No role signal yet</p>
-
 
                 <p className="mt-1 max-w-[30ch] text-[11px] leading-relaxed text-slate-600">
                   Choose a preset above or type your target role. The demand model will weight every
@@ -3750,7 +3106,6 @@ function SkillsStep({
       aside={
         <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
 
-
           <Gauge className="h-3.5 w-3.5 text-cyan-400" />
           <span className="tabular-nums text-cyan-300">{stats.coverage}%</span> market coverage
         </div>
@@ -3758,13 +3113,6 @@ function SkillsStep({
     >
       <div className="space-y-6">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,300px)]">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Calibration profile
-              </p>
-              <span className="text-[11px] text-slate-500">
-
           <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -3800,7 +3148,6 @@ function SkillsStep({
             </div>
             <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
 
-
               {CALIBRATION_PRESETS.find((preset) => preset.id === calibrationId)?.note ??
                 "Your own numbers, or a market-informed starting point you can edit."}
             </p>
@@ -3814,7 +3161,6 @@ function SkillsStep({
           <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
             <div className="flex items-center justify-between gap-3">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
-
 
                 Live coverage
               </p>
@@ -3832,13 +3178,11 @@ function SkillsStep({
                 <div key={row.label} className="flex items-center justify-between text-[11px]">
                   <span className="text-zinc-400">{row.label}</span>
 
-
                   <span className="font-semibold tabular-nums text-slate-200">{row.value}</span>
                 </div>
               ))}
             </div>
             <p className="mt-4 border-t border-zinc-800/50/80 pt-3 text-[11px] leading-relaxed text-zinc-500">
-
 
               Coverage is demand-weighted: closing a gap in a high-demand axis moves the number far
               more than closing an axis nobody is hiring for.
@@ -3894,12 +3238,6 @@ function TerminalStep({
   return (
     <Panel
       eyebrow="Step 05 · Engine run"
-      title="SerpApi → Google Gemini AI → Skill Gap Analysis"
-      description="Watch the live analysis pipeline. Each step connects to SerpApi for job data and Google Gemini for AI-powered skill gap analysis."
-      icon={Terminal}
-      aside={
-        <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
-
       title="SerpApi → Pydantic → SBERT → gap vectors"
       description="Watch the pipeline work. Every step below maps to a real stage of the production orchestrator, wired end to end to SerpApi google_jobs and google_jobs_extensions."
       icon={Terminal}
@@ -3915,7 +3253,6 @@ function TerminalStep({
         <div className="overflow-hidden rounded-2xl border border-zinc-800/50 bg-black p-4 shadow-[0_0_60px_-30px_rgba(34,211,238,0.7)]">
           <div className="mb-3 flex items-center justify-between gap-3 border-b border-zinc-800/50/80 pb-3">
 
-
             <div className="flex items-center gap-2">
               <span className="flex gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-500/70" />
@@ -3924,13 +3261,11 @@ function TerminalStep({
               </span>
               <span className="font-mono text-[11px] text-zinc-500">
 
-
                 skillsetu-engine · zsh · serpapi-lmi
               </span>
             </div>
             <div className="flex items-center gap-3">
               <span className="font-mono text-[11px] tabular-nums text-zinc-500">
-
 
                 {elapsed.toFixed(1)}s
               </span>
@@ -3939,7 +3274,6 @@ function TerminalStep({
                 onClick={onCopy}
                 disabled={logs.length === 0}
                 className="inline-flex items-center gap-1.5 rounded-md border border-zinc-800/50 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300 disabled:opacity-40"
-
 
               >
                 <Copy className="h-3 w-3" />
@@ -3966,7 +3300,6 @@ function TerminalStep({
                     "flex gap-2",
                     line.level === "cmd" ? "text-cyan-300" : "text-zinc-500",
 
-
                     line.level === "ok" ? "text-emerald-400/90" : undefined,
                     line.level === "warn" ? "text-amber-300" : undefined,
                   )}
@@ -3980,7 +3313,6 @@ function TerminalStep({
             )}
             {!done ? (
               <p className="flex gap-2 text-zinc-500">
-
 
                 <span className="select-none text-cyan-400/70">$</span>
                 <span className="ss-caret inline-block h-3.5 w-2 translate-y-0.5 bg-cyan-400" />
@@ -3997,7 +3329,6 @@ function TerminalStep({
           </div>
 
           <div className="mt-3 flex items-center gap-3 border-t border-zinc-800/50/80 pt-3">
-
 
             <MeterBar value={progress} className="flex-1" />
             <span className="font-mono text-[11px] tabular-nums text-cyan-400">
@@ -4019,7 +3350,6 @@ function TerminalStep({
                 key={card.label}
                 className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-3.5"
 
-
               >
                 <Icon className="h-4 w-4 text-cyan-400" />
                 <p className="mt-2 text-lg font-semibold tabular-nums tracking-tight text-slate-50">
@@ -4027,18 +3357,12 @@ function TerminalStep({
                 </p>
                 <p className="text-[10px] uppercase tracking-wider text-zinc-500">{card.label}</p>
 
-
               </div>
             );
           })}
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="flex items-center gap-2 text-[11px] text-slate-500">
-            <Info className="h-3.5 w-3.5 shrink-0" />
-            Live analysis powered by SerpApi google_jobs and Google Gemini AI.
-
-
           <p className="flex items-center gap-2 text-[11px] text-zinc-500">
             <Info className="h-3.5 w-3.5 shrink-0" />
             Deterministic local simulation — a production build swaps this script for live SerpApi
@@ -4050,12 +3374,6 @@ function TerminalStep({
           </GhostButton>
         </div>
       </div>
-
-      <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center">
-        <GhostButton onClick={onBack} icon={ArrowLeft}>
-          Back
-        </GhostButton>
-        <p className="flex items-center gap-1.5 text-[11px] text-slate-500">
 
       <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
         <GhostButton onClick={onBack} icon={ArrowLeft}>
@@ -4085,7 +3403,6 @@ function RadarTip({ active, payload }: { active?: boolean; payload?: TipEntry[] 
     <div className="rounded-xl border border-slate-700 bg-slate-950/95 px-3.5 py-2.5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-md">
       <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">{axis}</p>
 
-
       <div className="mt-2 space-y-1.5">
         {payload.map((entry) => (
           <div key={String(entry.dataKey)} className="flex items-center gap-2 text-xs">
@@ -4095,7 +3412,6 @@ function RadarTip({ active, payload }: { active?: boolean; payload?: TipEntry[] 
             />
             <span className="flex-1 text-zinc-400">{entry.name}</span>
             <span className="font-semibold tabular-nums text-zinc-100">{entry.value}</span>
-
 
           </div>
         ))}
@@ -4120,14 +3436,12 @@ function GapTip({
       <p className="text-xs font-semibold text-zinc-100">{label}</p>
       <p className="mt-1 text-[11px] text-zinc-400">
 
-
         Gap{" "}
         <span className="font-semibold tabular-nums text-cyan-300">{row?.gap ?? 0}</span> points to
         close
       </p>
       {row?.priority ? (
         <p className="mt-0.5 text-[11px] text-zinc-500">Priority: {row.priority}</p>
-
 
       ) : null}
     </div>
@@ -4140,9 +3454,6 @@ function RadarStep({
   stats,
   zone,
   role,
-  aiReport,
-  databaseId,
-  onSaveSnapshot,
 
   onRerun,
   onContinue,
@@ -4153,9 +3464,6 @@ function RadarStep({
   stats: ReportStats;
   zone: Zone | undefined;
   role: string;
-  aiReport?: any;
-  databaseId?: string | null;
-  onSaveSnapshot?: () => void;
 
   onRerun: () => void;
   onContinue: () => void;
@@ -4182,76 +3490,6 @@ function RadarStep({
       }
     >
       <div className="space-y-6">
-        {aiReport && (
-          <div className="rounded-xl border border-cyan-500/40 bg-cyan-950/30 p-4 shadow-[0_0_15px_-3px_rgba(34,211,238,0.15)]">
-            <div className="flex items-center gap-2 text-sm font-semibold text-cyan-300">
-              <Sparkles className="h-4 w-4" />
-              Live AI Analysis from Google Gemini
-            </div>
-            <p className="mt-1.5 text-xs leading-relaxed text-cyan-100/80">
-              Market Readiness: <strong className="text-white">{aiReport.readinessLevel}</strong>
-              {aiReport.matchPercentage && <> · Match: <strong className="text-white">{aiReport.matchPercentage}%</strong></>}
-              {aiReport.missingSkills?.length > 0 && <> · Focus on: <strong className="text-white">{aiReport.missingSkills.join(", ")}</strong></>}
-            </p>
-          </div>
-        )}
-
-        {databaseId && (
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-500/40 bg-amber-950/20 p-3.5 text-xs text-amber-200 shadow-[0_0_15px_-3px_rgba(245,158,11,0.15)]">
-            <div className="flex items-center gap-2.5">
-              <span className="relative flex h-2.5 w-2.5 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-500"></span>
-              </span>
-              <Database className="h-4 w-4 text-amber-400 shrink-0" />
-              <div>
-                <span className="font-medium text-amber-300">Firebase Firestore Cloud Sync:</span>{" "}
-                <span className="font-mono text-[11px] text-amber-100 bg-amber-900/60 px-2 py-0.5 rounded border border-amber-500/30">
-                  {databaseId}
-                </span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => {
-                  navigator.clipboard.writeText(databaseId);
-                }}
-                className="inline-flex items-center gap-1 rounded-lg border border-amber-500/40 bg-amber-900/40 px-2.5 py-1 text-[11px] font-medium text-amber-200 transition-colors hover:border-amber-400 hover:bg-amber-800/60"
-              >
-                <Copy className="h-3 w-3" />
-                Copy ID
-              </button>
-              {onSaveSnapshot && (
-                <button
-                  type="button"
-                  onClick={onSaveSnapshot}
-                  className="inline-flex items-center gap-1 rounded-lg border border-amber-500/40 bg-amber-900/40 px-2.5 py-1 text-[11px] font-medium text-amber-200 transition-colors hover:border-amber-400 hover:bg-amber-800/60"
-                >
-                  <Cloud className="h-3 w-3" />
-                  Save Snapshot
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-
-        {!databaseId && onSaveSnapshot && (
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-800 bg-slate-900/50 p-3 text-xs text-slate-300">
-            <div className="flex items-center gap-2">
-              <Database className="h-4 w-4 text-amber-400 shrink-0" />
-              <span>Save this customized roadmap to Google Firebase Firestore for permanent access.</span>
-            </div>
-            <button
-              type="button"
-              onClick={onSaveSnapshot}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-amber-500/40 bg-amber-950/40 px-3 py-1 text-[11px] font-medium text-amber-300 transition-colors hover:border-amber-400 hover:bg-amber-900/60"
-            >
-              <Cloud className="h-3 w-3" />
-              Save to Firebase
-            </button>
-          </div>
-        )}
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <StatTile
@@ -4285,21 +3523,6 @@ function RadarStep({
         </div>
 
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-5">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-                  Competency radar · 8 axes
-                </p>
-                <p className="mt-1 text-xs text-slate-500">Hover any vertex to read exact scores.</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="flex items-center gap-1.5 text-[11px] text-slate-400">
-                  <span className="h-2.5 w-2.5 rounded-sm bg-cyan-400/80" />
-                  Your baseline
-                </span>
-                <span className="flex items-center gap-1.5 text-[11px] text-slate-400">
-
           <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4 sm:p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
@@ -4358,7 +3581,7 @@ function RadarStep({
                     isAnimationActive
                     animationDuration={900}
                   />
-                  <Tooltip content={<RadarTip />} cursor={false} contentStyle={{ backgroundColor: "rgba(24, 24, 27, 0.95)", border: "1px solid rgba(39, 39, 42, 1)", borderRadius: "8px", color: "#e4e4e7" }} />
+                  <Tooltip content={<RadarTip />} cursor={false} />
                 </RadarChart>
               </ResponsiveContainer>
             </div>
@@ -4367,7 +3590,6 @@ function RadarStep({
           <div className="space-y-4">
             <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
-
 
                 Where the gap hurts most
               </p>
@@ -4381,7 +3603,6 @@ function RadarStep({
                       </span>
                       <span className="flex items-center gap-2">
                         <span className="tabular-nums text-zinc-400">
-
 
                           {row.you} → {row.market}
                         </span>
@@ -4408,7 +3629,6 @@ function RadarStep({
             <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
 
-
                 Already market-ready
               </p>
               {strengths.length > 0 ? (
@@ -4418,25 +3638,17 @@ function RadarStep({
                       {row.axisFull}{" "}
                       <span className="font-mono tabular-nums text-zinc-500">+{Math.abs(row.gap)}</span>
 
-
                     </Chip>
                   ))}
                 </div>
               ) : (
                 <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
 
-
                   No axis is fully at parity yet. Closing the top two gaps will move you there within
                   four weeks.
                 </p>
               )}
             </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-                How to read this
-              </p>
-              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
 
             <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -4462,7 +3674,6 @@ function RadarStep({
 
       <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
 
-
         <div className="flex flex-wrap items-center gap-3">
           <GhostButton onClick={onBack} icon={ArrowLeft}>
             Back
@@ -4476,7 +3687,6 @@ function RadarStep({
             Build my roadmap
           </PrimaryButton>
           <p className="text-[11px] text-zinc-500">
-
 
             {stats.totalGap} total points to close across 8 axes.
           </p>
@@ -4496,7 +3706,6 @@ function RoadmapStep({
   gapChartData,
   roadmap,
   stats,
-  databaseId,
 
   onRecalibrate,
   onContinue,
@@ -4506,7 +3715,6 @@ function RoadmapStep({
   gapChartData: { axis: string; gap: number; priority: Priority }[];
   roadmap: RoadmapWeek[];
   stats: ReportStats;
-  databaseId?: string | null;
 
   onRecalibrate: () => void;
   onContinue: () => void;
@@ -4521,11 +3729,6 @@ function RoadmapStep({
       icon={GraduationCap}
       aside={
         <div className="flex flex-wrap items-center gap-2">
-          {databaseId && (
-            <Chip icon={Database}>
-              Firestore: {databaseId}
-            </Chip>
-          )}
 
           <Chip icon={Clock}>~{hours}h total</Chip>
           <Chip icon={GraduationCap}>10 weeks</Chip>
@@ -4533,29 +3736,6 @@ function RoadmapStep({
       }
     >
       <div className="space-y-6">
-        {databaseId && (
-          <div className="flex items-center justify-between gap-3 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-2.5 text-xs text-amber-200">
-            <div className="flex items-center gap-2">
-              <Database className="h-4 w-4 text-amber-400 shrink-0" />
-              <span>This 10-week roadmap is saved to <strong>Firebase Firestore</strong> (Document: <code className="font-mono text-amber-100">{databaseId}</code>).</span>
-            </div>
-            <button
-              type="button"
-              onClick={() => navigator.clipboard.writeText(databaseId)}
-              className="inline-flex items-center gap-1 rounded border border-amber-500/30 bg-amber-900/40 px-2 py-0.5 text-[11px] text-amber-200 hover:bg-amber-800"
-            >
-              <Copy className="h-3 w-3" />
-              Copy
-            </button>
-          </div>
-        )}
-        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)]">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Skill delta breakdown
-            </p>
-            <p className="mt-1 text-xs text-slate-500">
-
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)]">
           <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4 sm:p-5">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -4618,11 +3798,6 @@ function RoadmapStep({
                 return (
                   <div
                     key={row.key}
-                    className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <p className="text-sm font-medium tracking-tight text-slate-100">
-
                     className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
                   >
                     <div className="flex items-start justify-between gap-2">
@@ -4647,7 +3822,6 @@ function RoadmapStep({
                         </p>
                         <p className="text-[10px] uppercase tracking-wider text-zinc-500">
 
-
                           self / market
                         </p>
                       </div>
@@ -4663,7 +3837,6 @@ function RoadmapStep({
                     <MeterBar value={progress} className="mt-3" />
                     <p className="mt-1.5 text-[11px] text-zinc-500">
 
-
                       {progress}% of market parity on this axis
                     </p>
                   </div>
@@ -4676,7 +3849,6 @@ function RoadmapStep({
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
 
-
               Week-by-week roadmap
             </p>
             <GhostButton onClick={onRecalibrate} icon={Sliders}>
@@ -4684,7 +3856,6 @@ function RoadmapStep({
             </GhostButton>
           </div>
           <ol className="relative mt-4 space-y-3 border-l border-zinc-800/50 pl-5">
-
 
             {roadmap.map((week) => (
               <li key={week.id} className="relative">
@@ -4702,7 +3873,6 @@ function RoadmapStep({
                   />
                 </span>
                 <div className="rounded-xl border border-zinc-800/50 bg-slate-900/40 p-4 transition-colors duration-200 hover:border-slate-700">
-
 
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-2">
@@ -4723,7 +3893,6 @@ function RoadmapStep({
                     </div>
                     <span className="flex items-center gap-1.5 text-[11px] tabular-nums text-zinc-400">
 
-
                       <TrendingUp className="h-3.5 w-3.5 text-emerald-400" />
                       {week.start} → {week.target}
                     </span>
@@ -4732,7 +3901,6 @@ function RoadmapStep({
                     {week.title}
                   </p>
                   <p className="mt-1 text-xs leading-relaxed text-zinc-400">{week.objective}</p>
-
 
                   <ul className="mt-3 space-y-1.5">
                     {week.tasks.map((task) => (
@@ -4743,7 +3911,6 @@ function RoadmapStep({
                     ))}
                   </ul>
                   <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-zinc-800/50/80 pt-3">
-
 
                     <Chip icon={CircleCheckBig}>{week.outcome}</Chip>
                     {week.resources.map((resource) => (
@@ -4762,7 +3929,6 @@ function RoadmapStep({
           <Sigma className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
           <p className="text-[11px] leading-relaxed text-zinc-400">
 
-
             Finishing this plan lifts coverage from {stats.coverage}% to a projected{" "}
             {Math.min(99, Math.round(stats.coverage + stats.totalGap * 0.55))}%, worth roughly{" "}
             {((stats.totalGap * 0.55 * stats.projected) / Math.max(stats.totalGap, 1)).toFixed(1)} LPA
@@ -4777,7 +3943,6 @@ function RoadmapStep({
         continueLabel="Export my credential"
         continueIcon={BadgeCheck}
         hint="One click, standards-compliant JSON-LD."
-
 
       />
     </Panel>
@@ -4824,7 +3989,6 @@ function CredentialStep({
       title="Export a verifiable Open Badges 3.0 credential"
       description="A signed JSON-LD envelope that any 1EdTech-compatible verifier can validate. Attach it to a portfolio, a job application, or a Skill Setu profile and re-verify it later."
 
-
       icon={BadgeCheck}
       aside={
         <div className="flex flex-wrap items-center gap-2">
@@ -4839,7 +4003,6 @@ function CredentialStep({
             className={cx(
               "relative overflow-hidden rounded-2xl border p-5 transition-colors duration-500",
               sealed ? "border-emerald-500/40 bg-emerald-500/[0.05]" : "border-zinc-800/50 bg-slate-950/40",
-
 
             )}
           >
@@ -4858,14 +4021,12 @@ function CredentialStep({
               <div className="min-w-0">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
 
-
                   {sealed ? "Credential sealed" : "Credential drafted"}
                 </p>
                 <p className="mt-1.5 text-lg font-semibold tracking-tight text-slate-50">
                   {credential.name}
                 </p>
                 <p className="mt-1.5 text-xs leading-relaxed text-zinc-400">
-
 
                   {credential.description}
                 </p>
@@ -4881,7 +4042,6 @@ function CredentialStep({
               ].map((row) => (
                 <div key={row.label} className="rounded-lg border border-zinc-800/50 bg-slate-950/50 p-3">
                   <p className="text-[10px] uppercase tracking-wider text-zinc-500">{row.label}</p>
-
 
                   <p className="mt-1 truncate font-mono text-[11px] text-slate-200">{row.value}</p>
                 </div>
@@ -4909,7 +4069,6 @@ function CredentialStep({
                           state === "done"
                             ? "text-zinc-500 line-through"
 
-
                             : state === "active"
                               ? "text-cyan-300"
                               : "text-slate-600",
@@ -4929,13 +4088,6 @@ function CredentialStep({
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
                 <div>
                   <p className="text-xs font-semibold text-emerald-200">
-                    Envelope verified locally against the Career Roadmap context
-                  </p>
-                  <p className="mt-1 text-[11px] leading-relaxed text-slate-400">
-                    Secure Verification attached. The Roadmap Data is standards-compliant and can be verified
-                    by any Skill-Setu-compatible badge platform. Your roadmap is generated using
-                    live market data from SerpApi and AI analysis from Google Gemini.
-
                     Envelope verified locally against the Open Badges 3.0 context
                   </p>
                   <p className="mt-1 text-[11px] leading-relaxed text-zinc-400">
@@ -4956,14 +4108,12 @@ function CredentialStep({
               >
                 {sealed ? "Credential exported" : signing ? "Sealing credential…" : "Export Open Badges 3.0 credential"}
 
-
               </PrimaryButton>
               <GhostButton onClick={onDownload} icon={Download} disabled={signing}>
-                Download .json
+                Download .jsonld
               </GhostButton>
               <GhostButton onClick={onCopy} icon={Copy} disabled={signing}>
                 Copy JSON-LD
-
 
               </GhostButton>
               <GhostButton onClick={onRemint} icon={RefreshCw} disabled={signing}>
@@ -4975,7 +4125,6 @@ function CredentialStep({
           <div className="space-y-4">
             <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
-
 
                 Report summary
               </p>
@@ -4993,21 +4142,12 @@ function CredentialStep({
                     <dt className="text-zinc-400">{row.label}</dt>
                     <dd className="truncate font-semibold tabular-nums text-zinc-100">
 
-
                       {row.value}
                     </dd>
                   </div>
                 ))}
               </dl>
             </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Where this credential works
-              </p>
-              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
-                {[
-                  "Any Open Badges 2.0/3.0 platform that accepts Roadmap Data credentials.",
 
             <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -5032,15 +4172,6 @@ function CredentialStep({
 
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Roadmap Data preview
-            </p>
-            <span className="font-mono text-[11px] tabular-nums text-slate-500">
-              {(serialized.length / 1024).toFixed(1)} KB
-            </span>
-          </div>
-          <pre className="mt-3 max-h-[420px] overflow-auto rounded-2xl border border-slate-800 bg-black p-4 font-mono text-[11px] leading-relaxed text-cyan-200/85 shadow-[0_0_50px_-30px_rgba(34,211,238,0.7)]">
-
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               JSON-LD payload preview
             </p>
@@ -5056,7 +4187,6 @@ function CredentialStep({
 
         <div className="flex flex-col gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center sm:justify-between">
 
-
           <div className="flex flex-wrap gap-2.5">
             <GhostButton onClick={onBack} icon={ArrowLeft}>
               Back to roadmap
@@ -5067,7 +4197,6 @@ function CredentialStep({
           </div>
           <Chip icon={ShieldCheck}>
             1EdTech JSON-LD · Open Badges 3.0 · context v3p0
-
 
           </Chip>
         </div>
