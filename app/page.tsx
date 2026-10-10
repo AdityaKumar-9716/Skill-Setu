@@ -790,13 +790,13 @@ function BrandMark() {
         <span className="absolute inset-0 rounded-xl bg-cyan-400/10" />
       </div>
       <div className="leading-tight">
-        <p className="flex items-center gap-1.5 text-[15px] font-semibold tracking-tight text-slate-100">
+        <p className="flex items-center gap-1.5 text-[15px] font-semibold tracking-tight text-zinc-100">
           Skill<span className="text-cyan-400">Setu</span>
-          <span className="rounded border border-slate-700 bg-slate-800/60 px-1.5 py-px text-[9px] font-medium uppercase tracking-widest text-slate-400">
+          <span className="rounded border border-slate-700 bg-slate-800/60 px-1.5 py-px text-[9px] font-medium uppercase tracking-widest text-zinc-400">
             LMI
           </span>
         </p>
-        <p className="hidden text-[11px] text-slate-500 sm:block">Labor Market Intelligence · India</p>
+        <p className="hidden text-[11px] text-zinc-500 sm:block">Labor Market Intelligence · India</p>
       </div>
     </div>
   );
@@ -827,7 +827,7 @@ function Panel({
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      <header className="flex flex-col gap-3 border-b border-slate-800/80 px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+      <header className="flex flex-col gap-3 border-b border-zinc-800/50/80 px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
         <div className="min-w-0">
           <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-400/80">
             {Icon ? <Icon className="h-3.5 w-3.5" /> : null}
@@ -837,7 +837,7 @@ function Panel({
             {title}
           </h2>
           {description ? (
-            <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-400">{description}</p>
+            <p className="mt-1 max-w-3xl text-sm leading-relaxed text-zinc-400">{description}</p>
           ) : null}
         </div>
         {aside ? <div className="shrink-0">{aside}</div> : null}
@@ -887,10 +887,10 @@ function Field({
     <div className="space-y-1.5">
       <label
         htmlFor={id}
-        className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wider text-slate-400"
+        className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wider text-zinc-400"
       >
         <span className="flex items-center gap-1.5">
-          <Icon className="h-3.5 w-3.5 text-slate-500" />
+          <Icon className="h-3.5 w-3.5 text-zinc-500" />
           {label}
         </span>
         {trailing}
@@ -911,11 +911,11 @@ function Field({
           aria-invalid={invalid}
           aria-describedby={invalid ? `${id}-error` : hint ? `${id}-hint` : undefined}
           className={cx(
-            "w-full rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-600",
+            "w-full rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-slate-600",
             "transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
             invalid
               ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
-              : "border-slate-800 hover:border-slate-700 focus:border-cyan-400/60",
+              : "border-zinc-800/50 hover:border-slate-700 focus:border-cyan-400/60",
             endAdornment ? "pr-11" : undefined,
           )}
         />
@@ -929,7 +929,7 @@ function Field({
           {error}
         </p>
       ) : hint ? (
-        <p id={`${id}-hint`} className="text-xs text-slate-500">
+        <p id={`${id}-hint`} className="text-xs text-zinc-500">
           {hint}
         </p>
       ) : null}
@@ -963,7 +963,7 @@ function PrimaryButton({
         "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl px-5 py-2.5 text-sm font-semibold tracking-tight transition-all duration-200",
         "bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 shadow-[0_0_28px_-8px_rgba(34,211,238,0.9)]",
         "hover:shadow-[0_0_36px_-6px_rgba(34,211,238,1)] active:scale-[0.985]",
-        "disabled:cursor-not-allowed disabled:from-slate-800 disabled:to-slate-800 disabled:text-slate-500 disabled:shadow-none",
+        "disabled:cursor-not-allowed disabled:from-slate-800 disabled:to-slate-800 disabled:text-zinc-500 disabled:shadow-none",
         full ? "w-full" : undefined,
         className,
       )}
@@ -997,9 +997,9 @@ function GhostButton({
       disabled={disabled}
       title={title}
       className={cx(
-        "inline-flex items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-2.5 text-sm font-medium text-slate-300",
+        "inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-800/50 bg-slate-900/60 px-4 py-2.5 text-sm font-medium text-slate-300",
         "transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-800/60 hover:text-cyan-300",
-        "disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-slate-800 disabled:hover:text-slate-300",
+        "disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-zinc-800/50 disabled:hover:text-slate-300",
         className,
       )}
     >
@@ -1030,17 +1030,17 @@ function StatTile({
     rose: "border-rose-500/25 bg-rose-500/10 text-rose-300",
   };
   return (
-    <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
+    <div className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
       <div className="flex items-center gap-2">
         <span className={cx("flex h-7 w-7 items-center justify-center rounded-lg border", tones[accent])}>
           <Icon className="h-3.5 w-3.5" />
         </span>
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
           {label}
         </p>
       </div>
       <p className="mt-2.5 text-2xl font-semibold tracking-tight text-slate-50">{value}</p>
-      <p className="mt-0.5 text-[11px] text-slate-500">{sub}</p>
+      <p className="mt-0.5 text-[11px] text-zinc-500">{sub}</p>
     </div>
   );
 }
@@ -1065,7 +1065,7 @@ function SegmentedControl<T extends string>({
     <div
       role="tablist"
       aria-label={ariaLabel}
-      className="relative inline-flex w-full rounded-xl border border-slate-800 bg-slate-950/60 p-1"
+      className="relative inline-flex w-full rounded-xl border border-zinc-800/50 bg-slate-950/60 p-1"
     >
       <span
         aria-hidden
@@ -1084,7 +1084,7 @@ function SegmentedControl<T extends string>({
           onClick={() => onChange(option.value)}
           className={cx(
             "relative z-10 flex-1 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200",
-            value === option.value ? "text-cyan-200" : "text-slate-400 hover:text-slate-200",
+            value === option.value ? "text-cyan-200" : "text-zinc-400 hover:text-slate-200",
           )}
         >
           {option.label}
@@ -1109,7 +1109,7 @@ function Chip({
     "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs transition-all duration-200",
     active
       ? "border-cyan-400/50 bg-cyan-400/10 text-cyan-200"
-      : "border-slate-800 bg-slate-950/50 text-slate-400 hover:border-slate-700 hover:text-slate-200",
+      : "border-zinc-800/50 bg-slate-950/50 text-zinc-400 hover:border-slate-700 hover:text-slate-200",
   );
   if (!onClick) {
     return (
@@ -1169,7 +1169,7 @@ function StepFooter({
   hint?: string;
 }) {
   return (
-    <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center">
+    <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
       <div className="flex flex-wrap items-center gap-3">
         {onBack ? (
           <GhostButton onClick={onBack} icon={ArrowLeft}>
@@ -1177,7 +1177,7 @@ function StepFooter({
           </GhostButton>
         ) : null}
         {hint ? (
-          <p className="flex items-center gap-1.5 text-[11px] text-slate-500">
+          <p className="flex items-center gap-1.5 text-[11px] text-zinc-500">
             <Info className="h-3.5 w-3.5 shrink-0" />
             {hint}
           </p>
@@ -1221,7 +1221,7 @@ function StepRail({
                   "group flex w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition-all duration-300",
                   item.id === step
                     ? "border-cyan-400/40 bg-slate-900/70 shadow-[0_0_30px_-12px_rgba(34,211,238,0.8)]"
-                    : "border-transparent hover:border-slate-800 hover:bg-slate-900/40",
+                    : "border-transparent hover:border-zinc-800/50 hover:bg-slate-900/40",
                   !reachable ? "cursor-not-allowed opacity-40" : undefined,
                 )}
               >
@@ -1232,7 +1232,7 @@ function StepRail({
                       ? "border-cyan-400/50 bg-cyan-400/10 text-cyan-300"
                       : state === "done"
                         ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
-                        : "border-slate-800 bg-slate-900/60 text-slate-500",
+                        : "border-zinc-800/50 bg-slate-900/60 text-zinc-500",
                   )}
                 >
                   {state === "done" ? <Check className="h-4 w-4" /> : <Icon className="h-4 w-4" />}
@@ -1246,7 +1246,7 @@ function StepRail({
                   >
                     {item.label}
                   </span>
-                  <span className="block truncate text-[11px] text-slate-500">{item.hint}</span>
+                  <span className="block truncate text-[11px] text-zinc-500">{item.hint}</span>
                 </span>
                 <span className="text-[11px] font-semibold tabular-nums text-slate-600 lg:hidden">
                   {item.id}
@@ -1256,8 +1256,8 @@ function StepRail({
           );
         })}
       </ol>
-      <div className="mt-5 hidden rounded-xl border border-slate-800 bg-slate-900/40 p-4 lg:block">
-        <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+      <div className="mt-5 hidden rounded-xl border border-zinc-800/50 bg-slate-900/40 p-4 lg:block">
+        <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
           <span>Journey</span>
           <span className="tabular-nums text-cyan-400">{completed}/8</span>
         </div>
@@ -1267,7 +1267,7 @@ function StepRail({
             style={{ width: `${(completed / 8) * 100}%` }}
           />
         </div>
-        <p className="mt-2.5 text-[11px] leading-relaxed text-slate-500">
+        <p className="mt-2.5 text-[11px] leading-relaxed text-zinc-500">
           Everything stays in this browser tab until you export a verifiable credential.
         </p>
       </div>
@@ -1290,20 +1290,20 @@ function SkillSlider({
   const delta = market - value;
   const tone = delta >= 25 ? "#f43f5e" : delta >= 12 ? "#f59e0b" : delta > 0 ? "#38bdf8" : "#10b981";
   return (
-    <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
+    <div className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-start gap-2.5">
           <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 text-cyan-300">
             <Icon className="h-3.5 w-3.5" />
           </span>
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium tracking-tight text-slate-100">{axis.label}</p>
-            <p className="mt-0.5 text-[11px] leading-relaxed text-slate-500">{axis.blurb}</p>
+            <p className="truncate text-sm font-medium tracking-tight text-zinc-100">{axis.label}</p>
+            <p className="mt-0.5 text-[11px] leading-relaxed text-zinc-500">{axis.blurb}</p>
           </div>
         </div>
         <div className="shrink-0 text-right">
           <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-50">{value}</p>
-          <p className="text-[10px] uppercase tracking-wider text-slate-500">self</p>
+          <p className="text-[10px] uppercase tracking-wider text-zinc-500">self</p>
         </div>
       </div>
       <div className="relative mt-4">
@@ -1335,7 +1335,7 @@ function SkillSlider({
         </span>
         <span className="text-slate-600">100</span>
       </div>
-      <div className="mt-2.5 flex items-center justify-between gap-2 border-t border-slate-800/80 pt-2.5">
+      <div className="mt-2.5 flex items-center justify-between gap-2 border-t border-zinc-800/50/80 pt-2.5">
         <span
           className={cx(
             "rounded border px-1.5 py-0.5 text-[10px] font-medium",
@@ -1377,7 +1377,7 @@ function Toast({ message, onDismiss }: { message: string | null; onDismiss: () =
         type="button"
         onClick={onDismiss}
         aria-label="Dismiss notification"
-        className="rounded p-0.5 text-slate-500 transition-colors hover:text-slate-200"
+        className="rounded p-0.5 text-zinc-500 transition-colors hover:text-slate-200"
       >
         <X className="h-3.5 w-3.5" />
       </button>
@@ -1858,31 +1858,31 @@ export default function SkillSetuPage() {
     <div className="relative flex min-h-screen flex-col">
       <AmbientBackground />
 
-      <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/75 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-zinc-800/50/80 bg-slate-950/75 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <BrandMark />
           <div className="flex items-center gap-2 sm:gap-2.5">
-            <div className="hidden items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 md:flex">
+            <div className="hidden items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-900/60 px-3 py-1.5 md:flex">
               <LiveDot />
               <span className="text-[11px] font-medium tracking-tight text-slate-300">SerpApi feed live</span>
-              <span className="text-[11px] tabular-nums text-slate-500">
+              <span className="text-[11px] tabular-nums text-zinc-500">
                 {stats.openings} postings
               </span>
             </div>
-            <div className="hidden items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 lg:flex">
+            <div className="hidden items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-900/60 px-3 py-1.5 lg:flex">
               <MapPin className="h-3.5 w-3.5 text-cyan-400" />
               <span className="text-[11px] font-medium tracking-tight text-slate-300">
                 {zone ? `${zone.city}, ${zone.region}` : "Location unset"}
               </span>
               {pin ? (
-                <span className="font-mono text-[11px] tabular-nums text-slate-500">{pin}</span>
+                <span className="font-mono text-[11px] tabular-nums text-zinc-500">{pin}</span>
               ) : null}
             </div>
             <button
               type="button"
               onClick={restart}
               title="Restart the journey"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800/50 bg-slate-900/60 text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
             >
               <RefreshCw className="h-4 w-4" />
               <span className="sr-only">Restart journey</span>
@@ -2047,8 +2047,8 @@ export default function SkillSetuPage() {
         </main>
       )}
 
-      <footer className="border-t border-slate-800/80 bg-slate-950/60">
-        <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+      <footer className="border-t border-zinc-800/50/80 bg-slate-950/60">
+        <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-zinc-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <p>
             Skill Setu · SerpApi India Hackathon 2026 · Deterministic demo engine — no live network
             calls are made from the browser.
@@ -2099,7 +2099,7 @@ function AuthStep({
       icon={Fingerprint}
       className="self-start"
       aside={
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
           <LiveDot />
           {mode === "signup" ? "Takes 40 seconds" : "Session restored"}
         </span>
@@ -2178,7 +2178,7 @@ function AuthStep({
             maxLength={10}
             hint="10-digit Indian mobile, used for OTP verification only."
             trailing={
-              <span className="text-[11px] text-slate-500">+91</span>
+              <span className="text-[11px] text-zinc-500">+91</span>
             }
           />
         )}
@@ -2199,16 +2199,16 @@ function AuthStep({
               type="button"
               onClick={() => setShowPassword((prev) => !prev)}
               aria-label={showPassword ? "Hide password" : "Show password"}
-              className="rounded-md p-1.5 text-slate-500 transition-colors hover:text-cyan-300"
+              className="rounded-md p-1.5 text-zinc-500 transition-colors hover:text-cyan-300"
             >
               {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
             </button>
           }
         />
 
-        <div className="flex items-start gap-2.5 rounded-xl border border-slate-800 bg-slate-950/40 p-3">
+        <div className="flex items-start gap-2.5 rounded-xl border border-zinc-800/50 bg-slate-950/40 p-3">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
-          <p className="text-[11px] leading-relaxed text-slate-400">
+          <p className="text-[11px] leading-relaxed text-zinc-400">
             Demo build: nothing is transmitted. Your calibration lives in this browser tab and is
             encoded into the credential you export.
           </p>
@@ -2225,7 +2225,7 @@ function AuthStep({
 function IntroPanel() {
   return (
     <div className="space-y-6">
-      <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur-md sm:p-8">
+      <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/50 p-6 backdrop-blur-md sm:p-8">
         <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
         <div className="relative">
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-[11px] font-medium tracking-tight text-cyan-300">
@@ -2238,7 +2238,7 @@ function IntroPanel() {
               before you spend another weekend learning the wrong thing.
             </span>
           </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
             Skill Setu turns live job postings into a PIN-code precise competency gap report, a
             sequenced 10-week roadmap, and a verifiable Open Badges 3.0 credential you can attach to
             any profile.
@@ -2258,41 +2258,41 @@ function IntroPanel() {
           return (
             <div
               key={pillar.label}
-              className="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/30"
+              className="group rounded-2xl border border-zinc-800/50 bg-zinc-900/50 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/30"
             >
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 bg-slate-950/60 text-cyan-300 transition-colors duration-300 group-hover:border-cyan-400/40">
                 <Icon className="h-5 w-5" />
               </span>
-              <p className="mt-3.5 text-sm font-medium tracking-tight text-slate-100">
+              <p className="mt-3.5 text-sm font-medium tracking-tight text-zinc-100">
                 {pillar.label}
               </p>
-              <p className="mt-1 text-xs leading-relaxed text-slate-500">{pillar.meta}</p>
+              <p className="mt-1 text-xs leading-relaxed text-zinc-500">{pillar.meta}</p>
             </div>
           );
         })}
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40">
-        <div className="flex items-center gap-2 border-b border-slate-800/80 px-5 py-3">
+      <div className="overflow-hidden rounded-2xl border border-zinc-800/50 bg-slate-900/40">
+        <div className="flex items-center gap-2 border-b border-zinc-800/50/80 px-5 py-3">
           <Activity className="h-3.5 w-3.5 text-cyan-400" />
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-zinc-500">
             SerpApi query stream
           </p>
         </div>
         <div className="relative h-9 overflow-hidden">
           <div className="ss-marquee flex w-max items-center gap-8 whitespace-nowrap px-4">
             {[...TICKER, ...TICKER].map((item, index) => (
-              <span key={`${item}-${index}`} className="font-mono text-[11px] text-slate-500">
+              <span key={`${item}-${index}`} className="font-mono text-[11px] text-zinc-500">
                 <span className="text-cyan-400/80">&gt;</span> {item}
               </span>
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 border-t border-slate-800/80 px-5 py-4 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 border-t border-zinc-800/50/80 px-5 py-4 sm:grid-cols-4">
           {NATIONAL_PULSE.map((item) => (
             <div key={item.label}>
               <p className="text-xl font-semibold tracking-tight text-slate-50">{item.value}</p>
-              <p className="mt-0.5 text-[11px] text-slate-500">{item.label}</p>
+              <p className="mt-0.5 text-[11px] text-zinc-500">{item.label}</p>
             </div>
           ))}
         </div>
@@ -2436,7 +2436,7 @@ function CalibrationAssessmentStep({
       description="Rate your confidence in each core skill from 0–100. This sets your baseline for the gap analysis."
       icon={Sliders}
       aside={
-        <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
           <Activity className="h-3.5 w-3.5 text-cyan-400" />
           8 skills · 0–100 scale
         </div>
@@ -2446,7 +2446,7 @@ function CalibrationAssessmentStep({
         {SKILL_AXES.map((axis) => (
           <div
             key={axis.key}
-            className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
+            className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
           >
             <div className="flex items-start justify-between gap-3">
               <div className="flex min-w-0 items-start gap-2.5">
@@ -2454,10 +2454,10 @@ function CalibrationAssessmentStep({
                   <axis.icon className="h-3.5 w-3.5" />
                 </span>
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-medium tracking-tight text-slate-100">
+                  <p className="truncate text-sm font-medium tracking-tight text-zinc-100">
                     {axis.label}
                   </p>
-                  <p className="mt-0.5 text-[11px] leading-relaxed text-slate-500">
+                  <p className="mt-0.5 text-[11px] leading-relaxed text-zinc-500">
                     {axis.blurb}
                   </p>
                 </div>
@@ -2466,7 +2466,7 @@ function CalibrationAssessmentStep({
                 <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-50">
                   {scores[axis.key]}
                 </p>
-                <p className="text-[10px] uppercase tracking-wider text-slate-500">self</p>
+                <p className="text-[10px] uppercase tracking-wider text-zinc-500">self</p>
               </div>
             </div>
             <input
@@ -2538,7 +2538,7 @@ function LocationStep({
       description="Demand is not national — Bengaluru and Ranchi do not price the same skills. We resolve your 6-digit PIN to a zone, then weight every demand score by local posting density and cost of living."
       icon={MapPin}
       aside={
-        <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
           <LiveDot />
           16 zones resolved · 2,400+ prefixes
         </div>
@@ -2573,10 +2573,10 @@ function LocationStep({
                       className="flex w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left text-sm text-slate-300 transition-colors hover:bg-slate-800/70 hover:text-cyan-200"
                     >
                       <span className="flex items-center gap-2">
-                        <MapPin className="h-3.5 w-3.5 text-slate-500" />
+                        <MapPin className="h-3.5 w-3.5 text-zinc-500" />
                         {item.city}, {item.region}
                       </span>
-                      <span className="font-mono text-[11px] tabular-nums text-slate-500">
+                      <span className="font-mono text-[11px] tabular-nums text-zinc-500">
                         {item.pin}
                       </span>
                     </button>
@@ -2620,7 +2620,7 @@ function LocationStep({
           </div>
 
           <div className="space-y-2.5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               Popular tier-1 zones
             </p>
             <div className="flex flex-wrap gap-2">
@@ -2638,7 +2638,7 @@ function LocationStep({
           <div
             className={cx(
               "relative overflow-hidden rounded-2xl border p-5 transition-colors duration-300",
-              zone ? "border-cyan-400/30 bg-cyan-400/[0.04]" : "border-slate-800 bg-slate-950/40",
+              zone ? "border-cyan-400/30 bg-cyan-400/[0.04]" : "border-zinc-800/50 bg-slate-950/40",
             )}
           >
             {zone ? (
@@ -2648,19 +2648,19 @@ function LocationStep({
                   Zone resolved
                 </div>
                 <p className="mt-3 text-xl font-semibold tracking-tight text-slate-50">{zone.city}</p>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-zinc-400">
                   {zone.region} · Tier {zone.tier}
                 </p>
                 <div className="mt-4 space-y-3">
                   <div>
-                    <div className="flex justify-between text-[11px] text-slate-400">
+                    <div className="flex justify-between text-[11px] text-zinc-400">
                       <span>Posting density</span>
                       <span className="tabular-nums text-cyan-300">{zone.density}x</span>
                     </div>
                     <MeterBar value={(zone.density / 5) * 100} className="mt-1.5" />
                   </div>
                   <div>
-                    <div className="flex justify-between text-[11px] text-slate-400">
+                    <div className="flex justify-between text-[11px] text-zinc-400">
                       <span>Cost-of-living index</span>
                       <span className="tabular-nums text-blue-300">{zone.salary.toFixed(2)}x</span>
                     </div>
@@ -2679,7 +2679,7 @@ function LocationStep({
             ) : (
               <div className="flex min-h-[200px] flex-col items-center justify-center text-center">
                 <Locate className="h-7 w-7 text-slate-700" />
-                <p className="mt-3 text-sm text-slate-400">No zone resolved yet</p>
+                <p className="mt-3 text-sm text-zinc-400">No zone resolved yet</p>
                 <p className="mt-1 max-w-[24ch] text-[11px] leading-relaxed text-slate-600">
                   Enter a valid 6-digit PIN to unlock local demand weighting and compensation
                   normalisation.
@@ -2688,11 +2688,11 @@ function LocationStep({
             )}
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               Why this matters
             </p>
-            <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
+            <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-zinc-400">
               {[
                 "SerpApi google_jobs takes a location string — we send the resolved city name.",
                 "PIN prefixes map to distinct wage bands, so salary outlook is normalised per zone.",
@@ -2773,7 +2773,7 @@ function CareerStep({
                   "group relative overflow-hidden rounded-xl border p-4 text-left transition-all duration-300",
                   isActive
                     ? "border-cyan-400/50 bg-cyan-400/[0.06] shadow-[0_0_32px_-16px_rgba(34,211,238,0.9)]"
-                    : "border-slate-800 bg-slate-950/40 hover:-translate-y-0.5 hover:border-slate-700",
+                    : "border-zinc-800/50 bg-slate-950/40 hover:-translate-y-0.5 hover:border-slate-700",
                 )}
               >
                 {isActive ? (
@@ -2781,17 +2781,17 @@ function CareerStep({
                     <CheckCircle2 className="h-4 w-4 text-cyan-400" />
                   </span>
                 ) : null}
-                <p className="pr-6 text-sm font-semibold tracking-tight text-slate-100">
+                <p className="pr-6 text-sm font-semibold tracking-tight text-zinc-100">
                   {preset.role}
                 </p>
                 <p className="mt-0.5 text-[11px] text-cyan-400/80">{preset.domain}</p>
-                <p className="mt-2.5 text-[11px] leading-relaxed text-slate-500">{preset.blurb}</p>
-                <div className="mt-3 flex items-center gap-3 border-t border-slate-800/80 pt-2.5 text-[11px]">
-                  <span className="flex items-center gap-1 text-slate-400">
+                <p className="mt-2.5 text-[11px] leading-relaxed text-zinc-500">{preset.blurb}</p>
+                <div className="mt-3 flex items-center gap-3 border-t border-zinc-800/50/80 pt-2.5 text-[11px]">
+                  <span className="flex items-center gap-1 text-zinc-400">
                     <Rocket className="h-3 w-3" />
                     {inrCompact(preset.openings)}
                   </span>
-                  <span className="flex items-center gap-1 text-slate-400">
+                  <span className="flex items-center gap-1 text-zinc-400">
                     <TrendingUp className="h-3 w-3" />
                     {preset.spread}
                   </span>
@@ -2824,9 +2824,9 @@ function CareerStep({
             <div className="space-y-1.5">
               <label
                 htmlFor="ss-domain"
-                className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-slate-400"
+                className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-zinc-400"
               >
-                <Compass className="h-3.5 w-3.5 text-slate-500" />
+                <Compass className="h-3.5 w-3.5 text-zinc-500" />
                 Industry domain
               </label>
               <div className="relative">
@@ -2836,10 +2836,10 @@ function CareerStep({
                   onChange={(event) => onDomain(event.target.value)}
                   aria-invalid={Boolean(attempted && errors.domain)}
                   className={cx(
-                    "w-full appearance-none rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-100 transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
+                    "w-full appearance-none rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-zinc-100 transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
                     attempted && errors.domain
                       ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
-                      : "border-slate-800 hover:border-slate-700 focus:border-cyan-400/60",
+                      : "border-zinc-800/50 hover:border-slate-700 focus:border-cyan-400/60",
                   )}
                 >
                   <option value="">Select a domain…</option>
@@ -2849,7 +2849,7 @@ function CareerStep({
                     </option>
                   ))}
                 </select>
-                <ChevronRight className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 rotate-90 text-slate-500" />
+                <ChevronRight className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 rotate-90 text-zinc-500" />
               </div>
               {attempted && errors.domain ? (
                 <p className="flex items-center gap-1.5 text-xs text-rose-400">
@@ -2860,11 +2860,11 @@ function CareerStep({
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
             {signal ? (
               <>
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                     Live role signal
                   </p>
                   <Chip icon={Activity}>30d window</Chip>
@@ -2872,29 +2872,29 @@ function CareerStep({
                 <p className="mt-3 text-lg font-semibold tracking-tight text-slate-50">
                   {signal.role}
                 </p>
-                <p className="mt-0.5 text-xs text-slate-400">{signal.blurb}</p>
+                <p className="mt-0.5 text-xs text-zinc-400">{signal.blurb}</p>
                 <div className="mt-4 grid grid-cols-3 gap-3">
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-cyan-300">
                       {inrCompact(signal.openings)}
                     </p>
-                    <p className="text-[10px] uppercase tracking-wider text-slate-500">postings</p>
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">postings</p>
                   </div>
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-blue-300">
                       {signal.median.toFixed(1)}
                     </p>
-                    <p className="text-[10px] uppercase tracking-wider text-slate-500">median LPA</p>
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">median LPA</p>
                   </div>
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-200">
                       17
                     </p>
-                    <p className="text-[10px] uppercase tracking-wider text-slate-500">clusters</p>
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">clusters</p>
                   </div>
                 </div>
-                <div className="mt-4 space-y-2 border-t border-slate-800/80 pt-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                <div className="mt-4 space-y-2 border-t border-zinc-800/50/80 pt-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                     Demand modifiers applied
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -2916,7 +2916,7 @@ function CareerStep({
             ) : (
               <div className="flex min-h-[220px] flex-col items-center justify-center text-center">
                 <Target className="h-7 w-7 text-slate-700" />
-                <p className="mt-3 text-sm text-slate-400">No role signal yet</p>
+                <p className="mt-3 text-sm text-zinc-400">No role signal yet</p>
                 <p className="mt-1 max-w-[30ch] text-[11px] leading-relaxed text-slate-600">
                   Choose a preset above or type your target role. The demand model will weight every
                   competency axis for it.
@@ -2976,7 +2976,7 @@ function SkillsStep({
       description="Drag each axis to where you would be comfortable in a real interview today. Inflate this and the roadmap will lie to you — the market tick marks show what your local employers actually ask for."
       icon={Sliders}
       aside={
-        <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
           <Gauge className="h-3.5 w-3.5 text-cyan-400" />
           <span className="tabular-nums text-cyan-300">{stats.coverage}%</span> market coverage
         </div>
@@ -2984,12 +2984,12 @@ function SkillsStep({
     >
       <div className="space-y-6">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,300px)]">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 Calibration profile
               </p>
-              <span className="text-[11px] text-slate-500">
+              <span className="text-[11px] text-zinc-500">
                 self average{" "}
                 <span className="font-semibold tabular-nums text-slate-200">{stats.avgYou}</span> ·
                 market average{" "}
@@ -3016,7 +3016,7 @@ function SkillsStep({
               </Chip>
               {calibrationId === "custom" ? <Chip active icon={Sigma}>Custom</Chip> : null}
             </div>
-            <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+            <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
               {CALIBRATION_PRESETS.find((preset) => preset.id === calibrationId)?.note ??
                 "Your own numbers, or a market-informed starting point you can edit."}
             </p>
@@ -3027,9 +3027,9 @@ function SkillsStep({
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
             <div className="flex items-center justify-between gap-3">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 Live coverage
               </p>
               <span className="text-xl font-semibold tabular-nums tracking-tight text-cyan-300">
@@ -3044,12 +3044,12 @@ function SkillsStep({
                 { label: "Points to close", value: `${stats.totalGap}`, tone: "cyan" as const },
               ].map((row) => (
                 <div key={row.label} className="flex items-center justify-between text-[11px]">
-                  <span className="text-slate-400">{row.label}</span>
+                  <span className="text-zinc-400">{row.label}</span>
                   <span className="font-semibold tabular-nums text-slate-200">{row.value}</span>
                 </div>
               ))}
             </div>
-            <p className="mt-4 border-t border-slate-800/80 pt-3 text-[11px] leading-relaxed text-slate-500">
+            <p className="mt-4 border-t border-zinc-800/50/80 pt-3 text-[11px] leading-relaxed text-zinc-500">
               Coverage is demand-weighted: closing a gap in a high-demand axis moves the number far
               more than closing an axis nobody is hiring for.
             </p>
@@ -3108,34 +3108,34 @@ function TerminalStep({
       description="Watch the pipeline work. Every step below maps to a real stage of the production orchestrator, wired end to end to SerpApi google_jobs and google_jobs_extensions."
       icon={Terminal}
       aside={
-        <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
           <LiveDot />
           {done ? "pipeline complete" : "pipeline running"}
         </div>
       }
     >
       <div className="space-y-5">
-        <div className="overflow-hidden rounded-2xl border border-slate-800 bg-black p-4 shadow-[0_0_60px_-30px_rgba(34,211,238,0.7)]">
-          <div className="mb-3 flex items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
+        <div className="overflow-hidden rounded-2xl border border-zinc-800/50 bg-black p-4 shadow-[0_0_60px_-30px_rgba(34,211,238,0.7)]">
+          <div className="mb-3 flex items-center justify-between gap-3 border-b border-zinc-800/50/80 pb-3">
             <div className="flex items-center gap-2">
               <span className="flex gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-500/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-500/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
               </span>
-              <span className="font-mono text-[11px] text-slate-500">
+              <span className="font-mono text-[11px] text-zinc-500">
                 skillsetu-engine · zsh · serpapi-lmi
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="font-mono text-[11px] tabular-nums text-slate-500">
+              <span className="font-mono text-[11px] tabular-nums text-zinc-500">
                 {elapsed.toFixed(1)}s
               </span>
               <button
                 type="button"
                 onClick={onCopy}
                 disabled={logs.length === 0}
-                className="inline-flex items-center gap-1.5 rounded-md border border-slate-800 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-slate-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300 disabled:opacity-40"
+                className="inline-flex items-center gap-1.5 rounded-md border border-zinc-800/50 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300 disabled:opacity-40"
               >
                 <Copy className="h-3 w-3" />
                 copy
@@ -3159,7 +3159,7 @@ function TerminalStep({
                   key={line.id}
                   className={cx(
                     "flex gap-2",
-                    line.level === "cmd" ? "text-cyan-300" : "text-slate-500",
+                    line.level === "cmd" ? "text-cyan-300" : "text-zinc-500",
                     line.level === "ok" ? "text-emerald-400/90" : undefined,
                     line.level === "warn" ? "text-amber-300" : undefined,
                   )}
@@ -3172,7 +3172,7 @@ function TerminalStep({
               ))
             )}
             {!done ? (
-              <p className="flex gap-2 text-slate-500">
+              <p className="flex gap-2 text-zinc-500">
                 <span className="select-none text-cyan-400/70">$</span>
                 <span className="ss-caret inline-block h-3.5 w-2 translate-y-0.5 bg-cyan-400" />
               </p>
@@ -3187,7 +3187,7 @@ function TerminalStep({
             )}
           </div>
 
-          <div className="mt-3 flex items-center gap-3 border-t border-slate-800/80 pt-3">
+          <div className="mt-3 flex items-center gap-3 border-t border-zinc-800/50/80 pt-3">
             <MeterBar value={progress} className="flex-1" />
             <span className="font-mono text-[11px] tabular-nums text-cyan-400">
               {progress}% · {logs.length}/{total} stages
@@ -3206,20 +3206,20 @@ function TerminalStep({
             return (
               <div
                 key={card.label}
-                className="rounded-xl border border-slate-800 bg-slate-950/40 p-3.5"
+                className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-3.5"
               >
                 <Icon className="h-4 w-4 text-cyan-400" />
                 <p className="mt-2 text-lg font-semibold tabular-nums tracking-tight text-slate-50">
                   {card.value}
                 </p>
-                <p className="text-[10px] uppercase tracking-wider text-slate-500">{card.label}</p>
+                <p className="text-[10px] uppercase tracking-wider text-zinc-500">{card.label}</p>
               </div>
             );
           })}
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="flex items-center gap-2 text-[11px] text-slate-500">
+          <p className="flex items-center gap-2 text-[11px] text-zinc-500">
             <Info className="h-3.5 w-3.5 shrink-0" />
             Deterministic local simulation — a production build swaps this script for live SerpApi
             responses and streamed NDJSON.
@@ -3230,11 +3230,11 @@ function TerminalStep({
         </div>
       </div>
 
-      <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center">
+      <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
         <GhostButton onClick={onBack} icon={ArrowLeft}>
           Back
         </GhostButton>
-        <p className="flex items-center gap-1.5 text-[11px] text-slate-500">
+        <p className="flex items-center gap-1.5 text-[11px] text-zinc-500">
           <Info className="h-3.5 w-3.5 shrink-0" />
           The engine advances you to the radar automatically when every stage finishes.
         </p>
@@ -3255,7 +3255,7 @@ function RadarTip({ active, payload }: { active?: boolean; payload?: TipEntry[] 
   const axis = String(payload[0]?.payload?.axis ?? "");
   return (
     <div className="rounded-xl border border-slate-700 bg-slate-950/95 px-3.5 py-2.5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-md">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{axis}</p>
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">{axis}</p>
       <div className="mt-2 space-y-1.5">
         {payload.map((entry) => (
           <div key={String(entry.dataKey)} className="flex items-center gap-2 text-xs">
@@ -3263,8 +3263,8 @@ function RadarTip({ active, payload }: { active?: boolean; payload?: TipEntry[] 
               className="h-2 w-2 shrink-0 rounded-full"
               style={{ backgroundColor: entry.dataKey === "you" ? "#22d3ee" : "#60a5fa" }}
             />
-            <span className="flex-1 text-slate-400">{entry.name}</span>
-            <span className="font-semibold tabular-nums text-slate-100">{entry.value}</span>
+            <span className="flex-1 text-zinc-400">{entry.name}</span>
+            <span className="font-semibold tabular-nums text-zinc-100">{entry.value}</span>
           </div>
         ))}
       </div>
@@ -3285,14 +3285,14 @@ function GapTip({
   const row = payload[0]?.payload;
   return (
     <div className="rounded-xl border border-slate-700 bg-slate-950/95 px-3.5 py-2.5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-md">
-      <p className="text-xs font-semibold text-slate-100">{label}</p>
-      <p className="mt-1 text-[11px] text-slate-400">
+      <p className="text-xs font-semibold text-zinc-100">{label}</p>
+      <p className="mt-1 text-[11px] text-zinc-400">
         Gap{" "}
         <span className="font-semibold tabular-nums text-cyan-300">{row?.gap ?? 0}</span> points to
         close
       </p>
       {row?.priority ? (
-        <p className="mt-0.5 text-[11px] text-slate-500">Priority: {row.priority}</p>
+        <p className="mt-0.5 text-[11px] text-zinc-500">Priority: {row.priority}</p>
       ) : null}
     </div>
   );
@@ -3370,20 +3370,20 @@ function RadarStep({
         </div>
 
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-5">
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4 sm:p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                   Competency radar · 8 axes
                 </p>
-                <p className="mt-1 text-xs text-slate-500">Hover any vertex to read exact scores.</p>
+                <p className="mt-1 text-xs text-zinc-500">Hover any vertex to read exact scores.</p>
               </div>
               <div className="flex items-center gap-4">
-                <span className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                <span className="flex items-center gap-1.5 text-[11px] text-zinc-400">
                   <span className="h-2.5 w-2.5 rounded-sm bg-cyan-400/80" />
                   Your baseline
                 </span>
-                <span className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                <span className="flex items-center gap-1.5 text-[11px] text-zinc-400">
                   <span className="h-2.5 w-2.5 rounded-sm bg-blue-400/80" />
                   Market demand
                 </span>
@@ -3434,8 +3434,8 @@ function RadarStep({
           </div>
 
           <div className="space-y-4">
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 Where the gap hurts most
               </p>
               <ul className="mt-4 space-y-3.5">
@@ -3447,7 +3447,7 @@ function RadarStep({
                         {row.axisFull}
                       </span>
                       <span className="flex items-center gap-2">
-                        <span className="tabular-nums text-slate-400">
+                        <span className="tabular-nums text-zinc-400">
                           {row.you} → {row.market}
                         </span>
                         <span
@@ -3470,8 +3470,8 @@ function RadarStep({
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 Already market-ready
               </p>
               {strengths.length > 0 ? (
@@ -3479,23 +3479,23 @@ function RadarStep({
                   {strengths.map((row) => (
                     <Chip key={row.key} icon={CheckCircle2}>
                       {row.axisFull}{" "}
-                      <span className="font-mono tabular-nums text-slate-500">+{Math.abs(row.gap)}</span>
+                      <span className="font-mono tabular-nums text-zinc-500">+{Math.abs(row.gap)}</span>
                     </Chip>
                   ))}
                 </div>
               ) : (
-                <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+                <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
                   No axis is fully at parity yet. Closing the top two gaps will move you there within
                   four weeks.
                 </p>
               )}
             </div>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 How to read this
               </p>
-              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
+              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-zinc-400">
                 {[
                   "Cyan outside blue means employers are already paying for that skill in you.",
                   "Blue outside cyan is a demand gap — a concrete, priced opportunity.",
@@ -3512,7 +3512,7 @@ function RadarStep({
         </div>
       </div>
 
-      <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center">
+      <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
         <div className="flex flex-wrap items-center gap-3">
           <GhostButton onClick={onBack} icon={ArrowLeft}>
             Back
@@ -3525,7 +3525,7 @@ function RadarStep({
           <PrimaryButton onClick={onContinue} icon={GraduationCap}>
             Build my roadmap
           </PrimaryButton>
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[11px] text-zinc-500">
             {stats.totalGap} total points to close across 8 axes.
           </p>
         </div>
@@ -3572,11 +3572,11 @@ function RoadmapStep({
     >
       <div className="space-y-6">
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)]">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4 sm:p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               Skill delta breakdown
             </p>
-            <p className="mt-1 text-xs text-slate-500">
+            <p className="mt-1 text-xs text-zinc-500">
               Bars left of zero are surpluses, right of zero are gaps to close.
             </p>
             <div className="mt-2 h-[260px] w-full">
@@ -3632,10 +3632,10 @@ function RoadmapStep({
                 return (
                   <div
                     key={row.key}
-                    className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
+                    className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
                   >
                     <div className="flex items-start justify-between gap-2">
-                      <p className="text-sm font-medium tracking-tight text-slate-100">
+                      <p className="text-sm font-medium tracking-tight text-zinc-100">
                         {row.axisFull}
                       </p>
                       <span
@@ -3651,9 +3651,9 @@ function RoadmapStep({
                       <div>
                         <p className="text-2xl font-semibold tabular-nums tracking-tight text-slate-50">
                           {row.you}
-                          <span className="text-sm text-slate-500"> / {row.market}</span>
+                          <span className="text-sm text-zinc-500"> / {row.market}</span>
                         </p>
-                        <p className="text-[10px] uppercase tracking-wider text-slate-500">
+                        <p className="text-[10px] uppercase tracking-wider text-zinc-500">
                           self / market
                         </p>
                       </div>
@@ -3667,7 +3667,7 @@ function RoadmapStep({
                       </p>
                     </div>
                     <MeterBar value={progress} className="mt-3" />
-                    <p className="mt-1.5 text-[11px] text-slate-500">
+                    <p className="mt-1.5 text-[11px] text-zinc-500">
                       {progress}% of market parity on this axis
                     </p>
                   </div>
@@ -3678,14 +3678,14 @@ function RoadmapStep({
 
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               Week-by-week roadmap
             </p>
             <GhostButton onClick={onRecalibrate} icon={Sliders}>
               Recalibrate
             </GhostButton>
           </div>
-          <ol className="relative mt-4 space-y-3 border-l border-slate-800 pl-5">
+          <ol className="relative mt-4 space-y-3 border-l border-zinc-800/50 pl-5">
             {roadmap.map((week) => (
               <li key={week.id} className="relative">
                 <span
@@ -3701,7 +3701,7 @@ function RoadmapStep({
                     )}
                   />
                 </span>
-                <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 transition-colors duration-200 hover:border-slate-700">
+                <div className="rounded-xl border border-zinc-800/50 bg-slate-900/40 p-4 transition-colors duration-200 hover:border-slate-700">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="rounded-md border border-slate-700 bg-slate-950/60 px-2 py-0.5 font-mono text-[10px] tabular-nums text-cyan-300">
@@ -3717,9 +3717,9 @@ function RoadmapStep({
                       >
                         {week.phase}
                       </span>
-                      <span className="text-[11px] text-slate-500">{week.skillFull}</span>
+                      <span className="text-[11px] text-zinc-500">{week.skillFull}</span>
                     </div>
-                    <span className="flex items-center gap-1.5 text-[11px] tabular-nums text-slate-400">
+                    <span className="flex items-center gap-1.5 text-[11px] tabular-nums text-zinc-400">
                       <TrendingUp className="h-3.5 w-3.5 text-emerald-400" />
                       {week.start} → {week.target}
                     </span>
@@ -3727,7 +3727,7 @@ function RoadmapStep({
                   <p className="mt-2.5 text-sm font-semibold tracking-tight text-slate-50">
                     {week.title}
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-slate-400">{week.objective}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-zinc-400">{week.objective}</p>
                   <ul className="mt-3 space-y-1.5">
                     {week.tasks.map((task) => (
                       <li key={task} className="flex gap-2 text-[11px] leading-relaxed text-slate-300">
@@ -3736,7 +3736,7 @@ function RoadmapStep({
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-slate-800/80 pt-3">
+                  <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-zinc-800/50/80 pt-3">
                     <Chip icon={CircleCheckBig}>{week.outcome}</Chip>
                     {week.resources.map((resource) => (
                       <Chip key={resource.title} icon={BookOpen}>
@@ -3750,9 +3750,9 @@ function RoadmapStep({
           </ol>
         </div>
 
-        <div className="flex items-start gap-2.5 rounded-xl border border-slate-800 bg-slate-950/40 p-4">
+        <div className="flex items-start gap-2.5 rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4">
           <Sigma className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
-          <p className="text-[11px] leading-relaxed text-slate-400">
+          <p className="text-[11px] leading-relaxed text-zinc-400">
             Finishing this plan lifts coverage from {stats.coverage}% to a projected{" "}
             {Math.min(99, Math.round(stats.coverage + stats.totalGap * 0.55))}%, worth roughly{" "}
             {((stats.totalGap * 0.55 * stats.projected) / Math.max(stats.totalGap, 1)).toFixed(1)} LPA
@@ -3824,7 +3824,7 @@ function CredentialStep({
           <div
             className={cx(
               "relative overflow-hidden rounded-2xl border p-5 transition-colors duration-500",
-              sealed ? "border-emerald-500/40 bg-emerald-500/[0.05]" : "border-slate-800 bg-slate-950/40",
+              sealed ? "border-emerald-500/40 bg-emerald-500/[0.05]" : "border-zinc-800/50 bg-slate-950/40",
             )}
           >
             <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -3840,13 +3840,13 @@ function CredentialStep({
                 {sealed ? <CheckCircle2 className="h-7 w-7" /> : <Award className="h-7 w-7" />}
               </span>
               <div className="min-w-0">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                   {sealed ? "Credential sealed" : "Credential drafted"}
                 </p>
                 <p className="mt-1.5 text-lg font-semibold tracking-tight text-slate-50">
                   {credential.name}
                 </p>
-                <p className="mt-1.5 text-xs leading-relaxed text-slate-400">
+                <p className="mt-1.5 text-xs leading-relaxed text-zinc-400">
                   {credential.description}
                 </p>
               </div>
@@ -3859,8 +3859,8 @@ function CredentialStep({
                 { label: "Schema", value: credential.credentialSchema.id.split("/").slice(-2).join("/") },
                 { label: "Holder", value: identity || "unnamed holder" },
               ].map((row) => (
-                <div key={row.label} className="rounded-lg border border-slate-800 bg-slate-950/50 p-3">
-                  <p className="text-[10px] uppercase tracking-wider text-slate-500">{row.label}</p>
+                <div key={row.label} className="rounded-lg border border-zinc-800/50 bg-slate-950/50 p-3">
+                  <p className="text-[10px] uppercase tracking-wider text-zinc-500">{row.label}</p>
                   <p className="mt-1 truncate font-mono text-[11px] text-slate-200">{row.value}</p>
                 </div>
               ))}
@@ -3885,7 +3885,7 @@ function CredentialStep({
                         className={cx(
                           "font-mono",
                           state === "done"
-                            ? "text-slate-500 line-through"
+                            ? "text-zinc-500 line-through"
                             : state === "active"
                               ? "text-cyan-300"
                               : "text-slate-600",
@@ -3907,7 +3907,7 @@ function CredentialStep({
                   <p className="text-xs font-semibold text-emerald-200">
                     Envelope verified locally against the Open Badges 3.0 context
                   </p>
-                  <p className="mt-1 text-[11px] leading-relaxed text-slate-400">
+                  <p className="mt-1 text-[11px] leading-relaxed text-zinc-400">
                     Ed25519 proof attached. The JSON-LD is standards-compliant and can be verified
                     by any 1EdTech-compatible badge platform. The signature in this demo build is a
                     placeholder, not a production key.
@@ -3937,8 +3937,8 @@ function CredentialStep({
           </div>
 
           <div className="space-y-4">
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 Report summary
               </p>
               <dl className="mt-3.5 space-y-2.5 text-[11px]">
@@ -3952,8 +3952,8 @@ function CredentialStep({
                   { label: "Credentials earned", value: "3 credits" },
                 ].map((row) => (
                   <div key={row.label} className="flex items-center justify-between gap-3">
-                    <dt className="text-slate-400">{row.label}</dt>
-                    <dd className="truncate font-semibold tabular-nums text-slate-100">
+                    <dt className="text-zinc-400">{row.label}</dt>
+                    <dd className="truncate font-semibold tabular-nums text-zinc-100">
                       {row.value}
                     </dd>
                   </div>
@@ -3961,11 +3961,11 @@ function CredentialStep({
               </dl>
             </div>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
                 Where this credential works
               </p>
-              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
+              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-zinc-400">
                 {[
                   "Any Open Badges 2.0/3.0 platform that accepts JSON-LD credentials.",
                   "Embedded in your portfolio as a linked-data script tag or downloaded file.",
@@ -3983,19 +3983,19 @@ function CredentialStep({
 
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               JSON-LD payload preview
             </p>
-            <span className="font-mono text-[11px] tabular-nums text-slate-500">
+            <span className="font-mono text-[11px] tabular-nums text-zinc-500">
               {(serialized.length / 1024).toFixed(1)} KB
             </span>
           </div>
-          <pre className="mt-3 max-h-[420px] overflow-auto rounded-2xl border border-slate-800 bg-black p-4 font-mono text-[11px] leading-relaxed text-cyan-200/85 shadow-[0_0_50px_-30px_rgba(34,211,238,0.7)]">
+          <pre className="mt-3 max-h-[420px] overflow-auto rounded-2xl border border-zinc-800/50 bg-black p-4 font-mono text-[11px] leading-relaxed text-cyan-200/85 shadow-[0_0_50px_-30px_rgba(34,211,238,0.7)]">
             {serialized}
           </pre>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-2.5">
             <GhostButton onClick={onBack} icon={ArrowLeft}>
               Back to roadmap
