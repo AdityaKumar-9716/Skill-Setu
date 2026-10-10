@@ -94,19 +94,34 @@ The project is integrated with Google Firebase Firestore (Project: `skill-setu39
 
 ---
 
-## 🚀 Running the Project
+## 🚀 Setup Instructions (For Hackathon Judges)
 
-### Start the Backend Server:
+To run this project locally and test the live integration, you will need to provide your own API keys. We have provided an example environment file to make this easy.
+
+### 1. Configure API Keys (Backend)
+1. Navigate to the `server/` directory.
+2. You will see a file named `.env.example`. Duplicate this file and rename the copy to exactly `.env`.
+3. Open the new `.env` file and insert your API keys:
+   ```env
+   PORT=5000
+   SERPAPI_KEY=your_serpapi_key_here
+   GEMINI_API_KEY=your_gemini_key_here
+   ```
+*(Note: If you do not provide a `firebase-key.json`, the app is architected with a "Circuit Breaker" to fallback to a local mock database gracefully so the app will not crash).*
+
+### 2. Start the Backend Server:
+Open a terminal in the `server` folder:
 ```bash
 cd server
 npm install
 npm run dev
 ```
-Server runs at `http://localhost:5000`.
+The server will run at `http://localhost:5000`.
 
-### Start the Website (Next.js):
+### 3. Start the Website (Next.js Frontend):
+Open a **second terminal** in the root folder (`Skill-Setu`):
 ```bash
 npm install
 npm run dev
 ```
-Website opens at `http://localhost:3000`.
+The website will open at `http://localhost:3000`.

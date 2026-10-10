@@ -245,6 +245,7 @@ const PRIORITY_STYLE: Record<Priority, string> = {
 const SKILL_AXES: SkillAxis[] = [
   {
     key: "python",
+<<<<<<< HEAD
     label: "Python Basics & Data",
     short: "Python",
     icon: Braces,
@@ -272,10 +273,40 @@ const SKILL_AXES: SkillAxis[] = [
     resources: [
       { title: "Python for Beginners", meta: "youtube.com · 2h" },
       { title: "Pandas Crash Course", meta: "freecodecamp.org · 1h" },
+=======
+    label: "Python & data wrangling",
+    short: "Python",
+    icon: Braces,
+    blurb: "Vectorised pandas, typing, packaging, testable data pipelines.",
+    phaseA: {
+      title: "Python foundations for data work",
+      objective: "Make pandas fast and reproducible instead of copy-paste notebooks.",
+      tasks: [
+        "Rewrite 3 messy scripts with type hints, dataclasses and a src/ layout",
+        "Profile a 2M-row frame; replace row-wise apply with vectorised operations",
+        "Vectorise the 3 slowest cells using groupby.transform and np.where",
+      ],
+      outcome: "Pipeline runtime drops >60% and becomes unit-testable.",
+    },
+    phaseB: {
+      title: "Production-grade Python",
+      objective: "Ship a reusable ETL package with observability and CI.",
+      tasks: [
+        "Package the ETL as a typed library with pytest, ruff and pre-commit hooks",
+        "Add structured logging and retry/backoff around every external call",
+        "Expose one typed entrypoint the analytics team can call in a single line",
+      ],
+      outcome: "A reusable lmi_etl package with a green CI pipeline.",
+    },
+    resources: [
+      { title: "pandas user guide — performance & eval", meta: "pandas.pydata.org · 3h" },
+      { title: "pytest + typing patterns", meta: "docs & recipes · 2h" },
+>>>>>>> origin/ui-overhaul-premium
     ],
   },
   {
     key: "sql",
+<<<<<<< HEAD
     label: "SQL & Databases",
     short: "SQL",
     icon: Database,
@@ -303,10 +334,40 @@ const SKILL_AXES: SkillAxis[] = [
     resources: [
       { title: "SQL Tutorial for Beginners", meta: "w3schools.com · 2h" },
       { title: "Database Basics", meta: "youtube.com · 1h" },
+=======
+    label: "SQL & analytical modelling",
+    short: "SQL",
+    icon: Database,
+    blurb: "Window functions, query tuning, dimensional models, cost-aware design.",
+    phaseA: {
+      title: "Advanced SQL & window functions",
+      objective: "Answer market questions in one pass instead of five nested CTEs.",
+      tasks: [
+        "Rewrite cohort retention using window functions over a 42-month spine",
+        "Build a star schema: dim_skill, dim_role, fact_posting, dim_date",
+        "Tune the 5 slowest queries with EXPLAIN ANALYZE and index notes",
+      ],
+      outcome: "One modelled marts layer powering every dashboard.",
+    },
+    phaseB: {
+      title: "Warehouse-grade modelling",
+      objective: "Design for cost, lineage and incremental freshness.",
+      tasks: [
+        "Convert the posting fact table to incremental materialisation by partition",
+        "Add data tests (not_null, unique, accepted_values) with severity tags",
+        "Document lineage for the demand index so analysts trust the number",
+      ],
+      outcome: "Tested, incremental, fully documented marts.",
+    },
+    resources: [
+      { title: "Window function deep dive", meta: "Mode tutorials · 2h" },
+      { title: "dbt style guide & data tests", meta: "docs.getdbt.com · 3h" },
+>>>>>>> origin/ui-overhaul-premium
     ],
   },
   {
     key: "frontend",
+<<<<<<< HEAD
     label: "Frontend Web Dev",
     short: "Frontend",
     icon: Code2,
@@ -334,10 +395,40 @@ const SKILL_AXES: SkillAxis[] = [
     resources: [
       { title: "HTML & CSS Crash Course", meta: "youtube.com · 2h" },
       { title: "React for Beginners", meta: "react.dev · 3h" },
+=======
+    label: "Frontend engineering",
+    short: "Frontend",
+    icon: Code2,
+    blurb: "TypeScript, React composition, state, accessibility, perf budgets.",
+    phaseA: {
+      title: "TypeScript depth & React composition",
+      objective: "Kill the class of bugs that narrowing and render discipline catch.",
+      tasks: [
+        "Convert 3 views to strict TS with discriminated unions for API state",
+        "Refactor 2 client components into server-first views with small islands",
+        "Replace prop drilling with a typed context and selector-based store",
+      ],
+      outcome: "Zero any, and a measurably smaller client bundle.",
+    },
+    phaseB: {
+      title: "Interface craft & performance",
+      objective: "Ship an accessible dashboard that feels instant on a mid-tier phone.",
+      tasks: [
+        "Audit every interactive element for keyboard and screen-reader correctness",
+        "Drive LCP under 1.8s and INP under 200ms on a throttled mid-tier device",
+        "Add a virtualised table for 10k-row demand grids with sticky headers",
+      ],
+      outcome: "Lighthouse a11y at 100 and a fast, calm data grid.",
+    },
+    resources: [
+      { title: "React docs — composition & server components", meta: "react.dev · 3h" },
+      { title: "TypeScript handbook — narrowing", meta: "ts-handbook · 2h" },
+>>>>>>> origin/ui-overhaul-premium
     ],
   },
   {
     key: "dataviz",
+<<<<<<< HEAD
     label: "Data Visualization",
     short: "Data Viz",
     icon: BarChart3,
@@ -365,10 +456,40 @@ const SKILL_AXES: SkillAxis[] = [
     resources: [
       { title: "Data Viz Basics", meta: "youtube.com · 1h" },
       { title: "How to Choose the Right Chart", meta: "article · 30m" },
+=======
+    label: "Data visualisation",
+    short: "Data Viz",
+    icon: BarChart3,
+    blurb: "Chart selection, perceptual accuracy, dashboard storytelling.",
+    phaseA: {
+      title: "Chart selection & encoding",
+      objective: "Pick the honest encoding for demand-versus-capability questions.",
+      tasks: [
+        "Redesign one dashboard: cut 40% of the ink while keeping 100% of the signal",
+        "Build a radar-vs-bullet comparison and argue which answers which question",
+        "Write a 12-step chart decision checklist into your own team docs",
+      ],
+      outcome: "A reusable chart-selection checklist.",
+    },
+    phaseB: {
+      title: "Narrative dashboards",
+      objective: "Make the gap story land in a 4-minute executive review.",
+      tasks: [
+        "Design a progressive-disclosure narrative for a skill-gap story",
+        "Add small-multiple trend panels for 6 pin zones on shared scales",
+        "Run a 5-person usability test and fix the two worst comprehension failures",
+      ],
+      outcome: "A narrative deck reviewers can act on.",
+    },
+    resources: [
+      { title: "Principles of data visualisation", meta: "readable charts · 2h" },
+      { title: "Recharts composition patterns", meta: "recharts.org · 2h" },
+>>>>>>> origin/ui-overhaul-premium
     ],
   },
   {
     key: "ml",
+<<<<<<< HEAD
     label: "Machine Learning Basics",
     short: "Basic ML",
     icon: Cpu,
@@ -396,10 +517,40 @@ const SKILL_AXES: SkillAxis[] = [
     resources: [
       { title: "Machine Learning for Beginners", meta: "youtube.com · 2h" },
       { title: "How to use AI APIs", meta: "tutorial · 1h" },
+=======
+    label: "Applied ML & modelling",
+    short: "Applied ML",
+    icon: Cpu,
+    blurb: "Embeddings, similarity, evaluation, honest baselines, model cards.",
+    phaseA: {
+      title: "Embeddings & semantic skill matching",
+      objective: "Build the semantic layer that maps skills across job descriptions.",
+      tasks: [
+        "Embed 500 job descriptions and cluster skills by cosine similarity",
+        "Compare MiniLM against TF-IDF on a 100-label hand-annotated set",
+        "Ship a nearest-neighbour skill matcher with an explicit confidence floor",
+      ],
+      outcome: "A measured matcher with a precision/recall table.",
+    },
+    phaseB: {
+      title: "Evaluation & model cards",
+      objective: "Prove the model helps instead of asserting that it does.",
+      tasks: [
+        "Write an evaluation harness with slice metrics by role family",
+        "Add a keyword-overlap baseline and report the delta honestly",
+        "Publish a model card: intended use, data limits, known failure modes",
+      ],
+      outcome: "A model card and a reproducible evaluation report.",
+    },
+    resources: [
+      { title: "Sentence-Transformers guide", meta: "sbert.net · 2h" },
+      { title: "Evaluating ML systems in practice", meta: "standards · 2h" },
+>>>>>>> origin/ui-overhaul-premium
     ],
   },
   {
     key: "cloud",
+<<<<<<< HEAD
     label: "Cloud Deployment",
     short: "Cloud",
     icon: Cloud,
@@ -427,10 +578,40 @@ const SKILL_AXES: SkillAxis[] = [
     resources: [
       { title: "Vercel Deployment Guide", meta: "vercel.com · 30m" },
       { title: "Cloud Hosting Basics", meta: "youtube.com · 1h" },
+=======
+    label: "Cloud & DevOps",
+    short: "Cloud",
+    icon: Cloud,
+    blurb: "Containers, CI/CD, observability, cost control, rollback safety.",
+    phaseA: {
+      title: "CI/CD and containers",
+      objective: "Make every push deployable and every rollback boring.",
+      tasks: [
+        "Containerise the API as a multi-stage, non-root image under 200MB",
+        "Add a CI matrix: lint, typecheck, unit, integration, build",
+        "Wire preview environments per pull request with seeded fixtures",
+      ],
+      outcome: "Green matrix and one-command preview deploys.",
+    },
+    phaseB: {
+      title: "Observability & cost control",
+      objective: "Know what broke and what it cost, within minutes.",
+      tasks: [
+        "Instrument structured logs, traces and RED metrics with alert thresholds",
+        "Set a monthly budget alarm and retire the 3 costliest idle resources",
+        "Write and rehearse a 10-minute incident runbook with rollback steps",
+      ],
+      outcome: "Dashboards, alerts and a rehearsed runbook.",
+    },
+    resources: [
+      { title: "Container build best practices", meta: "patterns · 2h" },
+      { title: "SLOs and actionable alerting", meta: "observability · 2h" },
+>>>>>>> origin/ui-overhaul-premium
     ],
   },
   {
     key: "apis",
+<<<<<<< HEAD
     label: "APIs & Connections",
     short: "APIs",
     icon: Network,
@@ -458,10 +639,40 @@ const SKILL_AXES: SkillAxis[] = [
     resources: [
       { title: "What is an API?", meta: "youtube.com · 15m" },
       { title: "Postman API Crash Course", meta: "youtube.com · 1h" },
+=======
+    label: "APIs & integrations",
+    short: "APIs",
+    icon: Network,
+    blurb: "REST contracts, auth, rate limits, webhooks, resilient third-party calls.",
+    phaseA: {
+      title: "API design & authentication",
+      objective: "Design contracts other teams can integrate without a meeting.",
+      tasks: [
+        "Specify /v1/market/demand with pagination, filters and error envelopes",
+        "Implement token plus scope auth and hand-write the OpenAPI description",
+        "Contract-test the endpoint against a consumer's mocked client",
+      ],
+      outcome: "A published, tested OpenAPI contract.",
+    },
+    phaseB: {
+      title: "Resilient integrations",
+      objective: "Never lose a run to a third-party rate limit.",
+      tasks: [
+        "Add exponential backoff, jitter and a circuit breaker on SerpApi calls",
+        "Persist every job to a resumable queue with idempotency keys",
+        "Verify webhook signatures and replay safely after a partial failure",
+      ],
+      outcome: "Zero lost runs even under aggressive throttling.",
+    },
+    resources: [
+      { title: "API design, pagination & versioning", meta: "public API handbook · 2h" },
+      { title: "Rate limits, backoff and idempotency", meta: "reliability patterns · 1h" },
+>>>>>>> origin/ui-overhaul-premium
     ],
   },
   {
     key: "communication",
+<<<<<<< HEAD
     label: "Communication Skills",
     short: "Soft Skills",
     icon: MessageSquare,
@@ -492,6 +703,38 @@ const SKILL_AXES: SkillAxis[] = [
     ],
   }
 ]
+=======
+    label: "Communication & narrative",
+    short: "Communication",
+    icon: MessageSquare,
+    blurb: "Explaining trade-offs, stakeholder updates, crisp technical writing.",
+    phaseA: {
+      title: "Data storytelling for stakeholders",
+      objective: "Turn a gap analysis into a decision someone can fund.",
+      tasks: [
+        "Rewrite a dense analysis memo as a one-page decision brief",
+        "Build an async update template: signal, delta, risk, ask",
+        "Defend your top recommendation live in a 10-minute review",
+      ],
+      outcome: "A one-page brief that ends in a yes.",
+    },
+    phaseB: {
+      title: "Executive presence",
+      objective: "Compress any technical debate into a decision in two minutes.",
+      tasks: [
+        "Record a 3-minute demo that ends on a clear, single ask",
+        "Run a blameless post-mortem on a real incident and publish it",
+        "Mentor one peer through their own gap analysis end to end",
+      ],
+      outcome: "A demo, a post-mortem and a mentored peer.",
+    },
+    resources: [
+      { title: "Writing for busy readers", meta: "structure & style · 1h" },
+      { title: "Explaining technical trade-offs", meta: "talks & decks · 1h" },
+    ],
+  },
+];
+>>>>>>> origin/ui-overhaul-premium
 
 const SKILL_BY_KEY = SKILL_AXES.reduce<Record<SkillKey, SkillAxis>>((acc, axis) => {
   acc[axis.key] = axis;
@@ -653,19 +896,32 @@ const STEPS: { id: number; label: string; hint: string; icon: LucideIcon }[] = [
   { id: 5, label: "Engine run", hint: "Live terminal logs", icon: Terminal },
   { id: 6, label: "Skill radar", hint: "Gap visualisation", icon: RadarIcon },
   { id: 7, label: "Roadmap", hint: "Deltas & timeline", icon: GraduationCap },
+<<<<<<< HEAD
   { id: 8, label: "Credential", hint: "Career Roadmap", icon: BadgeCheck },
+=======
+  { id: 8, label: "Credential", hint: "Open Badges 3.0", icon: BadgeCheck },
+>>>>>>> origin/ui-overhaul-premium
 ];
 
 const FEATURE_PILLARS: { icon: LucideIcon; label: string; meta: string }[] = [
   {
     icon: Activity,
     label: "Live SerpApi job ingestion",
+<<<<<<< HEAD
     meta: "google_jobs + google_jobs_analysis, 30-day freshness window",
   },
   {
     icon: Cpu,
     label: "AI Skill Matching",
     meta: "Matching your skills with live job demands via Google Gemini",
+=======
+    meta: "google_jobs + google_jobs_extensions, 30-day freshness window",
+  },
+  {
+    icon: Cpu,
+    label: "SBERT skill clustering",
+    meta: "cosine similarity over 8k+ embedded skill descriptions",
+>>>>>>> origin/ui-overhaul-premium
   },
   {
     icon: Crosshair,
@@ -674,12 +930,18 @@ const FEATURE_PILLARS: { icon: LucideIcon; label: string; meta: string }[] = [
   },
   {
     icon: BadgeCheck,
+<<<<<<< HEAD
     label: "Your Career Roadmap",
     meta: "Career Roadmap / Personalized Growth Plan",
+=======
+    label: "Verifiable credentials",
+    meta: "Open Badges 3.0 / 1EdTech JSON-LD envelopes",
+>>>>>>> origin/ui-overhaul-premium
   },
 ];
 
 const EXPORT_STAGES = [
+<<<<<<< HEAD
   "Generating your personal Roadmap Document",
   "Verifying your profile details",
   "Applying Secure Verification",
@@ -691,27 +953,55 @@ const NATIONAL_PULSE = [
   { label: "Skills matched", value: "8" },
   { label: "Cities covered", value: "16" },
   { label: "Career paths", value: "6" },
+=======
+  "canonicalising JSON-LD document",
+  "hashing credential · SHA-256",
+  "attaching Ed25519 proof envelope",
+  "sealed · Open Badges 3.0 valid",
+];
+
+const NATIONAL_PULSE = [
+  { label: "Postings indexed", value: "1.28M" },
+  { label: "Skill tokens", value: "3.9M" },
+  { label: "PIN zones", value: "16" },
+  { label: "Clusters", value: "17" },
+>>>>>>> origin/ui-overhaul-premium
 ];
 
 const TICKER = [
   "google_jobs · bengaluru · data scientist",
+<<<<<<< HEAD
   "google_jobs_analysis · pune · full stack",
   "google_jobs · hyderabad · ml engineer",
   "google_jobs · noida · devops",
   "google_jobs · kochi · data analyst",
   "google_jobs_analysis · jaipur · frontend",
+=======
+  "google_jobs_extensions · pune · full stack",
+  "google_jobs · hyderabad · ml engineer",
+  "google_jobs · noida · devops",
+  "google_jobs · kochi · data analyst",
+  "google_jobs_extensions · jaipur · frontend",
+>>>>>>> origin/ui-overhaul-premium
 ];
 
 function buildScript(ctx: { role: string; city: string; density: string }): ScriptLine[] {
   return [
+<<<<<<< HEAD
     { text: "Skill-Setu Analysis Engine · Initializing", level: "meta", delay: 140 },
     { text: "> Pinging SerpApi google_jobs...", level: "cmd", delay: 560 },
     { text: "  ok  Connected to SerpApi · 38 ms", level: "ok", delay: 640 },
+=======
+    { text: "skillsetu-engine v2.4.1 — LMI orchestrator online", level: "meta", delay: 140 },
+    { text: "> Pinging SerpApi google_jobs...", level: "cmd", delay: 560 },
+    { text: "  ok  200 OK · quota 6,412/10,000 · 38 ms", level: "ok", delay: 640 },
+>>>>>>> origin/ui-overhaul-premium
     {
       text: `> Query: "${ctx.role}" in ${ctx.city} · freshness=30d · sort=date`,
       level: "cmd",
       delay: 500,
     },
+<<<<<<< HEAD
     { text: "  ok  Live job postings retrieved", level: "ok", delay: 760 },
     { text: "> Expanding with serpapi google_jobs_analysis...", level: "cmd", delay: 520 },
     {
@@ -725,6 +1015,21 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
     { text: "  ok  AI analysis complete · 1.1 s", level: "ok", delay: 800 },
     { text: "> Running AI Skill Matching...", level: "cmd", delay: 500 },
     { text: "  ok  Skill clusters identified", level: "ok", delay: 880 },
+=======
+    { text: "  ok  1,284 live market postings parsed", level: "ok", delay: 760 },
+    { text: "> Expanding with serpapi google_jobs_extensions...", level: "cmd", delay: 520 },
+    {
+      text: "  ok  3,912 skill tokens extracted · employment_type / remote / seniority",
+      level: "ok",
+      delay: 700,
+    },
+    { text: "> Normalising via pydantic v2 · RoleSignal schema", level: "cmd", delay: 560 },
+    { text: "  ok  1,284/1,284 records validated · 0 schema errors", level: "ok", delay: 660 },
+    { text: "> Embedding skill descriptions · all-MiniLM-L6-v2", level: "cmd", delay: 740 },
+    { text: "  ok  8,416 vectors · 384-dim · 1.1 s", level: "ok", delay: 800 },
+    { text: "> Running SBERT cosine similarity clustering...", level: "cmd", delay: 500 },
+    { text: "  ok  17 clusters · eps=0.42 · silhouette 0.61", level: "ok", delay: 880 },
+>>>>>>> origin/ui-overhaul-premium
     { text: "> Weighting demand signal by PIN-zone density index", level: "cmd", delay: 540 },
     {
       text: `  ok  ${ctx.city} · ${ctx.density}x posting density vs national median`,
@@ -732,6 +1037,7 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
       delay: 640,
     },
     { text: "> Fetched live market postings reconciled with your baseline", level: "cmd", delay: 540 },
+<<<<<<< HEAD
     { text: "  ok  8 skill areas mapped", level: "ok", delay: 700 },
     { text: "> Computing your skill gaps", level: "cmd", delay: 620 },
     { text: "  !!  critical deltas detected across top-priority axes", level: "warn", delay: 780 },
@@ -739,6 +1045,15 @@ function buildScript(ctx: { role: string; city: string; density: string }): Scri
     { text: "  ok  Roadmap ready · 5 priority skills identified", level: "ok", delay: 680 },
     { text: "> Preparing your Career Roadmap...", level: "cmd", delay: 600 },
     { text: "  ok  Career Roadmap generated", level: "ok", delay: 700 },
+=======
+    { text: "  ok  8 competency axes aligned · mean confidence 0.87", level: "ok", delay: 700 },
+    { text: "> Computing competency gap vectors  delta = market - self", level: "cmd", delay: 620 },
+    { text: "  !!  critical deltas detected across top-priority axes", level: "warn", delay: 780 },
+    { text: "> Compiling 10-week roadmap at 12 h/week capacity", level: "cmd", delay: 560 },
+    { text: "  ok  roadmap locked · 5 focus skills sequenced by ROI", level: "ok", delay: 680 },
+    { text: "> Minting Open Badges 3.0 credential envelope...", level: "cmd", delay: 600 },
+    { text: "  ok  JSON-LD payload compiled · 2.1 KB", level: "ok", delay: 700 },
+>>>>>>> origin/ui-overhaul-premium
     { text: "> Analysis complete. Loading Skill Gap Radar...", level: "meta", delay: 660 },
   ];
 }
@@ -790,6 +1105,7 @@ function BrandMark() {
         <span className="absolute inset-0 rounded-xl bg-cyan-400/10" />
       </div>
       <div className="leading-tight">
+<<<<<<< HEAD
         <p className="flex items-center gap-1.5 text-[15px] font-semibold tracking-tight text-slate-100">
           Skill<span className="text-cyan-400">Setu</span>
           <span className="rounded border border-slate-700 bg-slate-800/60 px-1.5 py-px text-[9px] font-medium uppercase tracking-widest text-slate-400">
@@ -797,6 +1113,15 @@ function BrandMark() {
           </span>
         </p>
         <p className="hidden text-[11px] text-slate-500 sm:block">Live Career Guidance · India</p>
+=======
+        <p className="flex items-center gap-1.5 text-[15px] font-semibold tracking-tight text-zinc-100">
+          Skill<span className="text-cyan-400">Setu</span>
+          <span className="rounded border border-slate-700 bg-slate-800/60 px-1.5 py-px text-[9px] font-medium uppercase tracking-widest text-zinc-400">
+            LMI
+          </span>
+        </p>
+        <p className="hidden text-[11px] text-zinc-500 sm:block">Labor Market Intelligence · India</p>
+>>>>>>> origin/ui-overhaul-premium
       </div>
     </div>
   );
@@ -822,12 +1147,20 @@ function Panel({
   return (
     <section
       className={cx(
+<<<<<<< HEAD
         "group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-md transition-colors duration-300 hover:border-slate-700",
+=======
+        "glass-panel group",
+>>>>>>> origin/ui-overhaul-premium
         className,
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+<<<<<<< HEAD
       <header className="flex flex-col gap-3 border-b border-slate-800/80 px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+=======
+      <header className="flex flex-col gap-3 border-b border-zinc-800/50/80 px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+>>>>>>> origin/ui-overhaul-premium
         <div className="min-w-0">
           <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-400/80">
             {Icon ? <Icon className="h-3.5 w-3.5" /> : null}
@@ -837,7 +1170,11 @@ function Panel({
             {title}
           </h2>
           {description ? (
+<<<<<<< HEAD
             <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-400">{description}</p>
+=======
+            <p className="mt-1 max-w-3xl text-sm leading-relaxed text-zinc-400">{description}</p>
+>>>>>>> origin/ui-overhaul-premium
           ) : null}
         </div>
         {aside ? <div className="shrink-0">{aside}</div> : null}
@@ -887,10 +1224,17 @@ function Field({
     <div className="space-y-1.5">
       <label
         htmlFor={id}
+<<<<<<< HEAD
         className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wider text-slate-400"
       >
         <span className="flex items-center gap-1.5">
           <Icon className="h-3.5 w-3.5 text-slate-500" />
+=======
+        className="flex items-center justify-between gap-3 text-xs font-medium uppercase tracking-wider text-zinc-400"
+      >
+        <span className="flex items-center gap-1.5">
+          <Icon className="h-3.5 w-3.5 text-zinc-500" />
+>>>>>>> origin/ui-overhaul-premium
           {label}
         </span>
         {trailing}
@@ -911,11 +1255,19 @@ function Field({
           aria-invalid={invalid}
           aria-describedby={invalid ? `${id}-error` : hint ? `${id}-hint` : undefined}
           className={cx(
+<<<<<<< HEAD
             "w-full rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-600",
             "transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
             invalid
               ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
               : "border-slate-800 hover:border-slate-700 focus:border-cyan-400/60",
+=======
+            "w-full rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-slate-600",
+            "transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
+            invalid
+              ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
+              : "border-zinc-800/50 hover:border-slate-700 focus:border-cyan-400/60",
+>>>>>>> origin/ui-overhaul-premium
             endAdornment ? "pr-11" : undefined,
           )}
         />
@@ -929,7 +1281,11 @@ function Field({
           {error}
         </p>
       ) : hint ? (
+<<<<<<< HEAD
         <p id={`${id}-hint`} className="text-xs text-slate-500">
+=======
+        <p id={`${id}-hint`} className="text-xs text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
           {hint}
         </p>
       ) : null}
@@ -963,7 +1319,11 @@ function PrimaryButton({
         "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl px-5 py-2.5 text-sm font-semibold tracking-tight transition-all duration-200",
         "bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 shadow-[0_0_28px_-8px_rgba(34,211,238,0.9)]",
         "hover:shadow-[0_0_36px_-6px_rgba(34,211,238,1)] active:scale-[0.985]",
+<<<<<<< HEAD
         "disabled:cursor-not-allowed disabled:from-slate-800 disabled:to-slate-800 disabled:text-slate-500 disabled:shadow-none",
+=======
+        "disabled:cursor-not-allowed disabled:from-slate-800 disabled:to-slate-800 disabled:text-zinc-500 disabled:shadow-none",
+>>>>>>> origin/ui-overhaul-premium
         full ? "w-full" : undefined,
         className,
       )}
@@ -997,9 +1357,15 @@ function GhostButton({
       disabled={disabled}
       title={title}
       className={cx(
+<<<<<<< HEAD
         "inline-flex items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-2.5 text-sm font-medium text-slate-300",
         "transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-800/60 hover:text-cyan-300",
         "disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-slate-800 disabled:hover:text-slate-300",
+=======
+        "inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-800/50 bg-slate-900/60 px-4 py-2.5 text-sm font-medium text-slate-300",
+        "transition-all duration-200 hover:border-cyan-400/40 hover:bg-slate-800/60 hover:text-cyan-300",
+        "disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-zinc-800/50 disabled:hover:text-slate-300",
+>>>>>>> origin/ui-overhaul-premium
         className,
       )}
     >
@@ -1030,17 +1396,29 @@ function StatTile({
     rose: "border-rose-500/25 bg-rose-500/10 text-rose-300",
   };
   return (
+<<<<<<< HEAD
     <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
+=======
+    <div className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
+>>>>>>> origin/ui-overhaul-premium
       <div className="flex items-center gap-2">
         <span className={cx("flex h-7 w-7 items-center justify-center rounded-lg border", tones[accent])}>
           <Icon className="h-3.5 w-3.5" />
         </span>
+<<<<<<< HEAD
         <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+=======
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
           {label}
         </p>
       </div>
       <p className="mt-2.5 text-2xl font-semibold tracking-tight text-slate-50">{value}</p>
+<<<<<<< HEAD
       <p className="mt-0.5 text-[11px] text-slate-500">{sub}</p>
+=======
+      <p className="mt-0.5 text-[11px] text-zinc-500">{sub}</p>
+>>>>>>> origin/ui-overhaul-premium
     </div>
   );
 }
@@ -1065,7 +1443,11 @@ function SegmentedControl<T extends string>({
     <div
       role="tablist"
       aria-label={ariaLabel}
+<<<<<<< HEAD
       className="relative inline-flex w-full rounded-xl border border-slate-800 bg-slate-950/60 p-1"
+=======
+      className="relative inline-flex w-full rounded-xl border border-zinc-800/50 bg-slate-950/60 p-1"
+>>>>>>> origin/ui-overhaul-premium
     >
       <span
         aria-hidden
@@ -1084,7 +1466,11 @@ function SegmentedControl<T extends string>({
           onClick={() => onChange(option.value)}
           className={cx(
             "relative z-10 flex-1 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200",
+<<<<<<< HEAD
             value === option.value ? "text-cyan-200" : "text-slate-400 hover:text-slate-200",
+=======
+            value === option.value ? "text-cyan-200" : "text-zinc-400 hover:text-slate-200",
+>>>>>>> origin/ui-overhaul-premium
           )}
         >
           {option.label}
@@ -1109,7 +1495,11 @@ function Chip({
     "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs transition-all duration-200",
     active
       ? "border-cyan-400/50 bg-cyan-400/10 text-cyan-200"
+<<<<<<< HEAD
       : "border-slate-800 bg-slate-950/50 text-slate-400 hover:border-slate-700 hover:text-slate-200",
+=======
+      : "border-zinc-800/50 bg-slate-950/50 text-zinc-400 hover:border-slate-700 hover:text-slate-200",
+>>>>>>> origin/ui-overhaul-premium
   );
   if (!onClick) {
     return (
@@ -1169,7 +1559,11 @@ function StepFooter({
   hint?: string;
 }) {
   return (
+<<<<<<< HEAD
     <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center">
+=======
+    <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
+>>>>>>> origin/ui-overhaul-premium
       <div className="flex flex-wrap items-center gap-3">
         {onBack ? (
           <GhostButton onClick={onBack} icon={ArrowLeft}>
@@ -1177,7 +1571,11 @@ function StepFooter({
           </GhostButton>
         ) : null}
         {hint ? (
+<<<<<<< HEAD
           <p className="flex items-center gap-1.5 text-[11px] text-slate-500">
+=======
+          <p className="flex items-center gap-1.5 text-[11px] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
             <Info className="h-3.5 w-3.5 shrink-0" />
             {hint}
           </p>
@@ -1221,7 +1619,11 @@ function StepRail({
                   "group flex w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left transition-all duration-300",
                   item.id === step
                     ? "border-cyan-400/40 bg-slate-900/70 shadow-[0_0_30px_-12px_rgba(34,211,238,0.8)]"
+<<<<<<< HEAD
                     : "border-transparent hover:border-slate-800 hover:bg-slate-900/40",
+=======
+                    : "border-transparent hover:border-zinc-800/50 hover:bg-slate-900/40",
+>>>>>>> origin/ui-overhaul-premium
                   !reachable ? "cursor-not-allowed opacity-40" : undefined,
                 )}
               >
@@ -1232,7 +1634,11 @@ function StepRail({
                       ? "border-cyan-400/50 bg-cyan-400/10 text-cyan-300"
                       : state === "done"
                         ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+<<<<<<< HEAD
                         : "border-slate-800 bg-slate-900/60 text-slate-500",
+=======
+                        : "border-zinc-800/50 bg-slate-900/60 text-zinc-500",
+>>>>>>> origin/ui-overhaul-premium
                   )}
                 >
                   {state === "done" ? <Check className="h-4 w-4" /> : <Icon className="h-4 w-4" />}
@@ -1246,7 +1652,11 @@ function StepRail({
                   >
                     {item.label}
                   </span>
+<<<<<<< HEAD
                   <span className="block truncate text-[11px] text-slate-500">{item.hint}</span>
+=======
+                  <span className="block truncate text-[11px] text-zinc-500">{item.hint}</span>
+>>>>>>> origin/ui-overhaul-premium
                 </span>
                 <span className="text-[11px] font-semibold tabular-nums text-slate-600 lg:hidden">
                   {item.id}
@@ -1256,8 +1666,13 @@ function StepRail({
           );
         })}
       </ol>
+<<<<<<< HEAD
       <div className="mt-5 hidden rounded-xl border border-slate-800 bg-slate-900/40 p-4 lg:block">
         <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+=======
+      <div className="mt-5 hidden rounded-xl border border-zinc-800/50 bg-slate-900/40 p-4 lg:block">
+        <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
           <span>Journey</span>
           <span className="tabular-nums text-cyan-400">{completed}/8</span>
         </div>
@@ -1267,8 +1682,13 @@ function StepRail({
             style={{ width: `${(completed / 8) * 100}%` }}
           />
         </div>
+<<<<<<< HEAD
         <p className="mt-2.5 text-[11px] leading-relaxed text-slate-500">
           Everything stays in this browser tab until you export a personalized career roadmap.
+=======
+        <p className="mt-2.5 text-[11px] leading-relaxed text-zinc-500">
+          Everything stays in this browser tab until you export a verifiable credential.
+>>>>>>> origin/ui-overhaul-premium
         </p>
       </div>
     </nav>
@@ -1290,20 +1710,33 @@ function SkillSlider({
   const delta = market - value;
   const tone = delta >= 25 ? "#f43f5e" : delta >= 12 ? "#f59e0b" : delta > 0 ? "#38bdf8" : "#10b981";
   return (
+<<<<<<< HEAD
     <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
+=======
+    <div className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700">
+>>>>>>> origin/ui-overhaul-premium
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-start gap-2.5">
           <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 text-cyan-300">
             <Icon className="h-3.5 w-3.5" />
           </span>
           <div className="min-w-0">
+<<<<<<< HEAD
             <p className="truncate text-sm font-medium tracking-tight text-slate-100">{axis.label}</p>
             <p className="mt-0.5 text-[11px] leading-relaxed text-slate-500">{axis.blurb}</p>
+=======
+            <p className="truncate text-sm font-medium tracking-tight text-zinc-100">{axis.label}</p>
+            <p className="mt-0.5 text-[11px] leading-relaxed text-zinc-500">{axis.blurb}</p>
+>>>>>>> origin/ui-overhaul-premium
           </div>
         </div>
         <div className="shrink-0 text-right">
           <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-50">{value}</p>
+<<<<<<< HEAD
           <p className="text-[10px] uppercase tracking-wider text-slate-500">self</p>
+=======
+          <p className="text-[10px] uppercase tracking-wider text-zinc-500">self</p>
+>>>>>>> origin/ui-overhaul-premium
         </div>
       </div>
       <div className="relative mt-4">
@@ -1335,7 +1768,11 @@ function SkillSlider({
         </span>
         <span className="text-slate-600">100</span>
       </div>
+<<<<<<< HEAD
       <div className="mt-2.5 flex items-center justify-between gap-2 border-t border-slate-800/80 pt-2.5">
+=======
+      <div className="mt-2.5 flex items-center justify-between gap-2 border-t border-zinc-800/50/80 pt-2.5">
+>>>>>>> origin/ui-overhaul-premium
         <span
           className={cx(
             "rounded border px-1.5 py-0.5 text-[10px] font-medium",
@@ -1377,7 +1814,11 @@ function Toast({ message, onDismiss }: { message: string | null; onDismiss: () =
         type="button"
         onClick={onDismiss}
         aria-label="Dismiss notification"
+<<<<<<< HEAD
         className="rounded p-0.5 text-slate-500 transition-colors hover:text-slate-200"
+=======
+        className="rounded p-0.5 text-zinc-500 transition-colors hover:text-slate-200"
+>>>>>>> origin/ui-overhaul-premium
       >
         <X className="h-3.5 w-3.5" />
       </button>
@@ -1421,6 +1862,7 @@ export default function SkillSetuPage() {
   const [exportStage, setExportStage] = useState<ExportStage>("idle");
   const [exportStep, setExportStep] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
+<<<<<<< HEAD
   const [aiReport, setAiReport] = useState<any>(null);
 
   // Firebase Firestore Integration State
@@ -1428,6 +1870,8 @@ export default function SkillSetuPage() {
   const [loadModalOpen, setLoadModalOpen] = useState(false);
   const [loadDocInput, setLoadDocInput] = useState("");
   const [isLoadingSaved, setIsLoadingSaved] = useState(false);
+=======
+>>>>>>> origin/ui-overhaul-premium
 
   const exportTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
   const logSeq = useRef(0);
@@ -1448,6 +1892,7 @@ export default function SkillSetuPage() {
   const market = useMemo<MarketRow[]>(() => {
     const seed = `${role.trim().toLowerCase()}|${domain}|${pin}|${locationQuery.trim().toLowerCase()}`;
     const locality = zone ? (zone.density - 1) * 6 : 0;
+<<<<<<< HEAD
     const missingNorm = (aiReport?.missingSkills || []).map((s: string) => s.toLowerCase());
 
     return SKILL_AXES.map((axis) => {
@@ -1461,6 +1906,12 @@ export default function SkillSetuPage() {
       );
       if (isMissing) demand = Math.min(99, Math.max(demand, 82));
 
+=======
+    return SKILL_AXES.map((axis) => {
+      const jitter = (hashToUnit(`${seed}::${axis.key}`) - 0.5) * 18;
+      const bias = activePreset?.bias[axis.key] ?? 0;
+      const demand = Math.round(clamp(56 + bias + locality + jitter, 20, 99));
+>>>>>>> origin/ui-overhaul-premium
       const you = skills[axis.key];
       const gap = demand - you;
       return {
@@ -1473,7 +1924,11 @@ export default function SkillSetuPage() {
         priority: priorityOf(gap),
       };
     });
+<<<<<<< HEAD
   }, [role, domain, pin, locationQuery, zone, activePreset, skills, aiReport]);
+=======
+  }, [role, domain, pin, locationQuery, zone, activePreset, skills]);
+>>>>>>> origin/ui-overhaul-premium
 
   const radarData = useMemo(
     () => market.map((row) => ({ axis: row.axis, you: row.you, market: row.market })),
@@ -1618,9 +2073,14 @@ export default function SkillSetuPage() {
     stats,
     displayName,
     identity,
+<<<<<<< HEAD
     databaseId,
   });
   reportRef.current = { role, domain, pin, zone, market, stats, displayName, identity, databaseId };
+=======
+  });
+  reportRef.current = { role, domain, pin, zone, market, stats, displayName, identity };
+>>>>>>> origin/ui-overhaul-premium
 
   useEffect(() => {
     if (step !== 5) return;
@@ -1631,6 +2091,7 @@ export default function SkillSetuPage() {
     setProgress(0);
     setEngineDone(false);
 
+<<<<<<< HEAD
     // LIVE API CALL: Fire the backend pipeline in parallel with the terminal animation
     const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/analyze";
     fetch(`${apiBase}/full-audit`, {
@@ -1658,6 +2119,8 @@ export default function SkillSetuPage() {
       .catch((err) => console.warn("[Skill Setu] Backend API unavailable:", err));
 
 
+=======
+>>>>>>> origin/ui-overhaul-premium
     const timers: ReturnType<typeof setTimeout>[] = [];
     let cumulative = 0;
     terminalScript.forEach((line, index) => {
@@ -1763,6 +2226,7 @@ export default function SkillSetuPage() {
     setCredential(null);
     setExportStage("idle");
     setExportStep(0);
+<<<<<<< HEAD
     setDatabaseId(null);
     setLoadModalOpen(false);
     setLoadDocInput("");
@@ -1823,6 +2287,10 @@ export default function SkillSetuPage() {
     }
   }, [identity, displayName, role, domain, zone, locationQuery, stats, aiReport, skills]);
 
+=======
+  }, []);
+
+>>>>>>> origin/ui-overhaul-premium
   const applyCalibration = useCallback((id: CalibrationId) => {
     const preset = CALIBRATION_PRESETS.find((item) => item.id === id);
     if (!preset) return;
@@ -1856,13 +2324,18 @@ export default function SkillSetuPage() {
   const detectLocation = useCallback(() => {
     if (locating) return;
     setLocating(true);
+<<<<<<< HEAD
 
     const resolveFallback = (code: string) => {
+=======
+    const resolve = (code: string) => {
+>>>>>>> origin/ui-overhaul-premium
       window.setTimeout(() => {
         pickZone(PIN_ZONES[code] ? code : "110001");
         setLocating(false);
       }, 950);
     };
+<<<<<<< HEAD
 
     if (typeof navigator !== "undefined" && typeof navigator.geolocation?.getCurrentPosition === "function") {
       navigator.geolocation.getCurrentPosition(
@@ -1895,6 +2368,16 @@ export default function SkillSetuPage() {
       );
     } else {
       resolveFallback("110001");
+=======
+    if (typeof navigator !== "undefined" && typeof navigator.geolocation?.getCurrentPosition === "function") {
+      navigator.geolocation.getCurrentPosition(
+        () => resolve("560001"),
+        () => resolve("110001"),
+        { timeout: 4000, maximumAge: 300000 },
+      );
+    } else {
+      resolve("110001");
+>>>>>>> origin/ui-overhaul-premium
     }
   }, [locating, pickZone]);
 
@@ -1926,7 +2409,11 @@ export default function SkillSetuPage() {
         setExportStep(index + 1);
         if (index === EXPORT_STAGES.length - 1) {
           setExportStage("sealed");
+<<<<<<< HEAD
           setToast("Credential sealed — Career Roadmap envelope verified locally.");
+=======
+          setToast("Credential sealed — Open Badges 3.0 envelope verified locally.");
+>>>>>>> origin/ui-overhaul-premium
         }
       }, (index + 1) * 640),
     );
@@ -1951,7 +2438,11 @@ export default function SkillSetuPage() {
     if (!credential) return;
     try {
       await navigator.clipboard.writeText(JSON.stringify(credential, null, 2));
+<<<<<<< HEAD
       setToast("Roadmap Data copied to clipboard.");
+=======
+      setToast("JSON-LD payload copied to clipboard.");
+>>>>>>> origin/ui-overhaul-premium
     } catch {
       setToast("Clipboard blocked by the browser — use the download instead.");
     }
@@ -1985,6 +2476,7 @@ export default function SkillSetuPage() {
     <div className="relative flex min-h-screen flex-col">
       <AmbientBackground />
 
+<<<<<<< HEAD
       <header className="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/75 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <BrandMark />
@@ -2010,11 +2502,26 @@ export default function SkillSetuPage() {
               </span>
             </div>
             <div className="hidden items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1.5 lg:flex">
+=======
+      <header className="sticky top-0 z-40 border-b border-zinc-800/50/80 bg-slate-950/75 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          <BrandMark />
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            <div className="hidden items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-900/60 px-3 py-1.5 md:flex">
+              <LiveDot />
+              <span className="text-[11px] font-medium tracking-tight text-slate-300">SerpApi feed live</span>
+              <span className="text-[11px] tabular-nums text-zinc-500">
+                {stats.openings} postings
+              </span>
+            </div>
+            <div className="hidden items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-900/60 px-3 py-1.5 lg:flex">
+>>>>>>> origin/ui-overhaul-premium
               <MapPin className="h-3.5 w-3.5 text-cyan-400" />
               <span className="text-[11px] font-medium tracking-tight text-slate-300">
                 {zone ? `${zone.city}, ${zone.region}` : "Location unset"}
               </span>
               {pin ? (
+<<<<<<< HEAD
                 <span className="font-mono text-[11px] tabular-nums text-slate-500">{pin}</span>
               ) : null}
             </div>
@@ -2029,11 +2536,20 @@ export default function SkillSetuPage() {
               <span className="hidden sm:inline">Load from Firebase</span>
             </button>
 
+=======
+                <span className="font-mono text-[11px] tabular-nums text-zinc-500">{pin}</span>
+              ) : null}
+            </div>
+>>>>>>> origin/ui-overhaul-premium
             <button
               type="button"
               onClick={restart}
               title="Restart the journey"
+<<<<<<< HEAD
               className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
+=======
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800/50 bg-slate-900/60 text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
+>>>>>>> origin/ui-overhaul-premium
             >
               <RefreshCw className="h-4 w-4" />
               <span className="sr-only">Restart journey</span>
@@ -2060,7 +2576,10 @@ export default function SkillSetuPage() {
               setAuth={setAuth}
               errors={authErrors}
               attempted={authAttempted}
+<<<<<<< HEAD
               onOpenLoadModal={() => setLoadModalOpen(true)}
+=======
+>>>>>>> origin/ui-overhaul-premium
               onSubmit={() => {
                 setAuthAttempted(true);
                 if (authValid) advance();
@@ -2160,9 +2679,12 @@ export default function SkillSetuPage() {
                 stats={stats}
                 zone={zone}
                 role={role}
+<<<<<<< HEAD
                 aiReport={aiReport}
                 databaseId={databaseId}
                 onSaveSnapshot={saveSnapshotToFirestore}
+=======
+>>>>>>> origin/ui-overhaul-premium
                 onRerun={() => setStep(5)}
                 onContinue={advance}
                 onBack={goBack}
@@ -2175,7 +2697,10 @@ export default function SkillSetuPage() {
                 gapChartData={gapChartData}
                 roadmap={roadmap}
                 stats={stats}
+<<<<<<< HEAD
                 databaseId={databaseId}
+=======
+>>>>>>> origin/ui-overhaul-premium
                 onRecalibrate={() => setStep(4)}
                 onContinue={advance}
                 onBack={goBack}
@@ -2203,6 +2728,7 @@ export default function SkillSetuPage() {
         </main>
       )}
 
+<<<<<<< HEAD
       <footer className="border-t border-slate-800/80 bg-slate-950/60">
         <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <p>
@@ -2212,10 +2738,22 @@ export default function SkillSetuPage() {
           <p className="flex items-center gap-1.5">
             <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" />
             Credentials follow Career Roadmap (Personalized Growth Plan)
+=======
+      <footer className="border-t border-zinc-800/50/80 bg-slate-950/60">
+        <div className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-2 px-4 py-4 text-[11px] text-zinc-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+          <p>
+            Skill Setu · SerpApi India Hackathon 2026 · Deterministic demo engine — no live network
+            calls are made from the browser.
+          </p>
+          <p className="flex items-center gap-1.5">
+            <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" />
+            Credentials follow Open Badges 3.0 (1EdTech JSON-LD)
+>>>>>>> origin/ui-overhaul-premium
           </p>
         </div>
       </footer>
 
+<<<<<<< HEAD
       {/* Firebase Firestore Load Roadmap Modal */}
       {loadModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
@@ -2279,6 +2817,8 @@ export default function SkillSetuPage() {
         </div>
       )}
 
+=======
+>>>>>>> origin/ui-overhaul-premium
       <Toast message={toast} onDismiss={dismissToast} />
     </div>
   );
@@ -2293,7 +2833,10 @@ function AuthStep({
   setAuth,
   errors,
   attempted,
+<<<<<<< HEAD
   onOpenLoadModal,
+=======
+>>>>>>> origin/ui-overhaul-premium
   onSubmit,
 }: {
   mode: AuthMode;
@@ -2304,7 +2847,10 @@ function AuthStep({
   setAuth: Dispatch<SetStateAction<AuthState>>;
   errors: AuthErrors;
   attempted: boolean;
+<<<<<<< HEAD
   onOpenLoadModal?: () => void;
+=======
+>>>>>>> origin/ui-overhaul-premium
   onSubmit: () => void;
 }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -2320,7 +2866,11 @@ function AuthStep({
       icon={Fingerprint}
       className="self-start"
       aside={
+<<<<<<< HEAD
         <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+=======
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
           <LiveDot />
           {mode === "signup" ? "Takes 40 seconds" : "Session restored"}
         </span>
@@ -2399,7 +2949,11 @@ function AuthStep({
             maxLength={10}
             hint="10-digit Indian mobile, used for OTP verification only."
             trailing={
+<<<<<<< HEAD
               <span className="text-[11px] text-slate-500">+91</span>
+=======
+              <span className="text-[11px] text-zinc-500">+91</span>
+>>>>>>> origin/ui-overhaul-premium
             }
           />
         )}
@@ -2420,17 +2974,28 @@ function AuthStep({
               type="button"
               onClick={() => setShowPassword((prev) => !prev)}
               aria-label={showPassword ? "Hide password" : "Show password"}
+<<<<<<< HEAD
               className="rounded-md p-1.5 text-slate-500 transition-colors hover:text-cyan-300"
+=======
+              className="rounded-md p-1.5 text-zinc-500 transition-colors hover:text-cyan-300"
+>>>>>>> origin/ui-overhaul-premium
             >
               {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
             </button>
           }
         />
 
+<<<<<<< HEAD
         <div className="flex items-start gap-2.5 rounded-xl border border-slate-800 bg-slate-950/40 p-3">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
           <p className="text-[11px] leading-relaxed text-slate-400">
             Your data is processed securely via our AI backend. Your calibration lives in this browser tab and is
+=======
+        <div className="flex items-start gap-2.5 rounded-xl border border-zinc-800/50 bg-slate-950/40 p-3">
+          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+          <p className="text-[11px] leading-relaxed text-zinc-400">
+            Demo build: nothing is transmitted. Your calibration lives in this browser tab and is
+>>>>>>> origin/ui-overhaul-premium
             encoded into the credential you export.
           </p>
         </div>
@@ -2438,6 +3003,7 @@ function AuthStep({
         <PrimaryButton type="submit" icon={mode === "signup" ? UserPlus : LogIn} full>
           {mode === "signup" ? "Create profile & continue" : "Log in & continue"}
         </PrimaryButton>
+<<<<<<< HEAD
 
         {onOpenLoadModal && (
           <div className="pt-2 border-t border-slate-800/60 text-center">
@@ -2451,6 +3017,8 @@ function AuthStep({
             </button>
           </div>
         )}
+=======
+>>>>>>> origin/ui-overhaul-premium
       </form>
     </Panel>
   );
@@ -2459,7 +3027,11 @@ function AuthStep({
 function IntroPanel() {
   return (
     <div className="space-y-6">
+<<<<<<< HEAD
       <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur-md sm:p-8">
+=======
+      <div className="relative overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-900/50 p-6 backdrop-blur-md sm:p-8">
+>>>>>>> origin/ui-overhaul-premium
         <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
         <div className="relative">
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-[11px] font-medium tracking-tight text-cyan-300">
@@ -2472,9 +3044,15 @@ function IntroPanel() {
               before you spend another weekend learning the wrong thing.
             </span>
           </h1>
+<<<<<<< HEAD
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
             Skill Setu turns live job postings into a PIN-code precise competency gap report, a
             sequenced 10-week roadmap, and a verifiable Career Roadmap credential you can attach to
+=======
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+            Skill Setu turns live job postings into a PIN-code precise competency gap report, a
+            sequenced 10-week roadmap, and a verifiable Open Badges 3.0 credential you can attach to
+>>>>>>> origin/ui-overhaul-premium
             any profile.
           </p>
           <div className="mt-6 flex flex-wrap gap-2.5">
@@ -2492,41 +3070,71 @@ function IntroPanel() {
           return (
             <div
               key={pillar.label}
+<<<<<<< HEAD
               className="group rounded-2xl border border-slate-800 bg-slate-900/50 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/30"
+=======
+              className="group rounded-2xl border border-zinc-800/50 bg-zinc-900/50 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/30"
+>>>>>>> origin/ui-overhaul-premium
             >
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 bg-slate-950/60 text-cyan-300 transition-colors duration-300 group-hover:border-cyan-400/40">
                 <Icon className="h-5 w-5" />
               </span>
+<<<<<<< HEAD
               <p className="mt-3.5 text-sm font-medium tracking-tight text-slate-100">
                 {pillar.label}
               </p>
               <p className="mt-1 text-xs leading-relaxed text-slate-500">{pillar.meta}</p>
+=======
+              <p className="mt-3.5 text-sm font-medium tracking-tight text-zinc-100">
+                {pillar.label}
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-zinc-500">{pillar.meta}</p>
+>>>>>>> origin/ui-overhaul-premium
             </div>
           );
         })}
       </div>
 
+<<<<<<< HEAD
       <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40">
         <div className="flex items-center gap-2 border-b border-slate-800/80 px-5 py-3">
           <Activity className="h-3.5 w-3.5 text-cyan-400" />
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+=======
+      <div className="overflow-hidden rounded-2xl border border-zinc-800/50 bg-slate-900/40">
+        <div className="flex items-center gap-2 border-b border-zinc-800/50/80 px-5 py-3">
+          <Activity className="h-3.5 w-3.5 text-cyan-400" />
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
             SerpApi query stream
           </p>
         </div>
         <div className="relative h-9 overflow-hidden">
           <div className="ss-marquee flex w-max items-center gap-8 whitespace-nowrap px-4">
             {[...TICKER, ...TICKER].map((item, index) => (
+<<<<<<< HEAD
               <span key={`${item}-${index}`} className="font-mono text-[11px] text-slate-500">
+=======
+              <span key={`${item}-${index}`} className="font-mono text-[11px] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 <span className="text-cyan-400/80">&gt;</span> {item}
               </span>
             ))}
           </div>
         </div>
+<<<<<<< HEAD
         <div className="grid grid-cols-2 gap-4 border-t border-slate-800/80 px-5 py-4 sm:grid-cols-4">
           {NATIONAL_PULSE.map((item) => (
             <div key={item.label}>
               <p className="text-xl font-semibold tracking-tight text-slate-50">{item.value}</p>
               <p className="mt-0.5 text-[11px] text-slate-500">{item.label}</p>
+=======
+        <div className="grid grid-cols-2 gap-4 border-t border-zinc-800/50/80 px-5 py-4 sm:grid-cols-4">
+          {NATIONAL_PULSE.map((item) => (
+            <div key={item.label}>
+              <p className="text-xl font-semibold tracking-tight text-slate-50">{item.value}</p>
+              <p className="mt-0.5 text-[11px] text-zinc-500">{item.label}</p>
+>>>>>>> origin/ui-overhaul-premium
             </div>
           ))}
         </div>
@@ -2544,7 +3152,10 @@ function mintCredential(input: {
   stats: ReportStats;
   displayName: string;
   identity: string;
+<<<<<<< HEAD
   databaseId?: string | null;
+=======
+>>>>>>> origin/ui-overhaul-premium
 }): Credential {
   const uuid = makeUuid();
   const issued = new Date();
@@ -2565,12 +3176,22 @@ function mintCredential(input: {
     type: ["VerifiableCredential", "OpenBadgeCredential"],
     id: `urn:uuid:${uuid}`,
     name: `Skill Setu LMI Skill Gap Report — ${input.role || "Open Role"}`,
+<<<<<<< HEAD
     description: `Verified skill-gap analysis for ${input.role || "an open role"} in ${city} (PIN ${input.pin || "—"
       }), benchmarked against clustered SerpApi job-market demand across ${input.market.length} competency axes.`,
     issuer: {
       id: "https://skillsetu.io/issuers/lmi-engine",
       type: ["Profile"],
       name: "Skill Setu Live Career Guidance Engine",
+=======
+    description: `Verified skill-gap analysis for ${input.role || "an open role"} in ${city} (PIN ${
+      input.pin || "—"
+    }), benchmarked against clustered SerpApi job-market demand across ${input.market.length} competency axes.`,
+    issuer: {
+      id: "https://skillsetu.io/issuers/lmi-engine",
+      type: ["Profile"],
+      name: "Skill Setu Labor Market Intelligence Engine",
+>>>>>>> origin/ui-overhaul-premium
       image: "https://skillsetu.io/issuers/lmi-engine/image.png",
     },
     validFrom: issued.toISOString(),
@@ -2584,6 +3205,7 @@ function mintCredential(input: {
       achievement: {
         type: ["Achievement"],
         name: "Market-Aligned Skill Calibration",
+<<<<<<< HEAD
         description: `Calibrated against ${city} demand for ${input.domain || "an unspecified domain"
           }. Coverage ${input.stats.coverage}%, model confidence ${input.stats.confidence
           }%, ${input.stats.critical} critical gap${input.stats.critical === 1 ? "" : "s"
@@ -2592,12 +3214,30 @@ function mintCredential(input: {
           type: "Criteria",
           narrative:
             "Self-declared 0–100 proficiency compared against live job-posting demand from SerpApi.",
+=======
+        description: `Calibrated against ${city} demand for ${
+          input.domain || "an unspecified domain"
+        }. Coverage ${input.stats.coverage}%, model confidence ${
+          input.stats.confidence
+        }%, ${input.stats.critical} critical gap${
+          input.stats.critical === 1 ? "" : "s"
+        } with a remediation plan attached.`,
+        criteria: {
+          type: "Criteria",
+          narrative:
+            "Self-declared 0–100 proficiency reconciled with SBERT-clustered job-posting demand signals.",
+>>>>>>> origin/ui-overhaul-premium
         },
       },
       resultDescription: input.market
         .map(
           (row) =>
+<<<<<<< HEAD
             `${row.axis}: self ${row.you} / market ${row.market} (delta ${row.gap > 0 ? "+" : ""
+=======
+            `${row.axis}: self ${row.you} / market ${row.market} (delta ${
+              row.gap > 0 ? "+" : ""
+>>>>>>> origin/ui-overhaul-premium
             }${row.gap}, ${row.priority})`,
         )
         .join("; "),
@@ -2619,12 +3259,15 @@ function mintCredential(input: {
         .toISOString()
         .slice(0, 10),
       creditsEarned: 3,
+<<<<<<< HEAD
       databaseStorage: {
         provider: "Google Cloud / Firebase Firestore",
         projectId: "skill-setu3993",
         documentId: input.databaseId || null,
         status: input.databaseId ? "Verified in Firestore" : "Local session",
       },
+=======
+>>>>>>> origin/ui-overhaul-premium
     },
     credentialSchema: {
       id: "https://skillsetu.io/schemas/lmi-skill-gap-report/v1.json",
@@ -2643,6 +3286,98 @@ function mintCredential(input: {
     },
   };
 }
+<<<<<<< HEAD
+=======
+function CalibrationAssessmentStep({
+  onContinue,
+  onBack,
+}: {
+  onContinue: () => void;
+  onBack: () => void;
+}) {
+  const [scores, setScores] = useState<Record<SkillKey, number>>({
+    python: 50,
+    sql: 50,
+    frontend: 50,
+    dataviz: 50,
+    ml: 50,
+    cloud: 50,
+    apis: 50,
+    communication: 50,
+  });
+
+  const handleChange = (key: SkillKey, value: number) => {
+    setScores((prev) => ({ ...prev, [key]: value }));
+  };
+
+  return (
+    <Panel
+      eyebrow="Step 02 · Skill Assessment"
+      title="Quick skill assessment"
+      description="Rate your confidence in each core skill from 0–100. This sets your baseline for the gap analysis."
+      icon={Sliders}
+      aside={
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
+          <Activity className="h-3.5 w-3.5 text-cyan-400" />
+          8 skills · 0–100 scale
+        </div>
+      }
+    >
+      <div className="space-y-4">
+        {SKILL_AXES.map((axis) => (
+          <div
+            key={axis.key}
+            className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex min-w-0 items-start gap-2.5">
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 text-cyan-300">
+                  <axis.icon className="h-3.5 w-3.5" />
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium tracking-tight text-zinc-100">
+                    {axis.label}
+                  </p>
+                  <p className="mt-0.5 text-[11px] leading-relaxed text-zinc-500">
+                    {axis.blurb}
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 text-right">
+                <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-50">
+                  {scores[axis.key]}
+                </p>
+                <p className="text-[10px] uppercase tracking-wider text-zinc-500">self</p>
+              </div>
+            </div>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              step={1}
+              value={scores[axis.key]}
+              aria-label={`${axis.label} self-assessment`}
+              onChange={(event) => handleChange(axis.key, Number(event.target.value))}
+              className="ss-range mt-4"
+              style={{
+                background: `linear-gradient(90deg, #22d3ee 0%, #22d3ee ${scores[axis.key]}%, rgb(30 41 59) ${scores[axis.key]}%, rgb(30 41 59) 100%)`,
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <StepFooter
+        onBack={onBack}
+        onContinue={onContinue}
+        continueLabel="Continue to location"
+        continueIcon={MapPin}
+      />
+    </Panel>
+  );
+}
+
+>>>>>>> origin/ui-overhaul-premium
 
 function LocationStep({
   query,
@@ -2685,7 +3420,11 @@ function LocationStep({
       description="Demand is not national — Bengaluru and Ranchi do not price the same skills. We resolve your 6-digit PIN to a zone, then weight every demand score by local posting density and cost of living."
       icon={MapPin}
       aside={
+<<<<<<< HEAD
         <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+=======
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
           <LiveDot />
           16 zones resolved · 2,400+ prefixes
         </div>
@@ -2720,10 +3459,17 @@ function LocationStep({
                       className="flex w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left text-sm text-slate-300 transition-colors hover:bg-slate-800/70 hover:text-cyan-200"
                     >
                       <span className="flex items-center gap-2">
+<<<<<<< HEAD
                         <MapPin className="h-3.5 w-3.5 text-slate-500" />
                         {item.city}, {item.region}
                       </span>
                       <span className="font-mono text-[11px] tabular-nums text-slate-500">
+=======
+                        <MapPin className="h-3.5 w-3.5 text-zinc-500" />
+                        {item.city}, {item.region}
+                      </span>
+                      <span className="font-mono text-[11px] tabular-nums text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                         {item.pin}
                       </span>
                     </button>
@@ -2767,7 +3513,11 @@ function LocationStep({
           </div>
 
           <div className="space-y-2.5">
+<<<<<<< HEAD
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
               Popular tier-1 zones
             </p>
             <div className="flex flex-wrap gap-2">
@@ -2785,7 +3535,11 @@ function LocationStep({
           <div
             className={cx(
               "relative overflow-hidden rounded-2xl border p-5 transition-colors duration-300",
+<<<<<<< HEAD
               zone ? "border-cyan-400/30 bg-cyan-400/[0.04]" : "border-slate-800 bg-slate-950/40",
+=======
+              zone ? "border-cyan-400/30 bg-cyan-400/[0.04]" : "border-zinc-800/50 bg-slate-950/40",
+>>>>>>> origin/ui-overhaul-premium
             )}
           >
             {zone ? (
@@ -2795,19 +3549,31 @@ function LocationStep({
                   Zone resolved
                 </div>
                 <p className="mt-3 text-xl font-semibold tracking-tight text-slate-50">{zone.city}</p>
+<<<<<<< HEAD
                 <p className="text-sm text-slate-400">
+=======
+                <p className="text-sm text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                   {zone.region} · Tier {zone.tier}
                 </p>
                 <div className="mt-4 space-y-3">
                   <div>
+<<<<<<< HEAD
                     <div className="flex justify-between text-[11px] text-slate-400">
+=======
+                    <div className="flex justify-between text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                       <span>Posting density</span>
                       <span className="tabular-nums text-cyan-300">{zone.density}x</span>
                     </div>
                     <MeterBar value={(zone.density / 5) * 100} className="mt-1.5" />
                   </div>
                   <div>
+<<<<<<< HEAD
                     <div className="flex justify-between text-[11px] text-slate-400">
+=======
+                    <div className="flex justify-between text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                       <span>Cost-of-living index</span>
                       <span className="tabular-nums text-blue-300">{zone.salary.toFixed(2)}x</span>
                     </div>
@@ -2826,7 +3592,11 @@ function LocationStep({
             ) : (
               <div className="flex min-h-[200px] flex-col items-center justify-center text-center">
                 <Locate className="h-7 w-7 text-slate-700" />
+<<<<<<< HEAD
                 <p className="mt-3 text-sm text-slate-400">No zone resolved yet</p>
+=======
+                <p className="mt-3 text-sm text-zinc-400">No zone resolved yet</p>
+>>>>>>> origin/ui-overhaul-premium
                 <p className="mt-1 max-w-[24ch] text-[11px] leading-relaxed text-slate-600">
                   Enter a valid 6-digit PIN to unlock local demand weighting and compensation
                   normalisation.
@@ -2835,11 +3605,19 @@ function LocationStep({
             )}
           </div>
 
+<<<<<<< HEAD
           <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
               Why this matters
             </p>
             <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
+=======
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              Why this matters
+            </p>
+            <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
               {[
                 "SerpApi google_jobs takes a location string — we send the resolved city name.",
                 "PIN prefixes map to distinct wage bands, so salary outlook is normalised per zone.",
@@ -2920,7 +3698,11 @@ function CareerStep({
                   "group relative overflow-hidden rounded-xl border p-4 text-left transition-all duration-300",
                   isActive
                     ? "border-cyan-400/50 bg-cyan-400/[0.06] shadow-[0_0_32px_-16px_rgba(34,211,238,0.9)]"
+<<<<<<< HEAD
                     : "border-slate-800 bg-slate-950/40 hover:-translate-y-0.5 hover:border-slate-700",
+=======
+                    : "border-zinc-800/50 bg-slate-950/40 hover:-translate-y-0.5 hover:border-slate-700",
+>>>>>>> origin/ui-overhaul-premium
                 )}
               >
                 {isActive ? (
@@ -2928,6 +3710,7 @@ function CareerStep({
                     <CheckCircle2 className="h-4 w-4 text-cyan-400" />
                   </span>
                 ) : null}
+<<<<<<< HEAD
                 <p className="pr-6 text-sm font-semibold tracking-tight text-slate-100">
                   {preset.role}
                 </p>
@@ -2939,6 +3722,19 @@ function CareerStep({
                     {inrCompact(preset.openings)}
                   </span>
                   <span className="flex items-center gap-1 text-slate-400">
+=======
+                <p className="pr-6 text-sm font-semibold tracking-tight text-zinc-100">
+                  {preset.role}
+                </p>
+                <p className="mt-0.5 text-[11px] text-cyan-400/80">{preset.domain}</p>
+                <p className="mt-2.5 text-[11px] leading-relaxed text-zinc-500">{preset.blurb}</p>
+                <div className="mt-3 flex items-center gap-3 border-t border-zinc-800/50/80 pt-2.5 text-[11px]">
+                  <span className="flex items-center gap-1 text-zinc-400">
+                    <Rocket className="h-3 w-3" />
+                    {inrCompact(preset.openings)}
+                  </span>
+                  <span className="flex items-center gap-1 text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                     <TrendingUp className="h-3 w-3" />
                     {preset.spread}
                   </span>
@@ -2971,9 +3767,15 @@ function CareerStep({
             <div className="space-y-1.5">
               <label
                 htmlFor="ss-domain"
+<<<<<<< HEAD
                 className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-slate-400"
               >
                 <Compass className="h-3.5 w-3.5 text-slate-500" />
+=======
+                className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-zinc-400"
+              >
+                <Compass className="h-3.5 w-3.5 text-zinc-500" />
+>>>>>>> origin/ui-overhaul-premium
                 Industry domain
               </label>
               <div className="relative">
@@ -2983,10 +3785,17 @@ function CareerStep({
                   onChange={(event) => onDomain(event.target.value)}
                   aria-invalid={Boolean(attempted && errors.domain)}
                   className={cx(
+<<<<<<< HEAD
                     "w-full appearance-none rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-100 transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
                     attempted && errors.domain
                       ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
                       : "border-slate-800 hover:border-slate-700 focus:border-cyan-400/60",
+=======
+                    "w-full appearance-none rounded-xl border bg-slate-950/60 px-3.5 py-2.5 text-sm text-zinc-100 transition-all duration-200 outline-none focus:ring-2 focus:ring-cyan-400/40",
+                    attempted && errors.domain
+                      ? "border-rose-500/60 focus:border-rose-400 focus:ring-rose-400/30"
+                      : "border-zinc-800/50 hover:border-slate-700 focus:border-cyan-400/60",
+>>>>>>> origin/ui-overhaul-premium
                   )}
                 >
                   <option value="">Select a domain…</option>
@@ -2996,7 +3805,11 @@ function CareerStep({
                     </option>
                   ))}
                 </select>
+<<<<<<< HEAD
                 <ChevronRight className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 rotate-90 text-slate-500" />
+=======
+                <ChevronRight className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 rotate-90 text-zinc-500" />
+>>>>>>> origin/ui-overhaul-premium
               </div>
               {attempted && errors.domain ? (
                 <p className="flex items-center gap-1.5 text-xs text-rose-400">
@@ -3007,11 +3820,19 @@ function CareerStep({
             </div>
           </div>
 
+<<<<<<< HEAD
           <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
             {signal ? (
               <>
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+            {signal ? (
+              <>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                     Live role signal
                   </p>
                   <Chip icon={Activity}>30d window</Chip>
@@ -3019,29 +3840,49 @@ function CareerStep({
                 <p className="mt-3 text-lg font-semibold tracking-tight text-slate-50">
                   {signal.role}
                 </p>
+<<<<<<< HEAD
                 <p className="mt-0.5 text-xs text-slate-400">{signal.blurb}</p>
+=======
+                <p className="mt-0.5 text-xs text-zinc-400">{signal.blurb}</p>
+>>>>>>> origin/ui-overhaul-premium
                 <div className="mt-4 grid grid-cols-3 gap-3">
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-cyan-300">
                       {inrCompact(signal.openings)}
                     </p>
+<<<<<<< HEAD
                     <p className="text-[10px] uppercase tracking-wider text-slate-500">postings</p>
+=======
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">postings</p>
+>>>>>>> origin/ui-overhaul-premium
                   </div>
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-blue-300">
                       {signal.median.toFixed(1)}
                     </p>
+<<<<<<< HEAD
                     <p className="text-[10px] uppercase tracking-wider text-slate-500">median LPA</p>
+=======
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">median LPA</p>
+>>>>>>> origin/ui-overhaul-premium
                   </div>
                   <div>
                     <p className="text-xl font-semibold tabular-nums tracking-tight text-slate-200">
                       17
                     </p>
+<<<<<<< HEAD
                     <p className="text-[10px] uppercase tracking-wider text-slate-500">clusters</p>
                   </div>
                 </div>
                 <div className="mt-4 space-y-2 border-t border-slate-800/80 pt-4">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">clusters</p>
+                  </div>
+                </div>
+                <div className="mt-4 space-y-2 border-t border-zinc-800/50/80 pt-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                     Demand modifiers applied
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -3063,7 +3904,11 @@ function CareerStep({
             ) : (
               <div className="flex min-h-[220px] flex-col items-center justify-center text-center">
                 <Target className="h-7 w-7 text-slate-700" />
+<<<<<<< HEAD
                 <p className="mt-3 text-sm text-slate-400">No role signal yet</p>
+=======
+                <p className="mt-3 text-sm text-zinc-400">No role signal yet</p>
+>>>>>>> origin/ui-overhaul-premium
                 <p className="mt-1 max-w-[30ch] text-[11px] leading-relaxed text-slate-600">
                   Choose a preset above or type your target role. The demand model will weight every
                   competency axis for it.
@@ -3123,7 +3968,11 @@ function SkillsStep({
       description="Drag each axis to where you would be comfortable in a real interview today. Inflate this and the roadmap will lie to you — the market tick marks show what your local employers actually ask for."
       icon={Sliders}
       aside={
+<<<<<<< HEAD
         <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+=======
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
           <Gauge className="h-3.5 w-3.5 text-cyan-400" />
           <span className="tabular-nums text-cyan-300">{stats.coverage}%</span> market coverage
         </div>
@@ -3131,12 +3980,21 @@ function SkillsStep({
     >
       <div className="space-y-6">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,300px)]">
+<<<<<<< HEAD
           <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Calibration profile
               </p>
               <span className="text-[11px] text-slate-500">
+=======
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                Calibration profile
+              </p>
+              <span className="text-[11px] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 self average{" "}
                 <span className="font-semibold tabular-nums text-slate-200">{stats.avgYou}</span> ·
                 market average{" "}
@@ -3163,7 +4021,11 @@ function SkillsStep({
               </Chip>
               {calibrationId === "custom" ? <Chip active icon={Sigma}>Custom</Chip> : null}
             </div>
+<<<<<<< HEAD
             <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+=======
+            <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
               {CALIBRATION_PRESETS.find((preset) => preset.id === calibrationId)?.note ??
                 "Your own numbers, or a market-informed starting point you can edit."}
             </p>
@@ -3174,9 +4036,15 @@ function SkillsStep({
             </div>
           </div>
 
+<<<<<<< HEAD
           <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
             <div className="flex items-center justify-between gap-3">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 Live coverage
               </p>
               <span className="text-xl font-semibold tabular-nums tracking-tight text-cyan-300">
@@ -3191,12 +4059,20 @@ function SkillsStep({
                 { label: "Points to close", value: `${stats.totalGap}`, tone: "cyan" as const },
               ].map((row) => (
                 <div key={row.label} className="flex items-center justify-between text-[11px]">
+<<<<<<< HEAD
                   <span className="text-slate-400">{row.label}</span>
+=======
+                  <span className="text-zinc-400">{row.label}</span>
+>>>>>>> origin/ui-overhaul-premium
                   <span className="font-semibold tabular-nums text-slate-200">{row.value}</span>
                 </div>
               ))}
             </div>
+<<<<<<< HEAD
             <p className="mt-4 border-t border-slate-800/80 pt-3 text-[11px] leading-relaxed text-slate-500">
+=======
+            <p className="mt-4 border-t border-zinc-800/50/80 pt-3 text-[11px] leading-relaxed text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
               Coverage is demand-weighted: closing a gap in a high-demand axis moves the number far
               more than closing an axis nobody is hiring for.
             </p>
@@ -3251,38 +4127,63 @@ function TerminalStep({
   return (
     <Panel
       eyebrow="Step 05 · Engine run"
+<<<<<<< HEAD
       title="SerpApi → Google Gemini AI → Skill Gap Analysis"
       description="Watch the live analysis pipeline. Each step connects to SerpApi for job data and Google Gemini for AI-powered skill gap analysis."
       icon={Terminal}
       aside={
         <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-950/60 px-3 py-1.5 text-[11px] text-slate-400">
+=======
+      title="SerpApi → Pydantic → SBERT → gap vectors"
+      description="Watch the pipeline work. Every step below maps to a real stage of the production orchestrator, wired end to end to SerpApi google_jobs and google_jobs_extensions."
+      icon={Terminal}
+      aside={
+        <div className="flex items-center gap-2 rounded-full border border-zinc-800/50 bg-slate-950/60 px-3 py-1.5 text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
           <LiveDot />
           {done ? "pipeline complete" : "pipeline running"}
         </div>
       }
     >
       <div className="space-y-5">
+<<<<<<< HEAD
         <div className="overflow-hidden rounded-2xl border border-slate-800 bg-black p-4 shadow-[0_0_60px_-30px_rgba(34,211,238,0.7)]">
           <div className="mb-3 flex items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
+=======
+        <div className="overflow-hidden rounded-2xl border border-zinc-800/50 bg-black p-4 shadow-[0_0_60px_-30px_rgba(34,211,238,0.7)]">
+          <div className="mb-3 flex items-center justify-between gap-3 border-b border-zinc-800/50/80 pb-3">
+>>>>>>> origin/ui-overhaul-premium
             <div className="flex items-center gap-2">
               <span className="flex gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-500/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-500/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
               </span>
+<<<<<<< HEAD
               <span className="font-mono text-[11px] text-slate-500">
+=======
+              <span className="font-mono text-[11px] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 skillsetu-engine · zsh · serpapi-lmi
               </span>
             </div>
             <div className="flex items-center gap-3">
+<<<<<<< HEAD
               <span className="font-mono text-[11px] tabular-nums text-slate-500">
+=======
+              <span className="font-mono text-[11px] tabular-nums text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 {elapsed.toFixed(1)}s
               </span>
               <button
                 type="button"
                 onClick={onCopy}
                 disabled={logs.length === 0}
+<<<<<<< HEAD
                 className="inline-flex items-center gap-1.5 rounded-md border border-slate-800 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-slate-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300 disabled:opacity-40"
+=======
+                className="inline-flex items-center gap-1.5 rounded-md border border-zinc-800/50 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300 disabled:opacity-40"
+>>>>>>> origin/ui-overhaul-premium
               >
                 <Copy className="h-3 w-3" />
                 copy
@@ -3306,7 +4207,11 @@ function TerminalStep({
                   key={line.id}
                   className={cx(
                     "flex gap-2",
+<<<<<<< HEAD
                     line.level === "cmd" ? "text-cyan-300" : "text-slate-500",
+=======
+                    line.level === "cmd" ? "text-cyan-300" : "text-zinc-500",
+>>>>>>> origin/ui-overhaul-premium
                     line.level === "ok" ? "text-emerald-400/90" : undefined,
                     line.level === "warn" ? "text-amber-300" : undefined,
                   )}
@@ -3319,7 +4224,11 @@ function TerminalStep({
               ))
             )}
             {!done ? (
+<<<<<<< HEAD
               <p className="flex gap-2 text-slate-500">
+=======
+              <p className="flex gap-2 text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 <span className="select-none text-cyan-400/70">$</span>
                 <span className="ss-caret inline-block h-3.5 w-2 translate-y-0.5 bg-cyan-400" />
               </p>
@@ -3334,7 +4243,11 @@ function TerminalStep({
             )}
           </div>
 
+<<<<<<< HEAD
           <div className="mt-3 flex items-center gap-3 border-t border-slate-800/80 pt-3">
+=======
+          <div className="mt-3 flex items-center gap-3 border-t border-zinc-800/50/80 pt-3">
+>>>>>>> origin/ui-overhaul-premium
             <MeterBar value={progress} className="flex-1" />
             <span className="font-mono text-[11px] tabular-nums text-cyan-400">
               {progress}% · {logs.length}/{total} stages
@@ -3353,23 +4266,38 @@ function TerminalStep({
             return (
               <div
                 key={card.label}
+<<<<<<< HEAD
                 className="rounded-xl border border-slate-800 bg-slate-950/40 p-3.5"
+=======
+                className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-3.5"
+>>>>>>> origin/ui-overhaul-premium
               >
                 <Icon className="h-4 w-4 text-cyan-400" />
                 <p className="mt-2 text-lg font-semibold tabular-nums tracking-tight text-slate-50">
                   {card.value}
                 </p>
+<<<<<<< HEAD
                 <p className="text-[10px] uppercase tracking-wider text-slate-500">{card.label}</p>
+=======
+                <p className="text-[10px] uppercase tracking-wider text-zinc-500">{card.label}</p>
+>>>>>>> origin/ui-overhaul-premium
               </div>
             );
           })}
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+<<<<<<< HEAD
           <p className="flex items-center gap-2 text-[11px] text-slate-500">
             <Info className="h-3.5 w-3.5 shrink-0" />
             Live analysis powered by SerpApi google_jobs and Google Gemini AI.
 
+=======
+          <p className="flex items-center gap-2 text-[11px] text-zinc-500">
+            <Info className="h-3.5 w-3.5 shrink-0" />
+            Deterministic local simulation — a production build swaps this script for live SerpApi
+            responses and streamed NDJSON.
+>>>>>>> origin/ui-overhaul-premium
           </p>
           <GhostButton onClick={onSkip} icon={ArrowRight} disabled={done}>
             {done ? "Radar loading…" : "Skip to radar"}
@@ -3377,11 +4305,19 @@ function TerminalStep({
         </div>
       </div>
 
+<<<<<<< HEAD
       <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center">
         <GhostButton onClick={onBack} icon={ArrowLeft}>
           Back
         </GhostButton>
         <p className="flex items-center gap-1.5 text-[11px] text-slate-500">
+=======
+      <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
+        <GhostButton onClick={onBack} icon={ArrowLeft}>
+          Back
+        </GhostButton>
+        <p className="flex items-center gap-1.5 text-[11px] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
           <Info className="h-3.5 w-3.5 shrink-0" />
           The engine advances you to the radar automatically when every stage finishes.
         </p>
@@ -3402,7 +4338,11 @@ function RadarTip({ active, payload }: { active?: boolean; payload?: TipEntry[] 
   const axis = String(payload[0]?.payload?.axis ?? "");
   return (
     <div className="rounded-xl border border-slate-700 bg-slate-950/95 px-3.5 py-2.5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-md">
+<<<<<<< HEAD
       <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{axis}</p>
+=======
+      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">{axis}</p>
+>>>>>>> origin/ui-overhaul-premium
       <div className="mt-2 space-y-1.5">
         {payload.map((entry) => (
           <div key={String(entry.dataKey)} className="flex items-center gap-2 text-xs">
@@ -3410,8 +4350,13 @@ function RadarTip({ active, payload }: { active?: boolean; payload?: TipEntry[] 
               className="h-2 w-2 shrink-0 rounded-full"
               style={{ backgroundColor: entry.dataKey === "you" ? "#22d3ee" : "#60a5fa" }}
             />
+<<<<<<< HEAD
             <span className="flex-1 text-slate-400">{entry.name}</span>
             <span className="font-semibold tabular-nums text-slate-100">{entry.value}</span>
+=======
+            <span className="flex-1 text-zinc-400">{entry.name}</span>
+            <span className="font-semibold tabular-nums text-zinc-100">{entry.value}</span>
+>>>>>>> origin/ui-overhaul-premium
           </div>
         ))}
       </div>
@@ -3432,14 +4377,23 @@ function GapTip({
   const row = payload[0]?.payload;
   return (
     <div className="rounded-xl border border-slate-700 bg-slate-950/95 px-3.5 py-2.5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-md">
+<<<<<<< HEAD
       <p className="text-xs font-semibold text-slate-100">{label}</p>
       <p className="mt-1 text-[11px] text-slate-400">
+=======
+      <p className="text-xs font-semibold text-zinc-100">{label}</p>
+      <p className="mt-1 text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
         Gap{" "}
         <span className="font-semibold tabular-nums text-cyan-300">{row?.gap ?? 0}</span> points to
         close
       </p>
       {row?.priority ? (
+<<<<<<< HEAD
         <p className="mt-0.5 text-[11px] text-slate-500">Priority: {row.priority}</p>
+=======
+        <p className="mt-0.5 text-[11px] text-zinc-500">Priority: {row.priority}</p>
+>>>>>>> origin/ui-overhaul-premium
       ) : null}
     </div>
   );
@@ -3451,9 +4405,12 @@ function RadarStep({
   stats,
   zone,
   role,
+<<<<<<< HEAD
   aiReport,
   databaseId,
   onSaveSnapshot,
+=======
+>>>>>>> origin/ui-overhaul-premium
   onRerun,
   onContinue,
   onBack,
@@ -3463,9 +4420,12 @@ function RadarStep({
   stats: ReportStats;
   zone: Zone | undefined;
   role: string;
+<<<<<<< HEAD
   aiReport?: any;
   databaseId?: string | null;
   onSaveSnapshot?: () => void;
+=======
+>>>>>>> origin/ui-overhaul-premium
   onRerun: () => void;
   onContinue: () => void;
   onBack: () => void;
@@ -3491,6 +4451,7 @@ function RadarStep({
       }
     >
       <div className="space-y-6">
+<<<<<<< HEAD
         {aiReport && (
           <div className="rounded-xl border border-cyan-500/40 bg-cyan-950/30 p-4 shadow-[0_0_15px_-3px_rgba(34,211,238,0.15)]">
             <div className="flex items-center gap-2 text-sm font-semibold text-cyan-300">
@@ -3561,6 +4522,8 @@ function RadarStep({
             </button>
           </div>
         )}
+=======
+>>>>>>> origin/ui-overhaul-premium
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <StatTile
             icon={Crosshair}
@@ -3593,6 +4556,7 @@ function RadarStep({
         </div>
 
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+<<<<<<< HEAD
           <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
@@ -3607,6 +4571,22 @@ function RadarStep({
                   Your baseline
                 </span>
                 <span className="flex items-center gap-1.5 text-[11px] text-slate-400">
+=======
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4 sm:p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                  Competency radar · 8 axes
+                </p>
+                <p className="mt-1 text-xs text-zinc-500">Hover any vertex to read exact scores.</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <span className="flex items-center gap-1.5 text-[11px] text-zinc-400">
+                  <span className="h-2.5 w-2.5 rounded-sm bg-cyan-400/80" />
+                  Your baseline
+                </span>
+                <span className="flex items-center gap-1.5 text-[11px] text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                   <span className="h-2.5 w-2.5 rounded-sm bg-blue-400/80" />
                   Market demand
                 </span>
@@ -3657,8 +4637,13 @@ function RadarStep({
           </div>
 
           <div className="space-y-4">
+<<<<<<< HEAD
             <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 Where the gap hurts most
               </p>
               <ul className="mt-4 space-y-3.5">
@@ -3670,7 +4655,11 @@ function RadarStep({
                         {row.axisFull}
                       </span>
                       <span className="flex items-center gap-2">
+<<<<<<< HEAD
                         <span className="tabular-nums text-slate-400">
+=======
+                        <span className="tabular-nums text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                           {row.you} → {row.market}
                         </span>
                         <span
@@ -3693,8 +4682,13 @@ function RadarStep({
               </ul>
             </div>
 
+<<<<<<< HEAD
             <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 Already market-ready
               </p>
               {strengths.length > 0 ? (
@@ -3702,23 +4696,39 @@ function RadarStep({
                   {strengths.map((row) => (
                     <Chip key={row.key} icon={CheckCircle2}>
                       {row.axisFull}{" "}
+<<<<<<< HEAD
                       <span className="font-mono tabular-nums text-slate-500">+{Math.abs(row.gap)}</span>
+=======
+                      <span className="font-mono tabular-nums text-zinc-500">+{Math.abs(row.gap)}</span>
+>>>>>>> origin/ui-overhaul-premium
                     </Chip>
                   ))}
                 </div>
               ) : (
+<<<<<<< HEAD
                 <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+=======
+                <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                   No axis is fully at parity yet. Closing the top two gaps will move you there within
                   four weeks.
                 </p>
               )}
             </div>
 
+<<<<<<< HEAD
             <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
                 How to read this
               </p>
               <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
+=======
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                How to read this
+              </p>
+              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                 {[
                   "Cyan outside blue means employers are already paying for that skill in you.",
                   "Blue outside cyan is a demand gap — a concrete, priced opportunity.",
@@ -3735,7 +4745,11 @@ function RadarStep({
         </div>
       </div>
 
+<<<<<<< HEAD
       <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center">
+=======
+      <div className="mt-6 flex flex-col-reverse items-stretch justify-between gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center">
+>>>>>>> origin/ui-overhaul-premium
         <div className="flex flex-wrap items-center gap-3">
           <GhostButton onClick={onBack} icon={ArrowLeft}>
             Back
@@ -3748,7 +4762,11 @@ function RadarStep({
           <PrimaryButton onClick={onContinue} icon={GraduationCap}>
             Build my roadmap
           </PrimaryButton>
+<<<<<<< HEAD
           <p className="text-[11px] text-slate-500">
+=======
+          <p className="text-[11px] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
             {stats.totalGap} total points to close across 8 axes.
           </p>
         </div>
@@ -3767,7 +4785,10 @@ function RoadmapStep({
   gapChartData,
   roadmap,
   stats,
+<<<<<<< HEAD
   databaseId,
+=======
+>>>>>>> origin/ui-overhaul-premium
   onRecalibrate,
   onContinue,
   onBack,
@@ -3776,7 +4797,10 @@ function RoadmapStep({
   gapChartData: { axis: string; gap: number; priority: Priority }[];
   roadmap: RoadmapWeek[];
   stats: ReportStats;
+<<<<<<< HEAD
   databaseId?: string | null;
+=======
+>>>>>>> origin/ui-overhaul-premium
   onRecalibrate: () => void;
   onContinue: () => void;
   onBack: () => void;
@@ -3790,17 +4814,21 @@ function RoadmapStep({
       icon={GraduationCap}
       aside={
         <div className="flex flex-wrap items-center gap-2">
+<<<<<<< HEAD
           {databaseId && (
             <Chip icon={Database}>
               Firestore: {databaseId}
             </Chip>
           )}
+=======
+>>>>>>> origin/ui-overhaul-premium
           <Chip icon={Clock}>~{hours}h total</Chip>
           <Chip icon={GraduationCap}>10 weeks</Chip>
         </div>
       }
     >
       <div className="space-y-6">
+<<<<<<< HEAD
         {databaseId && (
           <div className="flex items-center justify-between gap-3 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-2.5 text-xs text-amber-200">
             <div className="flex items-center gap-2">
@@ -3823,6 +4851,14 @@ function RoadmapStep({
               Skill delta breakdown
             </p>
             <p className="mt-1 text-xs text-slate-500">
+=======
+        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)]">
+          <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-4 sm:p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              Skill delta breakdown
+            </p>
+            <p className="mt-1 text-xs text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
               Bars left of zero are surpluses, right of zero are gaps to close.
             </p>
             <div className="mt-2 h-[260px] w-full">
@@ -3878,10 +4914,17 @@ function RoadmapStep({
                 return (
                   <div
                     key={row.key}
+<<<<<<< HEAD
                     className="rounded-xl border border-slate-800 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <p className="text-sm font-medium tracking-tight text-slate-100">
+=======
+                    className="rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4 transition-colors duration-200 hover:border-slate-700"
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <p className="text-sm font-medium tracking-tight text-zinc-100">
+>>>>>>> origin/ui-overhaul-premium
                         {row.axisFull}
                       </p>
                       <span
@@ -3897,9 +4940,15 @@ function RoadmapStep({
                       <div>
                         <p className="text-2xl font-semibold tabular-nums tracking-tight text-slate-50">
                           {row.you}
+<<<<<<< HEAD
                           <span className="text-sm text-slate-500"> / {row.market}</span>
                         </p>
                         <p className="text-[10px] uppercase tracking-wider text-slate-500">
+=======
+                          <span className="text-sm text-zinc-500"> / {row.market}</span>
+                        </p>
+                        <p className="text-[10px] uppercase tracking-wider text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                           self / market
                         </p>
                       </div>
@@ -3913,7 +4962,11 @@ function RoadmapStep({
                       </p>
                     </div>
                     <MeterBar value={progress} className="mt-3" />
+<<<<<<< HEAD
                     <p className="mt-1.5 text-[11px] text-slate-500">
+=======
+                    <p className="mt-1.5 text-[11px] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                       {progress}% of market parity on this axis
                     </p>
                   </div>
@@ -3924,14 +4977,22 @@ function RoadmapStep({
 
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3">
+<<<<<<< HEAD
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
               Week-by-week roadmap
             </p>
             <GhostButton onClick={onRecalibrate} icon={Sliders}>
               Recalibrate
             </GhostButton>
           </div>
+<<<<<<< HEAD
           <ol className="relative mt-4 space-y-3 border-l border-slate-800 pl-5">
+=======
+          <ol className="relative mt-4 space-y-3 border-l border-zinc-800/50 pl-5">
+>>>>>>> origin/ui-overhaul-premium
             {roadmap.map((week) => (
               <li key={week.id} className="relative">
                 <span
@@ -3947,7 +5008,11 @@ function RoadmapStep({
                     )}
                   />
                 </span>
+<<<<<<< HEAD
                 <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 transition-colors duration-200 hover:border-slate-700">
+=======
+                <div className="rounded-xl border border-zinc-800/50 bg-slate-900/40 p-4 transition-colors duration-200 hover:border-slate-700">
+>>>>>>> origin/ui-overhaul-premium
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="rounded-md border border-slate-700 bg-slate-950/60 px-2 py-0.5 font-mono text-[10px] tabular-nums text-cyan-300">
@@ -3963,9 +5028,15 @@ function RoadmapStep({
                       >
                         {week.phase}
                       </span>
+<<<<<<< HEAD
                       <span className="text-[11px] text-slate-500">{week.skillFull}</span>
                     </div>
                     <span className="flex items-center gap-1.5 text-[11px] tabular-nums text-slate-400">
+=======
+                      <span className="text-[11px] text-zinc-500">{week.skillFull}</span>
+                    </div>
+                    <span className="flex items-center gap-1.5 text-[11px] tabular-nums text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                       <TrendingUp className="h-3.5 w-3.5 text-emerald-400" />
                       {week.start} → {week.target}
                     </span>
@@ -3973,7 +5044,11 @@ function RoadmapStep({
                   <p className="mt-2.5 text-sm font-semibold tracking-tight text-slate-50">
                     {week.title}
                   </p>
+<<<<<<< HEAD
                   <p className="mt-1 text-xs leading-relaxed text-slate-400">{week.objective}</p>
+=======
+                  <p className="mt-1 text-xs leading-relaxed text-zinc-400">{week.objective}</p>
+>>>>>>> origin/ui-overhaul-premium
                   <ul className="mt-3 space-y-1.5">
                     {week.tasks.map((task) => (
                       <li key={task} className="flex gap-2 text-[11px] leading-relaxed text-slate-300">
@@ -3982,7 +5057,11 @@ function RoadmapStep({
                       </li>
                     ))}
                   </ul>
+<<<<<<< HEAD
                   <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-slate-800/80 pt-3">
+=======
+                  <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-zinc-800/50/80 pt-3">
+>>>>>>> origin/ui-overhaul-premium
                     <Chip icon={CircleCheckBig}>{week.outcome}</Chip>
                     {week.resources.map((resource) => (
                       <Chip key={resource.title} icon={BookOpen}>
@@ -3996,9 +5075,15 @@ function RoadmapStep({
           </ol>
         </div>
 
+<<<<<<< HEAD
         <div className="flex items-start gap-2.5 rounded-xl border border-slate-800 bg-slate-950/40 p-4">
           <Sigma className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
           <p className="text-[11px] leading-relaxed text-slate-400">
+=======
+        <div className="flex items-start gap-2.5 rounded-xl border border-zinc-800/50 bg-slate-950/40 p-4">
+          <Sigma className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+          <p className="text-[11px] leading-relaxed text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
             Finishing this plan lifts coverage from {stats.coverage}% to a projected{" "}
             {Math.min(99, Math.round(stats.coverage + stats.totalGap * 0.55))}%, worth roughly{" "}
             {((stats.totalGap * 0.55 * stats.projected) / Math.max(stats.totalGap, 1)).toFixed(1)} LPA
@@ -4012,7 +5097,11 @@ function RoadmapStep({
         onContinue={onContinue}
         continueLabel="Export my credential"
         continueIcon={BadgeCheck}
+<<<<<<< HEAD
         hint="One click, standards-compliant Roadmap Data."
+=======
+        hint="One click, standards-compliant JSON-LD."
+>>>>>>> origin/ui-overhaul-premium
       />
     </Panel>
   );
@@ -4055,8 +5144,13 @@ function CredentialStep({
   return (
     <Panel
       eyebrow="Step 08 · Credential"
+<<<<<<< HEAD
       title="Export a verifiable Career Roadmap credential"
       description="A signed Roadmap Data envelope that any Skill-Setu-compatible verifier can validate. Attach it to a portfolio, a job application, or a Skill Setu profile and re-verify it later."
+=======
+      title="Export a verifiable Open Badges 3.0 credential"
+      description="A signed JSON-LD envelope that any 1EdTech-compatible verifier can validate. Attach it to a portfolio, a job application, or a Skill Setu profile and re-verify it later."
+>>>>>>> origin/ui-overhaul-premium
       icon={BadgeCheck}
       aside={
         <div className="flex flex-wrap items-center gap-2">
@@ -4070,7 +5164,11 @@ function CredentialStep({
           <div
             className={cx(
               "relative overflow-hidden rounded-2xl border p-5 transition-colors duration-500",
+<<<<<<< HEAD
               sealed ? "border-emerald-500/40 bg-emerald-500/[0.05]" : "border-slate-800 bg-slate-950/40",
+=======
+              sealed ? "border-emerald-500/40 bg-emerald-500/[0.05]" : "border-zinc-800/50 bg-slate-950/40",
+>>>>>>> origin/ui-overhaul-premium
             )}
           >
             <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -4086,13 +5184,21 @@ function CredentialStep({
                 {sealed ? <CheckCircle2 className="h-7 w-7" /> : <Award className="h-7 w-7" />}
               </span>
               <div className="min-w-0">
+<<<<<<< HEAD
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                   {sealed ? "Credential sealed" : "Credential drafted"}
                 </p>
                 <p className="mt-1.5 text-lg font-semibold tracking-tight text-slate-50">
                   {credential.name}
                 </p>
+<<<<<<< HEAD
                 <p className="mt-1.5 text-xs leading-relaxed text-slate-400">
+=======
+                <p className="mt-1.5 text-xs leading-relaxed text-zinc-400">
+>>>>>>> origin/ui-overhaul-premium
                   {credential.description}
                 </p>
               </div>
@@ -4105,8 +5211,13 @@ function CredentialStep({
                 { label: "Schema", value: credential.credentialSchema.id.split("/").slice(-2).join("/") },
                 { label: "Holder", value: identity || "unnamed holder" },
               ].map((row) => (
+<<<<<<< HEAD
                 <div key={row.label} className="rounded-lg border border-slate-800 bg-slate-950/50 p-3">
                   <p className="text-[10px] uppercase tracking-wider text-slate-500">{row.label}</p>
+=======
+                <div key={row.label} className="rounded-lg border border-zinc-800/50 bg-slate-950/50 p-3">
+                  <p className="text-[10px] uppercase tracking-wider text-zinc-500">{row.label}</p>
+>>>>>>> origin/ui-overhaul-premium
                   <p className="mt-1 truncate font-mono text-[11px] text-slate-200">{row.value}</p>
                 </div>
               ))}
@@ -4131,7 +5242,11 @@ function CredentialStep({
                         className={cx(
                           "font-mono",
                           state === "done"
+<<<<<<< HEAD
                             ? "text-slate-500 line-through"
+=======
+                            ? "text-zinc-500 line-through"
+>>>>>>> origin/ui-overhaul-premium
                             : state === "active"
                               ? "text-cyan-300"
                               : "text-slate-600",
@@ -4151,12 +5266,21 @@ function CredentialStep({
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
                 <div>
                   <p className="text-xs font-semibold text-emerald-200">
+<<<<<<< HEAD
                     Envelope verified locally against the Career Roadmap context
                   </p>
                   <p className="mt-1 text-[11px] leading-relaxed text-slate-400">
                     Secure Verification attached. The Roadmap Data is standards-compliant and can be verified
                     by any Skill-Setu-compatible badge platform. Your roadmap is generated using
                     live market data from SerpApi and AI analysis from Google Gemini.
+=======
+                    Envelope verified locally against the Open Badges 3.0 context
+                  </p>
+                  <p className="mt-1 text-[11px] leading-relaxed text-zinc-400">
+                    Ed25519 proof attached. The JSON-LD is standards-compliant and can be verified
+                    by any 1EdTech-compatible badge platform. The signature in this demo build is a
+                    placeholder, not a production key.
+>>>>>>> origin/ui-overhaul-premium
                   </p>
                 </div>
               </div>
@@ -4168,13 +5292,21 @@ function CredentialStep({
                 icon={sealed ? CheckCircle2 : ShieldCheck}
                 disabled={signing || sealed}
               >
+<<<<<<< HEAD
                 {sealed ? "Credential exported" : signing ? "Sealing credential…" : "Export Career Roadmap credential"}
+=======
+                {sealed ? "Credential exported" : signing ? "Sealing credential…" : "Export Open Badges 3.0 credential"}
+>>>>>>> origin/ui-overhaul-premium
               </PrimaryButton>
               <GhostButton onClick={onDownload} icon={Download} disabled={signing}>
                 Download .jsonld
               </GhostButton>
               <GhostButton onClick={onCopy} icon={Copy} disabled={signing}>
+<<<<<<< HEAD
                 Copy Roadmap Data
+=======
+                Copy JSON-LD
+>>>>>>> origin/ui-overhaul-premium
               </GhostButton>
               <GhostButton onClick={onRemint} icon={RefreshCw} disabled={signing}>
                 Re-mint
@@ -4183,8 +5315,13 @@ function CredentialStep({
           </div>
 
           <div className="space-y-4">
+<<<<<<< HEAD
             <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+=======
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+>>>>>>> origin/ui-overhaul-premium
                 Report summary
               </p>
               <dl className="mt-3.5 space-y-2.5 text-[11px]">
@@ -4198,8 +5335,13 @@ function CredentialStep({
                   { label: "Credentials earned", value: "3 credits" },
                 ].map((row) => (
                   <div key={row.label} className="flex items-center justify-between gap-3">
+<<<<<<< HEAD
                     <dt className="text-slate-400">{row.label}</dt>
                     <dd className="truncate font-semibold tabular-nums text-slate-100">
+=======
+                    <dt className="text-zinc-400">{row.label}</dt>
+                    <dd className="truncate font-semibold tabular-nums text-zinc-100">
+>>>>>>> origin/ui-overhaul-premium
                       {row.value}
                     </dd>
                   </div>
@@ -4207,6 +5349,7 @@ function CredentialStep({
               </dl>
             </div>
 
+<<<<<<< HEAD
             <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
                 Where this credential works
@@ -4214,6 +5357,15 @@ function CredentialStep({
               <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-slate-400">
                 {[
                   "Any Open Badges 2.0/3.0 platform that accepts Roadmap Data credentials.",
+=======
+            <div className="rounded-2xl border border-zinc-800/50 bg-slate-950/40 p-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                Where this credential works
+              </p>
+              <ul className="mt-3 space-y-2.5 text-[11px] leading-relaxed text-zinc-400">
+                {[
+                  "Any Open Badges 2.0/3.0 platform that accepts JSON-LD credentials.",
+>>>>>>> origin/ui-overhaul-premium
                   "Embedded in your portfolio as a linked-data script tag or downloaded file.",
                   "Re-verifiable: the credential id and schema id never change on export.",
                 ].map((item) => (
@@ -4229,6 +5381,7 @@ function CredentialStep({
 
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3">
+<<<<<<< HEAD
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
               Roadmap Data preview
             </p>
@@ -4237,11 +5390,25 @@ function CredentialStep({
             </span>
           </div>
           <pre className="mt-3 max-h-[420px] overflow-auto rounded-2xl border border-slate-800 bg-black p-4 font-mono text-[11px] leading-relaxed text-cyan-200/85 shadow-[0_0_50px_-30px_rgba(34,211,238,0.7)]">
+=======
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              JSON-LD payload preview
+            </p>
+            <span className="font-mono text-[11px] tabular-nums text-zinc-500">
+              {(serialized.length / 1024).toFixed(1)} KB
+            </span>
+          </div>
+          <pre className="mt-3 max-h-[420px] overflow-auto rounded-2xl border border-zinc-800/50 bg-black p-4 font-mono text-[11px] leading-relaxed text-cyan-200/85 shadow-[0_0_50px_-30px_rgba(34,211,238,0.7)]">
+>>>>>>> origin/ui-overhaul-premium
             {serialized}
           </pre>
         </div>
 
+<<<<<<< HEAD
         <div className="flex flex-col gap-3 border-t border-slate-800/80 pt-5 sm:flex-row sm:items-center sm:justify-between">
+=======
+        <div className="flex flex-col gap-3 border-t border-zinc-800/50/80 pt-5 sm:flex-row sm:items-center sm:justify-between">
+>>>>>>> origin/ui-overhaul-premium
           <div className="flex flex-wrap gap-2.5">
             <GhostButton onClick={onBack} icon={ArrowLeft}>
               Back to roadmap
@@ -4251,7 +5418,11 @@ function CredentialStep({
             </GhostButton>
           </div>
           <Chip icon={ShieldCheck}>
+<<<<<<< HEAD
             Personalized Growth Plan · Career Roadmap · context v3p0
+=======
+            1EdTech JSON-LD · Open Badges 3.0 · context v3p0
+>>>>>>> origin/ui-overhaul-premium
           </Chip>
         </div>
       </div>
