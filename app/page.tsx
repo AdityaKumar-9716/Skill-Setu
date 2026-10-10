@@ -822,7 +822,7 @@ function Panel({
   return (
     <section
       className={cx(
-        "group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-md transition-colors duration-300 hover:border-slate-700",
+        "glass-panel group",
         className,
       )}
     >
