@@ -1,33 +1,25 @@
-HEAD
+# Dependencies & Logs
 node_modules/
+npm-debug.log*
+
+# Environment & Private Keys
 .env
-.env.*
-.DS_Store
+.env*
+*.pem
 *serviceAccount*.json
 firebase-key.json
 firebase-*.json
-
 server/firebase-key.json
 
-# Next.js
+# Next.js & Build Outputs
 .next/
 out/
 build/
 .swc/
 tsconfig.tsbuildinfo
+next-env.d.ts
 
-# Scratch and Backups
+# OS & Scratch Files
+.DS_Store
 scratch/
 *_backup.*
-=======
-node_modules
-.next
-out
-build
-.DS_Store
-*.pem
-npm-debug.log*
-.env*
-next-env.d.ts
-tsconfig.tsbuildinfo
-
