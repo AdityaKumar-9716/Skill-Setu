@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ChangeEvent, Dispatch, ReactNode, RefObject, SetStateAction } from "react";
 import {
@@ -1470,7 +1471,9 @@ export default function SkillSetuPage() {
   const logSeq = useRef(0);
   const terminalBodyRef = useRef<HTMLDivElement>(null);
 
-  const zone = pin.trim().length === 6 ? PIN_ZONES[pin.trim()] : undefined;
+  const zone = pin.trim().length === 6 
+    ? (PIN_ZONES[pin.trim()] || { city: locationQuery.split(',')[0] || 'Unknown', region: locationQuery.split(',')[1]?.trim() || 'Unknown', tier: 2, density: 2.0, salary: 0.8 }) 
+    : undefined;
   const activePreset = useMemo(
     () => CAREER_PRESETS.find((preset) => preset.role === role.trim()) ?? null,
     [role],
@@ -1803,22 +1806,33 @@ export default function SkillSetuPage() {
   const detectLocation = useCallback(() => {
     if (locating) return;
     setLocating(true);
-    const resolve = (code: string) => {
-
-      window.setTimeout(() => {
-        pickZone(PIN_ZONES[code] ? code : "110001");
-        setLocating(false);
-      }, 950);
-    };
+    
     if (typeof navigator !== "undefined" && typeof navigator.geolocation?.getCurrentPosition === "function") {
       navigator.geolocation.getCurrentPosition(
-        () => resolve("560001"),
-        () => resolve("110001"),
-        { timeout: 4000, maximumAge: 300000 },
+        async (pos) => {
+          try {
+            const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&localityLanguage=en`);
+            const data = await res.json();
+            const city = data.city || data.locality || "Unknown City";
+            const region = data.principalSubdivision || "Unknown Region";
+            const code = data.postcode || "110001";
+            
+            setPin(code.slice(0, 6));
+            setLocationQuery(`${city}, ${region}`);
+          } catch (e) {
+            pickZone("110001");
+          }
+          setLocating(false);
+        },
+        () => {
+          pickZone("110001");
+          setLocating(false);
+        },
+        { timeout: 5000, maximumAge: 300000 },
       );
     } else {
-      resolve("110001");
-
+      pickZone("110001");
+      setLocating(false);
     }
   }, [locating, pickZone]);
 
@@ -1938,11 +1952,24 @@ export default function SkillSetuPage() {
               onClick={restart}
               title="Restart the journey"
               className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-800/50 bg-slate-900/60 text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
-
             >
               <RefreshCw className="h-4 w-4" />
               <span className="sr-only">Restart journey</span>
             </button>
+
+            <Link
+              href="/login"
+              className="hidden items-center justify-center rounded-lg border border-zinc-800/50 bg-slate-900/60 px-4 py-1.5 text-sm font-medium text-zinc-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-300 sm:flex"
+            >
+              Log in
+            </Link>
+            
+            <Link
+              href="/dashboard"
+              className="flex items-center justify-center rounded-lg bg-cyan-500 px-4 py-1.5 text-sm font-medium text-slate-950 transition-colors hover:bg-cyan-400"
+            >
+              Dashboard
+            </Link>
           </div>
         </div>
         <div className="relative h-px w-full overflow-hidden">
