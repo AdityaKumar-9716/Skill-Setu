@@ -2,7 +2,7 @@
 
 > **Bridging the gap between student potential and live industry requirements.**
 
-**👉 [INSERT 3-MINUTE YOUTUBE/DRIVE DEMO LINK HERE] 👈**
+** https://youtu.be/73-TE42NF2s?si=EX0WzFjnJVjoJe3R **
 
 ---
 
