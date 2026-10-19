@@ -102,8 +102,8 @@ Open `http://localhost:3000` in your browser and experience Skill Setu!
 | :--- | :--- |
 | **Aditya** | Project Lead, Backend Architecture, SerpApi Integration |
 | **Paarth** | Frontend Lead, React/Next.js UI, Tailwind Styling |
-| **Rohit** | AI Integration (Gemini), Prompt Engineering |
-| **Alisha** | Database (Firebase) & State Management |
+| **Alisha** | AI Integration (Gemini), Prompt Engineering |
+| **Rohit** | Database (Firebase) & State Management |
 | **Prabha** | Presentation, Video Demo, & QA |
 
 
