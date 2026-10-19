@@ -2,7 +2,7 @@
 
 > **Bridging the gap between student potential and live industry requirements.**
 
-** https://youtu.be/73-TE42NF2s?si=EX0WzFjnJVjoJe3R **
+**https://youtu.be/73-TE42NF2s?si=EX0WzFjnJVjoJe3R**
 
 ---
 
@@ -26,7 +26,7 @@ Instead of generic advice, our platform tells students exactly what skills emplo
 
 ---
 
-## 🔍 SerpApi Integration (Mandatory Disclosure)
+## 🔍 SerpApi Integration 
 Skill Setu heavily relies on **SerpApi** as its primary live data ingestion engine. 
 * We utilize the official `serpapi` npm SDK in our backend Node.js pipeline.
 * When a student selects a target role, our server instantly queries the **Google Jobs API engine** via SerpApi to scrape live job postings, requirements, and geographic market trends.
@@ -34,13 +34,13 @@ Skill Setu heavily relies on **SerpApi** as its primary live data ingestion engi
 
 ---
 
-## 🤖 AI & Tooling Disclosure (Mandatory)
+## 🤖 AI & Tooling Disclosure 
 * **Generative AI Logic:** We utilized **Google Gemini 2.5 Flash** (via `@google/generative-ai` SDK). The LLM processes the live job descriptions scraped by SerpApi alongside the user's current skill profile to intelligently generate the JSON-structured learning roadmaps and skill-gap charts.
 * **Development Accelerator:** We utilized **Antigravity (AI IDE)** as a pair-programming assistant to accelerate UI component generation, debug complex React state, and audit our Git merge conflicts and code quality during the hackathon.
 
 ---
 
-## 🚀 Setup & Usage Instructions (For Judges)
+## 🚀 Setup & Usage Instructions 
 
 We have architected this project to be incredibly easy to run locally. If you do not have certain API keys, our backend features a robust "Circuit Breaker" that will automatically fall back to high-quality mock data so the app will never crash during your evaluation.
 
@@ -102,8 +102,8 @@ Open `http://localhost:3000` in your browser and experience Skill Setu!
 | :--- | :--- |
 | **Aditya** | Project Lead, Backend Architecture, SerpApi Integration |
 | **Paarth** | Frontend Lead, React/Next.js UI, Tailwind Styling |
-| **[Teammate 3]** | AI Integration (Gemini), Prompt Engineering |
-| **[Teammate 4]** | Database (Firebase) & State Management |
-| **[Teammate 5]** | Presentation, Video Demo, & QA |
+| **Rohit** | AI Integration (Gemini), Prompt Engineering |
+| **Alisha** | Database (Firebase) & State Management |
+| **Prabha** | Presentation, Video Demo, & QA |
 
-*(Note to team: Update the bracketed names and roles above before final submission!)*
+
